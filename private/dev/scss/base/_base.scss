@@ -1,6 +1,6 @@
 body{
     font-family: $varela;
-    background-color: red;
+    background-color: $secondary;
 }
 
 .corps{
@@ -9,11 +9,11 @@ body{
     width: 100%;
 
     nav{
-        width: 150px;
+        width: 200px;
     }
 
     main{
-        width: calc(100% - 150px);
+        width: calc(100% - 200px);
     }
 }
 

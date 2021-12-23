@@ -1,6 +1,6 @@
 body {
   font-family: "Varela Round", sans-serif;
-  background-color: red;
+  background-color: #FFF;
 }
 
 .corps {
@@ -9,10 +9,10 @@ body {
   width: 100%;
 }
 .corps nav {
-  width: 150px;
+  width: 200px;
 }
 .corps main {
-  width: calc(100% - 150px);
+  width: calc(100% - 200px);
 }
 
 section {
@@ -65,10 +65,17 @@ nav ul {
   flex-direction: column;
   list-style: none;
 }
+nav ul li {
+  margin: 10px;
+}
 nav ul li a {
   text-decoration: none;
   color: #FFF;
   padding: 20px;
+}
+nav ul li a:hover {
+  text-decoration: none;
+  color: #FFF;
 }
 
 footer {

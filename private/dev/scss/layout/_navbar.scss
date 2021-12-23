@@ -10,11 +10,18 @@ nav{
         list-style: none;
 
         li{
+            margin: 10px;
 
             a{
                 text-decoration: none;
                 color: $secondary;
                 padding: 20px;
+            }
+
+            a:hover{
+                text-decoration: none;
+                color: $secondary;
+                
             }
         }
     }
