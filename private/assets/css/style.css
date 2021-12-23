@@ -1,0 +1,109 @@
+body {
+  font-family: "Varela Round", sans-serif;
+  background-color: red;
+}
+
+.corps {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.corps nav {
+  width: 150px;
+}
+.corps main {
+  width: calc(100% - 150px);
+}
+
+section {
+  padding: 30px 0px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  padding: 20px;
+}
+
+h3 {
+  text-transform: uppercase;
+  color: #9fa8ad;
+  font-weight: bolder;
+  margin-top: 4em;
+  font-size: 13px;
+}
+
+hr {
+  width: 20px;
+  height: 3px;
+  background-color: #FFF;
+}
+
+p {
+  font-size: 12px;
+}
+
+header {
+  display: flex;
+  background-color: #24292f;
+  color: #FFF;
+}
+header h2 {
+  margin: 0;
+}
+
+nav {
+  display: inline;
+  background-color: #24292f;
+  height: 100vh;
+  padding: 20px;
+}
+nav ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+}
+nav ul li a {
+  text-decoration: none;
+  color: #FFF;
+  padding: 20px;
+}
+
+footer {
+  background-color: #9fa8ad;
+  padding: 20px 0px;
+  margin-top: 50px;
+}
+footer ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+footer ul li {
+  display: inline;
+}
+footer ul li a {
+  color: #24292f;
+  font-size: 13px;
+}
+footer ul li a:hover {
+  color: #818e9e;
+  text-decoration: none;
+}
+footer p {
+  color: #818e9e;
+  margin: 0;
+}
+
+#myChart {
+  height: 300px !important;
+  width: 600px !important;
+}
+
+/************************************************/
+/***************MEDIAS QUERY******************/
+/************************************************/
+
+/*# sourceMappingURL=style.css.map */

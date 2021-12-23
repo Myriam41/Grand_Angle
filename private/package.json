@@ -1,0 +1,12 @@
+{
+  "name": "td-sass",
+  "version": "1.0.0",
+  "description": "compile projet",
+  "main": "index.js",
+  "scripts": {
+    "compiler-sass": "sass --watch dev/scss/main.scss:assets/css/style.css" ,
+    "min":"sass --watch dev/scss/main.scss:assets/css/style.min.css -s compressed"
+  },
+  "author": "Myriam",
+  "license": "ISC"
+}

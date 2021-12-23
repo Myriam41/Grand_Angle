@@ -1,0 +1,12 @@
+//small Devices (u to 760px) - MD
+
+@media screen and (min-width: 720px){
+    @include base--sm();
+    @include footer--sm();
+}
+
+@media screen and (min-width: 1200px){
+    @include base--md();
+    @include footer--md();
+}
+

@@ -1,0 +1,21 @@
+nav{
+    display: inline;
+    background-color: $primary;
+    height: 100vh;
+    padding: 20px;
+
+    ul{
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+
+        li{
+
+            a{
+                text-decoration: none;
+                color: $secondary;
+                padding: 20px;
+            }
+        }
+    }
+}

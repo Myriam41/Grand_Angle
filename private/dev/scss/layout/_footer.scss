@@ -1,0 +1,37 @@
+footer{
+    background-color: $tertiary;
+    padding: 20px 0px;
+    margin-top: 50px;
+
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+
+        li{
+            display: inline;
+
+            a{
+                color: $primary;
+                font-size: 13px;
+            }
+
+            a:hover{
+                color: $primary-light;
+                text-decoration:  none;
+            }
+        }
+    }
+    p{
+        color: $primary-light;
+        margin: 0;
+    }
+}
+
+@mixin footer--sm {
+
+}
+
+@mixin footer--md {
+
+}
