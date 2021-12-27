@@ -1,5 +1,3 @@
 <?php
 
-include ('private/index.html');
-
-
+    include('private/controller/homeController.php');

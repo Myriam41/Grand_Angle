@@ -1,13 +1,13 @@
 nav{
     display: inline;
     background-color: $primary;
-    height: 100vh;
-    padding: 20px;
+
 
     ul{
         display: flex;
         flex-direction: column;
         list-style: none;
+        padding: 0;
 
         li{
             margin: 10px;
@@ -15,7 +15,7 @@ nav{
             a{
                 text-decoration: none;
                 color: $secondary;
-                padding: 20px;
+                padding: 10px;
             }
 
             a:hover{

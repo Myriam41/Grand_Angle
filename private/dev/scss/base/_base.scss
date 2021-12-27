@@ -3,17 +3,52 @@ body{
     background-color: $secondary;
 }
 
+h2{
+    font-size: 16px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding: 15px;
+}
+
+aside{
+    background-color: black;
+    height: 100vh;
+    padding: 10px;
+}
+
+i{
+    padding: 5px;
+    margin-right: 5px;
+}
+
 .corps{
     display: flex;
     flex-direction: row;
     width: 100%;
 
-    nav{
+    aside{
         width: 200px;
+
+        h2{
+            text-align: center;
+            color: #fff;
+        }
     }
 
     main{
         width: calc(100% - 200px);
+        padding: 0;
+
+        #top{
+            width: 100%;
+            background-color: black;
+            padding: 15px;
+
+            input{
+                background-color: $primary;
+
+            }
+        }
     }
 }
 
@@ -22,12 +57,7 @@ section{
     text-align: center;
 }
 
-h2{
-    font-size: 16px;
-    font-weight: bolder;
-    text-transform: uppercase;
-    padding: 20px;
-}
+
 
 h3{
     text-transform: uppercase;
