@@ -2,5 +2,5 @@
     
     include_once('config.php');
     
-    include('private/model/expoModel.php');
+    include('private/model/artWorkModel.php');
     include('private/view/homeView.php');

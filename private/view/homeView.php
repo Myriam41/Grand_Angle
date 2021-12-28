@@ -1,29 +1,33 @@
 <?php
     $title = "Accueil";
     $titlePage = "accueil";
-    $chaine = "";
 
     ob_start();
 ?>
-    <h2>Nombre de vues par oeuvres</h2>
+    <div class="container">
+        <div class="row">
+        <h2>Les 5 oeuvres les plus vues</h2>
 
-    <canvas id="myChart" width="100" height="100"></canvas>
+        <canvas id="myChart" width="400" height="200"></canvas>
+        </div>
 
-    <h2>Oeuvres de l'exposition</h2>
-    
-    <?= "<table border = 1>";
+        <div class="row">
+            <div class="col-6">
+                <h2>Autres oeuvres de l'exposition</h2>
+<?php           displayAllArtwork(getArtworkAll()); 
+?>
+            </div>
+            <div class="col-6">
 
-    // corps du tableau
-    while($row = mysqli_fetch_array($res, MYSQLI_ASSOC)){
-        echo "<tr>";
+                <h2>Oeuvres non livrées</h2>
 
-        
-        foreach($row as $k=>$v){
-            echo "<td>" . $chaine .= $v."</td>";
-        }
-        echo "</tr>";
-    }
-    echo "</table>";?>
+                <h2>Oeuvres livrées ces 7 derniers jours</h2>
+
+                <h2>à faire</h2>
+
+            </div>
+        </div>
+    </div>
 
 <?php
     $content = ob_get_clean();
