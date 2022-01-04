@@ -11,7 +11,10 @@
         <div class="row">
         <h2>Les 5 oeuvres les plus vues</h2>
 
-        <canvas id="mychart" width="400" height="200"></canvas>
+        <canvas id="myChart" width="400" height="200"></canvas>
+        <canvas id="artGraph" width="400" height="200"></canvas>
+        
+        
 
         </div>
 

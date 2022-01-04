@@ -3,8 +3,8 @@ $(document).ready( function(){
     //données pour le graph : tableau json
     $data = getData();
 
-    const ctx = document.getElementById('myChart');
-    const myChart = new Chart(ctx, {
+    const ctx2 = document.getElementById('artGraph');
+    const artGraph = new Chart(ctx2, {
         type: 'line',
         
         data: $data,
@@ -20,7 +20,7 @@ $(document).ready( function(){
   
     // récupération de l'id de l'expo en cours d'affichage
     // récupération grâce à $_SESSION['expoAff']
-    $expo = 1 ;
+    var $expo = 1 ;
 
     /**
      * Requete AJAX pour récupérer les données du graph
@@ -36,10 +36,10 @@ $(document).ready( function(){
                     
                 } else{
                     // Cas où une erreur apparait this.status <> 200
-                    document.getElementById("mychart").innerHTML = 'erreur : impossibilité d\'afficher le graphique' + this.responseText;
+                    document.getElementById("artGraph").innerHTML = 'erreur : impossibilité d\'afficher le graphique' + this.responseText;
                 }
             } else{
-                document.getElementById("mychart").innerHTML = 'En attente de réponse';
+                document.getElementById("artGraph").innerHTML = 'En attente de réponse';
             }
         };
 

@@ -1,6 +1,10 @@
 <?php
-    $idExpo = (isset($_GET['id']))?$_GET['id']:'';
+    //include ('../../connect.php');
 
+    $idExpo = isset($_GET['id'])?$_GET['id']:'';
+
+    //$idExpo =1;
+    //getBestArts();
 
     if($idExpo){
         getBestArts();
@@ -9,7 +13,7 @@
     /** function getBestArt
      *  @return datas for graph
      */
-    /* exemple de ce qui doit être renvoyé par getBestArts
+    /* exemple return by getBestArts
         
         labels: ['03/01/2022', '04/01/2022', '05/01/2022', '06/01/2022', '07/01/2022', '08/01/2022', '09/01/2022'],
         datasets: [
@@ -27,39 +31,52 @@
     function getBestArts(){
         global $idExpo;
 
-        $sql = "SELECT expo.date_debut, expo.date_fin
-        FROM expo
+        // Recover dates exposition
+        $sql = "SELECT exposition.date_debut, exposition.date_fin
+        FROM exposition
         WHERE code_expo = $idExpo";
 
         $res = connecMySQL($sql);
-        $row = mysqli_fetch_row($res, MYSQLI_ASSOC);
 
-        for ($date=$row['date_debut'];$date<$row['date_fin'];$date++) {
-            $labels[] = $date;
+        $expo = mysqli_fetch_array($res, MYSQLI_ASSOC);
+
+        var_dump ($expo['date_debut']);
+
+        $nbJours = (strtotime($expo['date_fin']) - strtotime($expo['date_debut']))/(60*60*24);
+        echo $nbJours;
+
+        // create graph labels
+        for ($i = 0; $i<= $nbJours ;$i++) {
+            $labels[] = date('Y-m-d',strtotime($expo['date_debut'] . '+' . $i . 'day'));
         }
 
-        $sql = "SELECT oeuvre.nombreVues, oeuvre.code_oeuvre, oeuvre.titre_oeuvre
-        FROM oeuvre
-        WHERE code_expo = $idExpo
-        ORDER BY oeuvre.nombreVues DESC
-        LIMIT 5";
+
+        // Recover 5 arts more see
+        $sql = "SELECT exposer.nombre_vues, oeuvre.code_oeuvre, oeuvre.titre_oeuvre
+                FROM oeuvre
+                INNER JOIN exposer ON oeuvre.code_oeuvre = exposer.code_oeuvre
+                WHERE code_expo = 1
+                ORDER BY exposer.nombre_vues DESC
+                LIMIT 5";
 
         $res = connecMySQL($sql);
+
         // Tant que l'on a des lignes dans le res
-        while($row = mysqli_fetch_row($res, MYSQLI_ASSOC)){
-            $code = $row['code_oeuvre'];
+        while($oeuvres = mysqli_fetch_array($res, MYSQLI_ASSOC)){
+            $code = $oeuvres['code_oeuvre'];
 
             foreach($labels as $date){
-                $sql = "SELECT COUNT(vue.code_vue)
+                $sql = "SELECT COUNT(vue.code_vue), vue.code_oeuvre, vue.date_vue
                 FROM vue
-                GROUP BY DATE(vue.date_heure)
-                HAVING vue.code_oeuvre = $code";
+                WHERE vue.code_oeuvre = $code
+                GROUP BY vue.date_vue
+                HAVING date_vue = $date";
         
                 $res = connecMySQL($sql);
-                $row2 = mysqli_fetch_row($res, MYSQLI_NUM);
+                $vues = mysqli_fetch_array($res, MYSQLI_NUM);
 
-                $array['label'] = $row['titre_oeuvre'];
-                $array['data'] =  $row2;
+                $array['label'] = $oeuvres['titre_oeuvre'];
+                $array['data'] =  $vues;
 
             }
 
