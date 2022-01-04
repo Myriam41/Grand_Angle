@@ -3,13 +3,32 @@
 
     function get5Artwork(){
 
-        $sql = 'SELECT * FROM oeuvres LIMIT 5';
+        $sql = 'SELECT oeuvres.Nom, exposer.nombre_vues
+                FROM exposer
+                INNER JOIN oeuvres
+                WHERE exposer.code_events = 1
+                ORDER BY exposer.nombre_vues
+                LIMIT 5';
 
         $res = connecMySQL($sql);
         
         return $res;
 
     }
+
+    function getArtworkExpoAll($idExpo){
+
+        $sql = 'SELECT oeuvres.Nom, exposer.nombre_vues
+                FROM exposer
+                INNER JOIN oeuvres ON exposer.code_oeuvre = oeuvres.code_oeuvre
+                WHERE exposer.code_events = "'. $idExpo .'"';
+
+        $res = connecMySQL($sql);
+        
+        return $res;
+
+    }
+
 
     function getArtworkAll(){
 

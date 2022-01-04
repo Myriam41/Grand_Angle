@@ -5,3 +5,4 @@
 
 config.php
 connect.php
+private/model/stats_Exemple.php
