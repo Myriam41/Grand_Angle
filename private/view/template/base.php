@@ -30,19 +30,6 @@
 		<div class="container">
 			<aside>
 				<?php include('aside.php') ?>
-				<!--
-				<h2 ><?= $titlePage ?> </h2>
-				<nav>
-					<ul>
-						<li><a href="#"><i class="fas fa-home"></i>Accueil</a></li>
-						<li><a href="#"><i class="fas fa-theater-masks"></i>Expositions</a></li>
-						<li><a href="#"><i class="fas fa-user-edit"></i>Artistes</a></li>
-						<li><a href="#"><i class="fas fa-palette"></i>Oeuvres</a></li>
-						<li><a href="#"><i class="fas fa-users"></i>Utilisateurs</a></li>
-						<li><a href="#"><i class="fas fa-wifi"></i>Déconnection</a></li>
-					</ul>
-				</nav>
-			-->
 			</aside>
 			<!--	
 			<div id="top">

@@ -9,44 +9,36 @@
     </div>
     <div class="sidebar">
         <a href="#" class="active">
-            <span class="material-icons-sharp">grid_view</span>
-            <h3>Dashboard</h3>
+            <i class="fas fa-home"></i>Accueil
         </a>
         <a href="#">
-            <span class="material-icons-sharp">person_outline</span>
-            <h3>Customers</h3>
+            <i class="fas fa-theater-masks"></i>Expositions
         </a>
         <a href="#">
-            <span class="material-icons-sharp">receipt_long</span>
-            <h3>Orders</h3>
+            <i class="fas fa-user-edit"></i>Artistes
         </a>
         <a href="#">
-            <span class="material-icons-sharp">insights</span>
-            <h3>Analytics</h3>
+            <i class="fas fa-palette"></i>Oeuvres
         </a>
         <a href="#">
-            <span class="material-icons-sharp">mail_outline</span>
-            <h3>Messages</h3>
+            <i class="fas fa-users"></i>Utilisateurs
             <span class="message-count">26</span>
         </a>
         <a href="#">
-            <span class="material-icons-sharp">inventory</span>
-            <h3>Products</h3>
-        </a>
-        <a href="#">
-            <span class="material-icons-sharp">report_gmailerrorred</span>
-            <h3>Reports</h3>
-        </a>
-        <a href="#">
-            <span class="material-icons-sharp">settings</span>
-            <h3>Settings</h3>
-        </a>
-        <a href="#">
-            <span class="material-icons-sharp">add</span>
-            <h3>Add Product</h3>
-        </a>
-        <a href="#">
-            <span class="material-icons-sharp">logout</span>
-            <h3>Logout</h3>
+            <i class="fas fa-wifi"></i>Déconnection
         </a>
     </div>
+
+    				<!--
+				<h2 ><?= $titlePage ?> </h2>
+				<nav>
+					<ul>
+						<li><a href="#"><i class="fas fa-home"></i>Accueil</a></li>
+						<li><a href="#"><i class="fas fa-theater-masks"></i>Expositions</a></li>
+						<li><a href="#"><i class="fas fa-user-edit"></i>Artistes</a></li>
+						<li><a href="#"><i class="fas fa-palette"></i>Oeuvres</a></li>
+						<li><a href="#"><i class="fas fa-users"></i>Utilisateurs</a></li>
+						<li><a href="#"><i class="fas fa-wifi"></i>Déconnection</a></li>
+					</ul>
+				</nav>
+			-->
