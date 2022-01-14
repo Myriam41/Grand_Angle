@@ -1,92 +1,85 @@
 <?php
-    //include ('../../connect.php');
+    $mysqli = new MySQLi('localhost', 'root','','grand_angle2');
 
-    $idExpo = isset($_GET['id'])?$_GET['id']:'';
-
-    //$idExpo =1;
-    //getBestArts();
-
-    if($idExpo){
-        getBestArts();
+    if($mysqli->connect_errno){
+        echo "Failed to connect to MySQL: " . $mysql->connect_errno;
     }
 
-    /** function getBestArt
-     *  @return datas for graph
-     */
-    /* exemple return by getBestArts
-        
-        labels: ['03/01/2022', '04/01/2022', '05/01/2022', '06/01/2022', '07/01/2022', '08/01/2022', '09/01/2022'],
-        datasets: [
-            {
-            label: 'taleau 1',
-            data: [10, 26, 52, 46, 20],
-            },
-            {
-            label: 'tableau 2',
-            data: [50, 30, 2, 23, 50],
-            }
-        ]
-    */
+    $idExpo = isset($_GET['id'])?$_GET['id']:'';
+    $colors = ['#ff6384','#36a2eb','#36a2eb','#cc65fe','#ffce56'];
 
-    function getBestArts(){
-        global $idExpo;
+    $idExpo =1;
 
+    if($idExpo){
         // Recover dates exposition
-        $sql = "SELECT exposition.date_debut, exposition.date_fin
+        $getDates = "SELECT exposition.date_debut, exposition.date_fin
         FROM exposition
         WHERE code_expo = $idExpo";
+    
+        $dates = $mysqli->query($getDates);
 
-        $res = connecMySQL($sql);
-
-        $expo = mysqli_fetch_array($res, MYSQLI_ASSOC);
-
-        var_dump ($expo['date_debut']);
+        $expo = $dates->fetch_assoc();
 
         $nbJours = (strtotime($expo['date_fin']) - strtotime($expo['date_debut']))/(60*60*24);
-        echo $nbJours;
 
         // create graph labels
         for ($i = 0; $i<= $nbJours ;$i++) {
-            $labels[] = date('Y-m-d',strtotime($expo['date_debut'] . '+' . $i . 'day'));
+            // var_dump(date('Y-m-d',strtotime($expo['date_debut'] . '+' . $i . 'day')).'<br>');
+           // $date = date('Y-m-d', strtotime($expo['date_debut'] . '+' . $i . 'day'));
+            $labels[] = date('Y-m-d', strtotime($expo['date_debut'] . '+' . $i . 'day'));
         }
-
-
+    
         // Recover 5 arts more see
-        $sql = "SELECT exposer.nombre_vues, oeuvre.code_oeuvre, oeuvre.titre_oeuvre
-                FROM oeuvre
-                INNER JOIN exposer ON oeuvre.code_oeuvre = exposer.code_oeuvre
-                WHERE code_expo = 1
-                ORDER BY exposer.nombre_vues DESC
-                LIMIT 5";
+        $getArts = "SELECT exposer.nombre_vues, oeuvre.code_oeuvre, oeuvre.titre_oeuvre
+        FROM oeuvre
+        INNER JOIN exposer ON oeuvre.code_oeuvre = exposer.code_oeuvre
+        WHERE code_expo = 1
+        ORDER BY exposer.nombre_vues DESC
+        LIMIT 5";
 
-        $res = connecMySQL($sql);
+        // View by art by date
+        $code = "";
+        $datasets = [];
 
-        // Tant que l'on a des lignes dans le res
-        while($oeuvres = mysqli_fetch_array($res, MYSQLI_ASSOC)){
-            $code = $oeuvres['code_oeuvre'];
+        $arts = $mysqli->query($getArts);
 
-            foreach($labels as $date){
-                $sql = "SELECT COUNT(vue.code_vue), vue.code_oeuvre, vue.date_vue
+        while($oeuvre = $arts -> fetch_assoc()){
+
+            $code = $oeuvre['code_oeuvre'];  
+            $array =[];
+
+            foreach ($labels as $date) {
+                $getVues = "SELECT COUNT(vue.code_vue) as nbVues, vue.code_oeuvre, vue.date_vue
                 FROM vue
                 WHERE vue.code_oeuvre = $code
                 GROUP BY vue.date_vue
-                HAVING date_vue = $date";
-        
-                $res = connecMySQL($sql);
-                $vues = mysqli_fetch_array($res, MYSQLI_NUM);
+                HAVING date_vue = date('$date')";
 
-                $array['label'] = $oeuvres['titre_oeuvre'];
-                $array['data'] =  $vues;
+                $nbVues = $mysqli->query($getVues);
 
+                $tbl =[];
+                $tbl["label"] = $oeuvre['titre_oeuvre'];
+
+                $array[$date] = 0;
+                while( $vues = $nbVues->fetch_assoc()){
+                    $array[$date] = $vues['nbVues'];
+                }
             }
+            $i = 0;
+            foreach($array as $d){
+                $tbl["data"][] = $d;
+                $tbl['backgroundColor'][]= $colors[$i];
+                $tbl['borderColor'][]= $colors[$i];              
 
-            $datasets[] = $array;
+                $i++;
+            }
+            $datasets[] = $tbl;
+            
         }
+        
+        $data = [];
+        $data['labels']= $labels;
+        $data['datasets']= $datasets;
 
-        $retour['labels'] = $labels;
-        $retour['datasets'] = $datasets;
-
-        return json_encode($retour);
-    
-
+        echo $art_graph = json_encode($data) ;
     }

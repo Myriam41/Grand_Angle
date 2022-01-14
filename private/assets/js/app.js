@@ -1,7 +1,55 @@
 $(document).ready( function(){
+// DASHBOARD
+const sideMenu = document.querySelector('aside');
+const menuBtn = document.querySelector('#menu-btn');
+const closeBtn = document.querySelector('#close-btn');
+// Toggle
+const themeToggler = document.querySelector('.theme-toggler');
+
+// Ouverture menu
+menuBtn.addEventListener('click', () => {
+    sideMenu.style.display = 'block';
+})
+
+// Fermeture menu
+closeBtn.addEventListener('click', () => {
+    sideMenu.style.display = 'none';
+})
+
+// Changement de thème
+themeToggler.addEventListener('click', () =>{
+    document.body.classList.toggle('dark-theme-variables');
+
+    themeToggler.querySelector('span:nth-child(1)').classList.toggle('active');
+    themeToggler.querySelector('span:nth-child(2)').classList.toggle('active');
+})
+
+// Orders
+Orders.forEach(order => {
+    const tr = document.createElement('tr');
+    const trContent = `
+    <td>${order.productName}</td>
+    <td>${order.productNumber}</td>
+    <td>${order.paymentStatus}</td>
+    <td class="${order.shipping ===
+    'Declined' ? 'danger' : order.
+    shipping === 'Pending' ? 'warning'
+    : 'primary'}">${order.shipping}</td>
+    <td class="primary">Details</td>
+        `;
+    tr.innerHTML = trContent;
+    document.querySelector('table tbody').appendChild(tr);
+})  
+
+
+
+
+
+
+// GRAPH
   
-    const ctx = document.getElementById('myChart');
-    const myChart = new Chart(ctx, {
+    const ctx2 = document.getElementById('myChart');
+    const myChart = new Chart(ctx2, {
         type: 'line',
         data: {
             labels: ['03/01/2022', '04/01/2022', '05/01/2022', '06/01/2022', '07/01/2022', '08/01/2022', '09/01/2022'],

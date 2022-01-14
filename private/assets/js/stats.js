@@ -1,52 +1,35 @@
 $(document).ready( function(){
-
-    //données pour le graph : tableau json
-    $data = getData();
-
-    const ctx2 = document.getElementById('artGraph');
-    const artGraph = new Chart(ctx2, {
-        type: 'line',
-        
-        data: $data,
-        options: {
-            responsive: true,
-            plugins: {
-                legend: {
-                position: 'top',
-                },
-            }
-        },
-    });
-  
-    // récupération de l'id de l'expo en cours d'affichage
-    // récupération grâce à $_SESSION['expoAff']
     var $expo = 1 ;
 
-    /**
-     * Requete AJAX pour récupérer les données du graph
-     */
-    function getData(){
-        // Appel AJAX pour récupérer les dates expo
-        var xhttpExpo = new XMLHttpRequest();
-        xhttpExpo.onreadystatechange = function() {
-            if (this.readyState == 4) {
-                // Si réponse alors récupération des dates expo
-                if(this.status == 200){
-                    return JSON.parse(this.responseText);
-                    
-                } else{
-                    // Cas où une erreur apparait this.status <> 200
-                    document.getElementById("artGraph").innerHTML = 'erreur : impossibilité d\'afficher le graphique' + this.responseText;
-                }
-            } else{
-                document.getElementById("artGraph").innerHTML = 'En attente de réponse';
-            }
-        };
+    $.ajax({
+        url: "http://localhost/Grand_Angle/private/model/statsModel.php",
+        type: "get",
+        data: {
+            id: $expo,
+        },
+        success: function(art_graph){
 
-        // Appel en synchrone pour attendre d'avoir la réponse
-        xhttpExpo.open("GET", "http://localhost/Grand_Angle/private/model/statsModel.php?id=" + $expo, false);
-        xhttpExpo.send();
-    }
+            //$("#artGraph").html(art_graph);
+            var data = jQuery.parseJSON(art_graph);
+            console.log(data);
+            var ctx = $("#graph");
+            var conf ="";
+            conf =  {
+                type: 'line',
+                data: data,
+                options: {
+                    responsive: true,
+                    plugins: {
+                      legend: {
+                        position: 'top',
+                      },
+                    }
+                },
+            };
+                console.log(conf);
+            var artGraph = new Chart(ctx, conf);
+        }
+    });
 });
 
 
