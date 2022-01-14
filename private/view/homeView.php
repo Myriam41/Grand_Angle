@@ -94,21 +94,18 @@
         </div>
 
         <!-- FIN MAJ RECENTES -->
-        <div class="sales-analytics">
+        <div class="recent-orders">
             <h2>Sales Analytics</h2>
-            <div class="item online">
-                <div class="icon">
-                    <span class="material-icons-sharp">shopping_cart</span>
-                </div>
-                <div class="right">
-                    <div class="info">
-                        <h3>Online Orders</h3>
-                        <small class="text-muted">Last 24 hours</small>
-                    </div>
-                    <h5 class="success">+39%</h5>
-                    <h3>3849</h3>
-                </div>
-            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Nb vues</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--  -->
+            </table>
         </div>
     </div>
 

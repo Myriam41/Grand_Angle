@@ -274,38 +274,6 @@ main .insights small {
   margin-top: 1.6rem;
   display: block;
 }
-main .recent-orders {
-  margin-top: 2rem;
-}
-main .recent-orders h2 {
-  margin-bottom: 0.8rem;
-}
-main .recent-orders table {
-  background-color: #fff;
-  width: 100%;
-  border-radius: 2rem;
-  padding: 1.8rem;
-  text-align: center;
-  box-shadow: 0 2rem 3rem;
-  transition: all 300ms ease;
-}
-main .recent-orders table:hover {
-  box-shadow: none;
-}
-main table tbody td {
-  height: 2.8rem;
-  border-bottom: 1px solid rgba(132, 139, 200, 0.18);
-  color: #677483;
-}
-main table tbody tr:last-child td {
-  border: none;
-}
-main .recent-orders a {
-  text-align: center;
-  display: block;
-  margin: 1rem auto;
-  color: #7380ec;
-}
 
 /* RIGHT */
 .right {
@@ -766,6 +734,45 @@ aside .sidebar .message-count {
   --card-padding: 1.8rem;
   --padding-1: 1.2rem;
   --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.recent-orders {
+  margin-top: 2rem;
+}
+
+.recent-orders h2 {
+  margin-bottom: 0.8rem;
+}
+
+.recent-orders table {
+  background-color: #fff;
+  width: 100%;
+  border-radius: 2rem;
+  padding: 1.8rem;
+  text-align: center;
+  box-shadow: 0 2rem 3rem;
+  transition: all 300ms ease;
+}
+
+.recent-orders table:hover {
+  box-shadow: none;
+}
+
+table tbody td {
+  height: 2.8rem;
+  border-bottom: 1px solid rgba(132, 139, 200, 0.18);
+  color: #677483;
+}
+
+table tbody tr:last-child td {
+  border: none;
+}
+
+.recent-orders a {
+  text-align: center;
+  display: block;
+  margin: 1rem auto;
+  color: #7380ec;
 }
 
 /*!
