@@ -31,3 +31,19 @@ $color-background: #F6F6F9;
     --color-light: rgba(0, 0, 0, 0.4);
     --box-shadow: 0 2rem 3rem var(--color-light);
 }
+
+.primary{
+    color: $color-primary;
+}
+
+.danger{
+    color: $color-danger;
+}
+
+.success{
+    color: $color-success;
+}
+
+.warning{
+    color: $color-warning;
+}
