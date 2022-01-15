@@ -16,16 +16,18 @@
 
     }
 
-    function getArtworkExpoAll($idExpo){
+    function getArtworkExpoView($idExpo){
 
-        $sql = 'SELECT oeuvres.Nom, exposer.nombre_vues
+        $sql = "SELECT oeuvre.titre_oeuvre, exposer.nombre_vues
                 FROM exposer
-                INNER JOIN oeuvres ON exposer.code_oeuvre = oeuvres.code_oeuvre
-                WHERE exposer.code_events = "'. $idExpo .'"';
+                INNER JOIN oeuvre ON exposer.code_oeuvre = oeuvre.code_oeuvre
+                WHERE exposer.code_expo = $idExpo
+                ORDER BY exposer.nombre_vues DESC";
+                
 
-        $res = connecMySQL($sql);
+        $views = connecMySQL($sql);
         
-        return $res;
+        return $views;
 
     }
 

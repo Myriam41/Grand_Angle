@@ -41,6 +41,19 @@ $(document).ready( function(){
       document.querySelector('table tbody').appendChild(tr);
   })  
 
+  // Arts views
+  getArtworkExpoView($idExpo);
+  views.forEach(view => {
+    const tr = document.createElement('tr');
+    const trContent = `
+    <td>${view.Nom}</td>
+    <td>${view.nombre_vues}</td>
+        `;
+    tr.innerHTML = trContent;
+    document.querySelector('table tbody').appendChild(tr);
+})  
+  
+
 
 
 
