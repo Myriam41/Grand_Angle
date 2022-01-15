@@ -11,7 +11,7 @@
 
     $host = 'localhost';
     $user = 'postgres';
-    $pass = '';
+    $pass = 'PJRV0tel!S:121';
     $base = 'grandAngle';
 
     $pg = pg_connect("host=$host port=5432 user=$user password=$pass dbname=$base");

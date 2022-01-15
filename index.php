@@ -1,6 +1,15 @@
 <?php
+    session_start();
+
+    $_SESSION['visitor'] = isset($_GET['v'])?1:"";
 
 
+    if($_SESSION['visitor']){
+       
+        require('visitor/index.php');
 
+    }else{
 
-    include('private/controller/homeController.php');
+        require('private/index.php');
+
+    }
