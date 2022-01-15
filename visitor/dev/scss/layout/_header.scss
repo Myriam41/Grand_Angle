@@ -1,0 +1,17 @@
+header  div{
+    height: 300px;
+    width: 100%;
+    background-image: url(../img/IMG_2502.jpg);
+    background-size:cover ;
+    position: relative;
+    margin-bottom: 20px;
+
+    h2{
+        position: absolute;
+        left:    0;
+        bottom:   0;
+        padding: 20px;
+        color: #fff;
+        font-family: 'Montserrat', sans-serif;
+    }
+}

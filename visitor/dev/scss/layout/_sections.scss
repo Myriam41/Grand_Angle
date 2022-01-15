@@ -1,0 +1,83 @@
+div.image{
+    align-items: center;
+    padding-top: 80px;
+}
+
+div.all-lang{
+    padding: 50px ;
+    width: auto;
+    height: 500px;
+
+    img{
+        margin: 10px;
+    }
+}
+
+div.lang, div.lang2{
+    width: auto;
+    display: flex;
+    justify-content: center;
+}
+
+div.lang img, .lang2 img{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+}
+
+.active-img{
+    border: 5px solid #00AB66;
+}
+
+div.choix{
+    padding: 30px; 
+ }
+ div.choix p{
+     display: none;
+ }
+
+ div.choix p.active{
+     display: flex;
+     padding: 0;
+ }
+ div.cont-btn{
+     padding: 20px 0 0 150px;
+ }
+
+ section.horaires{
+    font-family: 'Montserrat', sans-serif;
+    justify-self: center;
+    background-color: whitesmoke;
+    margin: 0 5%;
+    padding:15px 15px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px rgba(119, 119, 119, 0.75);
+}
+
+section{
+    font-family: 'Montserrat', sans-serif;
+    justify-self: center;
+    background-color: whitesmoke;
+    margin: 0 5%;
+    padding:15px 15px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 1px rgba(119, 119, 119, 0.75);
+}
+
+div.h-lang{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    position: relative;
+
+    img{
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 30px;
+        width: 30px;
+        border-radius: 100%;
+        border: 2px solid #00AB66;
+    }
+}

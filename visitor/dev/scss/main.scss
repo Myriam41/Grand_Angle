@@ -1,0 +1,42 @@
+// Utilities
+@import 'utilities/variables';
+@import 'utilities/functions';
+@import 'utilities/mixins';
+
+// Vendors
+@import 'vendors/rewrite-bootstrap';
+
+// Base
+@import 'base/reset';
+@import 'base/colors';
+@import 'base/fonts';
+@import 'base/icons';
+@import 'base/animation';
+@import 'base/base';
+
+// Layout 
+@import 'layout/header';
+@import 'layout/navbar';
+@import 'layout/footer';
+@import 'layout/infos';
+@import 'layout/sections';
+@import 'layout/para';
+
+// Components
+@import 'components/loaders';
+@import 'components/imgs';
+@import 'components/inputs';
+@import 'components/buttons';
+@import 'components/titles';
+
+// Specific pages
+@import 'pages/index';
+@import 'pages/contact';
+
+//**********************************/
+//********** MEDIA QUERIES *********/
+
+@import 'responsive/media-queries';
+
+
+

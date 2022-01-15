@@ -1,0 +1,12 @@
+{
+  "name": "template_scss",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "compiler-scss": "sass --watch dev/scss/main.scss:./dist/assets/css/styles.css",
+    "minifier-scss": "sass --watch dev/scss/main.scss:./dist/assets/css/styles.css -s compressed"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
