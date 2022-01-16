@@ -11,7 +11,7 @@
         <h1><?= $titlePage ?></h1>
 
         <div class="recent-orders">
-            <h2>Oeuvres non livrées             <a href="#"><i class="">Tout voir</i></a></span></h2>
+            <h2>Oeuvres non livrées<a href="#"><i class="">Tout voir</i></a></span></h2>
 
             <table>
                 <thead>
@@ -103,7 +103,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <!--  -->
             </table>
         </div>
     </div>

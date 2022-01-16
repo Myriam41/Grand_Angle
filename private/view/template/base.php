@@ -18,9 +18,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
 		<link href="'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap'" rel="stylesheet">
 
-		<!-- CDN Material icons
+		<!-- CDN Material icons-->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
-        -->
         <!-- CSS PERSO -->
         <link rel="stylesheet" href="assets/css/style.css">
                 
@@ -46,7 +45,7 @@
 		</footer>
 
 		<!-- JS -->
-		<script src="private/vendor/node_modules/chart.js/dist/chart.js"></script>
+		<script src="vendor/node_modules/chart.js/dist/chart.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script src="assets/js/app.js"></script>
 		<script src="assets/js/orders.js"></script>
