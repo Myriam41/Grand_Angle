@@ -1,8 +1,8 @@
 <?php
     //include_once('connect.php');
 
-    //require('private/model/artWorkModel.php');
-    //require('private/model/expoModel.php');
+    require('model/artModel.php');
+    //require('model/expoModel.php');
 
     function home(){
 

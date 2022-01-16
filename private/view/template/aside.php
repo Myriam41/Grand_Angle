@@ -1,6 +1,6 @@
     <div class="top">
         <div class="logo">
-            <img src="private/assets/img/25623.png" alt="logo">
+            <img src="assets/img/25623.png" alt="logo">
             <h2>Grand <span>Angle.</span></h2>
         </div>
         <div class="close" id="close-btn">
