@@ -3,4 +3,9 @@
 
 .git
 
+<<<<<<< HEAD
 private/model/stats_Exemple.php
+=======
+config.php
+private/model/stats_Exemple.php
+>>>>>>> 83e4424048d7a0c95c25fe41e6314bbf5278676a
