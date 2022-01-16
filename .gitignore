@@ -1,0 +1,7 @@
+# Utilisé pour VSCODE
+.vscode
+
+.git
+
+config.php
+private/model/stats_Exemple.php
