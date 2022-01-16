@@ -22,7 +22,7 @@
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
         -->
         <!-- CSS PERSO -->
-        <link rel="stylesheet" href="private/assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/style.css">
                 
     </head>
     
@@ -48,8 +48,8 @@
 		<!-- JS -->
 		<script src="private/vendor/node_modules/chart.js/dist/chart.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-		<script src="private/assets/js/app.js"></script>
-		<script src="private/assets/js/orders.js"></script>
+		<script src="assets/js/app.js"></script>
+		<script src="assets/js/orders.js"></script>
 
     </body>
 </html>
