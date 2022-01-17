@@ -18,7 +18,7 @@
         </div>
 
         <div class="recent-orders">
-            <h2>Oeuvres non livrées             <a href="#"><i class="">Tout voir</i></a></span></h2>
+            <h2>Oeuvres non livrées</h2>
 
             <table>
                 <thead>
