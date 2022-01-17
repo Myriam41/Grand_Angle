@@ -11,6 +11,13 @@
         <h1><?= $titlePage ?></h1>
 
         <div class="recent-orders">
+            <h2>Les 5 oeuvres les plus vues</h2>
+            <div id="artGraph">
+                <canvas id="graph" width="400" height="200"></canvas>
+            </div>
+        </div>
+
+        <div class="recent-orders">
             <h2>Oeuvres non livrées             <a href="#"><i class="">Tout voir</i></a></span></h2>
 
             <table>
@@ -28,14 +35,6 @@
             </table>
             
         </div>
-
-        <div class="recent-orders">
-            <h2>Les 5 oeuvres les plus vues</h2>
-            <div id="artGraph">
-                <canvas id="graph" width="400" height="200"></canvas>
-            </div>
-        </div>
-
     </main>
     
     <!-- Partie droite -->
@@ -59,6 +58,11 @@
             </div>
         </div>
         <!-- FIN DU TOP -->
+        <div class="recent-orders">
+            <h2>Vues de la dernière exposition</h2>
+<?php       getViewsArtsExpo(1);?>
+        </div>
+
         <div class="recent-updates">
             <h2>Recent Updates</h2>
             <div class="updates">
@@ -93,13 +97,7 @@
         </div>
 
         <!-- FIN MAJ RECENTES -->
-        <div class="recent-orders">
-        <h2>Vues de la dernière exposition</h2>
 
-<?php
-                getViewsArtsExpo(1);
-?>
-        </div>
     </div>
 
 <?php
