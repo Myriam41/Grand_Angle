@@ -1,13 +1,8 @@
 <?php
     //include_once('connect.php');
 
-<<<<<<< HEAD
     //require('model/artModel.php');
     //require('model/expoModel.php');
-=======
-    //require('private/model/artWorkModel.php');
-    //require('private/model/expoModel.php');
->>>>>>> parent of 46b0291 (edit home about data)
 
     function home(){
 
