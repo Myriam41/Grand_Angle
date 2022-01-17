@@ -26,7 +26,7 @@
                 
     </head>
     
-    <body class="dark-theme-variables">	
+    <body>	
 		<div class="container">
 			<aside>
 				<?php include('aside.php') ?>
