@@ -7,13 +7,15 @@
 
     $lk = mysqli_connect(__HOST__, __USER__, __PASS__, __DBNAME__ ) or die("Erreur");
 
+
+/*
 // Connect with Postgres
 
     $host = 'localhost';
     $user = 'postgres';
-    $pass = 'PJRV0tel!S:121';
+    $pass = '';
     $base = 'grandAngle';
 
     $pg = pg_connect("host=$host port=5432 user=$user password=$pass dbname=$base");
-
+*/
     

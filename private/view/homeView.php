@@ -2,7 +2,7 @@
     $title = "Accueil";
     $titlePage = "Accueil";
 
-    $_SESSION['expoID'] = getLastExpo();
+    //$_SESSION['expoID'] = getLastExpo();
 
     ob_start();
     
@@ -11,7 +11,14 @@
         <h1><?= $titlePage ?></h1>
 
         <div class="recent-orders">
-            <h2>Oeuvres non livrées             <a href="#"><i class="">Tout voir</i></a></span></h2>
+            <h2>Les 5 oeuvres les plus vues de la dernière exposition</h2>
+            <div id="artGraph">
+                <canvas id="graph" width="400" height="200"></canvas>
+            </div>
+        </div>
+
+        <div class="recent-orders">
+            <h2>Oeuvres non livrées</h2>
 
             <table>
                 <thead>
@@ -29,12 +36,7 @@
             
         </div>
 
-        <div class="recent-orders">
-            <h2>Les 5 oeuvres les plus vues</h2>
-            <div id="artGraph">
-                <canvas id="graph" width="400" height="200"></canvas>
-            </div>
-        </div>
+
 
     </main>
     
@@ -54,11 +56,13 @@
                     <small class="text-muted">Admin</small>
                 </div>
                 <div class="profile-photo">
-                    <img src="private/assets/img/261746878_453672526326290_2022088434576343659_n.jpg" alt="user_picture">
+                    <img src="assets/img/261746878_453672526326290_2022088434576343659_n.jpg" alt="user_picture">
                 </div>
             </div>
         </div>
+
         <!-- FIN DU TOP -->
+        <!--
         <div class="recent-updates">
             <h2>Recent Updates</h2>
             <div class="updates">
@@ -91,28 +95,22 @@
                 </div>
             </div>
         </div>
-
+-->
         <!-- FIN MAJ RECENTES -->
         <div class="recent-orders">
-            <h2>Sales Analytics</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Titre</th>
-                        <th>Nb vues</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!--  -->
-            </table>
+            <h2>Vues de la dernière exposition</h2>
+
+<?php
+                getArtExpoView(1);
+?>
         </div>
     </div>
 
 <?php
     $content = ob_get_clean();
 
-    require('private/view/template/base.php');
+    require('view/template/base.php');
 
     // JS pour affichage du graph
 ?> 
-    <script src="private/assets/js/stats.js"></script>
+    <script src="assets/js/stats.js"></script>
