@@ -1,7 +1,7 @@
 <?php
     //include_once('connect.php');
 
-    require('model/artModel.php');
+    //require('model/artModel.php');
     //require('model/expoModel.php');
 
     function home(){
