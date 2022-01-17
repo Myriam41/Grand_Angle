@@ -24,9 +24,10 @@
                 WHERE exposer.code_expo = $idExpo
                 ORDER BY exposer.nombre_vues DESC";
                 
+       // $views = connecMySQL($sql);
+        $lk = mysqli_connect("localhost", "root", "","grand_angle2");
+        $views = mysqli_query($lk, $sql);
 
-        $views = connecMySQL($sql);
-        
         echo "<table>";
         echo "<thead>";
                 echo "<tr>";

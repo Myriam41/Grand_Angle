@@ -94,17 +94,11 @@
 
         <!-- FIN MAJ RECENTES -->
         <div class="recent-orders">
-            <h2>Sales Analytics</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Titre</th>
-                        <th>Nb vues</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!--  -->
-            </table>
+        <h2>Vues de la dernière exposition</h2>
+
+<?php
+                getViewsArtsExpo(1);
+?>
         </div>
     </div>
 

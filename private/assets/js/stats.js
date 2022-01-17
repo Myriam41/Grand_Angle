@@ -2,7 +2,7 @@ $(document).ready( function(){
     var $expo = 1 ;
 
     $.ajax({
-        url: "http://localhost/Grand_Angle/private/model/statsModel.php",
+        url: "model/statsModel.php",
         type: "get",
         data: {
             id: $expo,
@@ -26,7 +26,7 @@ $(document).ready( function(){
                     }
                 },
             };
-                console.log(conf);
+                //console.log(conf);
             var artGraph = new Chart(ctx, conf);
         }
     });

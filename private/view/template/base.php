@@ -46,7 +46,7 @@
 		</footer>
 
 		<!-- JS -->
-		<script src="private/vendor/node_modules/chart.js/dist/chart.js"></script>
+		<script src="vendor/node_modules/chart.js/dist/chart.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 		<script src="assets/js/app.js"></script>
 		<script src="assets/js/orders.js"></script>

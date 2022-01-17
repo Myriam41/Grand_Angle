@@ -41,26 +41,8 @@ $(document).ready( function(){
       document.querySelector('table tbody').appendChild(tr);
   })  
 
-  // Arts views
-  getArtworkExpoView($idExpo);
-  views.forEach(view => {
-    const tr = document.createElement('tr');
-    const trContent = `
-    <td>${view.Nom}</td>
-    <td>${view.nombre_vues}</td>
-        `;
-    tr.innerHTML = trContent;
-    document.querySelector('table tbody').appendChild(tr);
-})  
-  
-
-
-
-
-
-
   // GRAPH
-  
+ /*
     const ctx2 = document.getElementById('myChart');
     const myChart = new Chart(ctx2, {
         type: 'line',
@@ -86,7 +68,7 @@ $(document).ready( function(){
             }
         },
     });
-
+*/
 });
 
 
