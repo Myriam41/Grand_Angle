@@ -1,7 +1,7 @@
 <?php
-    include_once('connect.php');
+    include_once('../connect.php');
 
-    function get5Artwork(){
+    function get5Art(){
 
         $sql = 'SELECT oeuvres.Nom, exposer.nombre_vues
                 FROM exposer
@@ -16,7 +16,7 @@
 
     }
 
-    function getArtworkExpoView($idExpo){
+    function getViewsArtsExpo($idExpo){
 
         $sql = "SELECT oeuvre.titre_oeuvre, exposer.nombre_vues
                 FROM exposer
@@ -27,12 +27,30 @@
 
         $views = connecMySQL($sql);
         
-        return $views;
+        echo "<table>";
+        echo "<thead>";
+                echo "<tr>";
+                    echo "<th>Titre</th>";
+                    echo "<th>Vues</th>";
+                echo "</tr>";
+        echo "</thead>";
+
+        // corps du tableau
+        while($row = mysqli_fetch_array($views, MYSQLI_ASSOC)){
+            echo "<tr>";
+            
+            foreach($row as $k=>$v){
+
+                    echo "<td>$v</td>";
+            }
+            echo "</tr>";
+        }
+        echo "</table>";
 
     }
 
 
-    function getArtworkAll(){
+    function getArtsAll(){
 
         $sql = 'SELECT * FROM oeuvres';
 
@@ -42,14 +60,14 @@
 
     }
 
-    function getArtworkById(){
-        $sql = 'SELECT * FROM oeuvres WHERE id=?';
+    function getArtById($id){
+        $sql = "SELECT * FROM oeuvres WHERE id= $id";
 
         connecMySQL($sql);
         
     }
 
-    function displayAllArtwork($res){
+    function displayArtsAll($res){
         if($res){
 
             echo "<table>";
