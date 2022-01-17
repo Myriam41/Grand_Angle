@@ -26,8 +26,8 @@ $(document).ready( function(){
 
   // Orders
   Orders.forEach(order => {
-      let tr = document.createElement('tr');
-      let trContent = `
+      const tr = document.createElement('tr');
+      const trContent = `
       <td>${order.productName}</td>
       <td>${order.productNumber}</td>
       <td>${order.paymentStatus}</td>
@@ -42,20 +42,21 @@ $(document).ready( function(){
   })  
 
   // Arts views
-  function displayArtViews(){
-    $idExpo = 1;
-    var views = getArtExpoView($idExpo);
-    views.forEach(view => {
-      let tr = document.createElement('tr');
-      let trContent = `
-      <td>${view.Nom}</td>
-      <td>${view.nombre_vues}</td>
-          `;
-      tr.innerHTML = trContent;
-      document.querySelector('table tbody').appendChild(tr);
-  })  
+  getArtworkExpoView($idExpo);
+  views.forEach(view => {
+    const tr = document.createElement('tr');
+    const trContent = `
+    <td>${view.Nom}</td>
+    <td>${view.nombre_vues}</td>
+        `;
+    tr.innerHTML = trContent;
+    document.querySelector('table tbody').appendChild(tr);
+})  
+  
 
-  }
+
+
+
 
 
   // GRAPH

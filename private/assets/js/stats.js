@@ -2,7 +2,7 @@ $(document).ready( function(){
     var $expo = 1 ;
 
     $.ajax({
-        url: "model/statsModel.php",
+        url: "http://localhost/Grand_Angle/private/model/statsModel.php",
         type: "get",
         data: {
             id: $expo,
