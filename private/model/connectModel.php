@@ -1,6 +1,6 @@
 <?php
 // cette ligne utile seulement pour les débugage. Permet de remettre à zero la connexion.
-$_SESSION['connect'] = 0;
+    @session_start();
 
 function logConnect(){
     // connexion à la base de données

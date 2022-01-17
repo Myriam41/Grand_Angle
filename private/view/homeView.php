@@ -1,4 +1,11 @@
 <?php
+    @session_start();
+    // si la session existe pas soit si l'on est pas connecté on redirige
+     if(!isset($_SESSION['user'])){
+         header('Location: ../index.php');
+         die();
+     }
+     
     $title = "Accueil";
     $titlePage = "Accueil";
 
@@ -60,7 +67,7 @@
         <!-- FIN DU TOP -->
         <div class="recent-orders">
             <h2>Vues de la dernière exposition</h2>
-<?php       getViewsArtsExpo(1);?>
+<?php       getViewsArtsExpo(1); ?>
         </div>
 
         <div class="recent-updates">

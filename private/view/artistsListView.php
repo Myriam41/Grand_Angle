@@ -1,7 +1,7 @@
 <?php
-    session_start();
+    @session_start();
     // si la session existe pas soit si l'on est pas connecté on redirige
-     if(!isset($_SESSION['username'])){
+     if(!isset($_SESSION['user'])){
          header('Location: ../index.php');
          die();
      }
@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
         
         <!-- STYLESHEET -->
-        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="assets/css/style.css">
         
         <!-- TITLE -->
         <title>Artistes - Grand Angle</title>
@@ -34,7 +34,7 @@
             <aside>
                 <div class="top">
                     <div class="logo">
-                        <img src="../img/logo.png" alt="logo">
+                        <img src="assets/img/logo.png" alt="logo">
                         <h2>Grand Angle.</h2>
                     </div>
                     <div class="close" id="close-btn">
@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 <div class="sidebar">
-                    <a href="../Dashboard.php">
+                    <a href="assets/Dashboard.php">
                         <span class="material-icons-sharp">grid_view</span>
                         <h3>Dashboard</h3>
                     </a>
@@ -236,6 +236,6 @@
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <!-- <script src="js/orders.js"></script> -->
-        <script src="../js/app.js"></script>
+        <script src="assets/js/app.js"></script>
     </body>
 </html>

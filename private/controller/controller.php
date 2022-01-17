@@ -1,4 +1,5 @@
 <?php
+    @session_start();
     //include_once('connect.php');
 
 
@@ -34,9 +35,11 @@
 
         if(isset($_SESSION['user']) && isset($_SESSION['pass'])){
             $log = logConnect();
+            //echo $log;
             if(isset($log) && $log > 0) // nom d'utilisateur et mot de passe correctes
             {
-                    $_SESSION['connect'] = 1;  
+                    $_SESSION['connect'] = '1'; 
+                    //echo '<br> connect dans log verif =' . $_SESSION['connect'];
                     home();         
             }
             else{

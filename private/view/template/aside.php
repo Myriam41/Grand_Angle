@@ -14,7 +14,7 @@
         <a href="#">
             <i class="fas fa-theater-masks"></i>Expositions
         </a>
-        <a href="#">
+        <a href="index.php?page=artistsList">
             <i class="fas fa-user-edit"></i>Artistes
         </a>
         <a href="#">

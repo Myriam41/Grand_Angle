@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    @session_start();
 
     $_SESSION['visitor'] = isset($_GET['v'])?1:"";
     $_SESSION['connect'] = "";
