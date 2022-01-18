@@ -11,13 +11,23 @@
     }
 
     function artsList(){
-
+        require('view/artsListView.php');
         
+    }
+
+    function exposList(){
+
+        require('view/exposListView.php');
     }
 
     function artistsList(){
 
         require('view/artistsListView.php');
+    }
+
+    function usersList(){
+
+        require('view/usersListView.php');
     }
 
     function connect(){

@@ -23,27 +23,24 @@
 
         <!-- CSS PERSO -->
         <link rel="stylesheet" href="assets/css/style.css">
+
+		<!-- TITLE -->
+		<title><?= $title ?> - Grand Angle</title>
                 
     </head>
     
-    <body>	
+    <body>
+		<header>
+				<?php include('header.php') ?>
+		</header>
+
 		<div class="container">
 			<aside>
 				<?php include('aside.php') ?>
 			</aside>
-			<!--	
-			<div id="top">
-				<input type="search">
-			</div>
--->
+
 			<?= $content ?>
 		</div>
-	
-		<footer class="row">
-			<div class="container">
-
-			</div>
-		</footer>
 
 		<!-- JS -->
 		<script src="vendor/node_modules/chart.js/dist/chart.js"></script>

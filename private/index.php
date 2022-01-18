@@ -26,6 +26,14 @@
             artistsList();
         }
 
+        if($page == 'exposList'){
+            exposList();
+        }
+
+        if($page == 'usersList'){
+            usersList();
+        }
+
 
     }else if($_SESSION['connect'] == 'log'){
     

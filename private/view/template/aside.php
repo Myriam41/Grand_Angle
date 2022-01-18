@@ -8,37 +8,23 @@
         </div>
     </div>
     <div class="sidebar">
-        <a href="#" class="active">
+        <a href="index.php?page=home" class="active">
             <i class="fas fa-home"></i>Accueil
         </a>
-        <a href="#">
+        <a href="index.php?page=exposList">
             <i class="fas fa-theater-masks"></i>Expositions
         </a>
         <a href="index.php?page=artistsList">
             <i class="fas fa-user-edit"></i>Artistes
         </a>
-        <a href="#">
+        <a href="index.php?page=artsList">
             <i class="fas fa-palette"></i>Oeuvres
         </a>
-        <a href="#">
+        <a href="index.php?page=usersList">
             <i class="fas fa-users"></i>Utilisateurs
             <span class="message-count">26</span>
         </a>
-        <a href="#">
+        <a href="index.php?connect=deconnect">
             <i class="fas fa-wifi"></i>Déconnection
         </a>
     </div>
-
-    				<!--
-				<h2 ><?= $titlePage ?> </h2>
-				<nav>
-					<ul>
-						<li><a href="#"><i class="fas fa-home"></i>Accueil</a></li>
-						<li><a href="#"><i class="fas fa-theater-masks"></i>Expositions</a></li>
-						<li><a href="#"><i class="fas fa-user-edit"></i>Artistes</a></li>
-						<li><a href="#"><i class="fas fa-palette"></i>Oeuvres</a></li>
-						<li><a href="#"><i class="fas fa-users"></i>Utilisateurs</a></li>
-						<li><a href="#"><i class="fas fa-wifi"></i>Déconnection</a></li>
-					</ul>
-				</nav>
-			-->
