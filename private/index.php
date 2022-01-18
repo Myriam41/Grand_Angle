@@ -34,6 +34,11 @@
             usersList();
         }
 
+        if($page == 'art'){
+            $id = $_GET['id'];
+            art($id);
+        }
+
 
     }else if($_SESSION['connect'] == 'log'){
     

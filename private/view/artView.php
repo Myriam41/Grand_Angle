@@ -10,12 +10,16 @@
     $titlePage = "";
 
     ob_start();
+    $art = getArtById(1);
+
+    echo $art['titre_oeuvre'] . '<br>';
+    echo $art['flashcode'] . '<br>';
     
 ?>
-        <a href="index.php?page=art&amp;id=1">
-            <i class="fas fa-palette"></i>Vers une Oeuvre
-        </a>
+
     Main
+
+
 
 <?php
     $content = ob_get_clean();

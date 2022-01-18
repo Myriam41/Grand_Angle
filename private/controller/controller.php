@@ -10,6 +10,11 @@
         require('view/homeView.php');
     }
 
+    function art(){
+        require('model/artModel.php');
+        require('view/artView.php');
+    }
+
     function artsList(){
         require('view/artsListView.php');
         

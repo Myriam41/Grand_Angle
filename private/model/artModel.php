@@ -62,10 +62,13 @@
     }
 
     function getArtById($id){
-        $sql = "SELECT * FROM oeuvres WHERE id= $id";
+        $sql = "SELECT * FROM oeuvre WHERE code_oeuvre = $id";
 
-        connecMySQL($sql);
-        
+        $lk = mysqli_connect("localhost", "root", "","grand_angle2");
+        $res = mysqli_query($lk, $sql);
+        //connecMySQL($sql);
+        $art = mysqli_fetch_array($res, MYSQLI_ASSOC);
+        return $art;
     }
 
     function displayArtsAll($res){
