@@ -5,6 +5,10 @@
          header('Location: ../index.php');
          die();
      }
+     $title = "";
+     $titlePage = "";
+ 
+     ob_start();
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,9 +20,6 @@
         <!-- CDN FONT-AWESOME -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
         
-        <!-- CDN BOOTSTRAP -->
-        <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet"> -->
-
         <!-- CDN Material icons-->
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
         
@@ -31,61 +32,6 @@
     
     <body>
         <div class="container">
-            <aside>
-                <div class="top">
-                    <div class="logo">
-                        <img src="assets/img/logo.png" alt="logo">
-                        <h2>Grand Angle.</h2>
-                    </div>
-                    <div class="close" id="close-btn">
-                        <span class="material-icons-sharp">close</span>
-                    </div>
-                </div>
-                <div class="sidebar">
-                    <a href="assets/Dashboard.php">
-                        <span class="material-icons-sharp">grid_view</span>
-                        <h3>Dashboard</h3>
-                    </a>
-                    <a href="artistes.html" class="active">
-                        <span class="material-icons-sharp">person_outline</span>
-                        <h3>Artistes</h3>
-                    </a>
-                    <a href="">
-                        <span class="material-icons-sharp">receipt_long</span>
-                        <h3>Oeuvres</h3>
-                    </a>
-                    <a href="#">
-                        <span class="material-icons-sharp">insights</span>
-                        <h3>Exposition</h3>
-                    </a>
-                    <a href="#">
-                        <span class="material-icons-sharp">mail_outline</span>
-                        <h3>Messages</h3>
-                        <span class="message-count">26</span>
-                    </a>
-                    <a href="#">
-                        <span class="material-icons-sharp">inventory</span>
-                        <h3>Products</h3>
-                    </a>
-                    <a href="#">
-                        <span class="material-icons-sharp">report_gmailerrorred</span>
-                        <h3>Reports</h3>
-                    </a>
-                    <a href="#">
-                        <span class="material-icons-sharp">settings</span>
-                        <h3>Settings</h3>
-                    </a>
-                    <a href="#">
-                        <span class="material-icons-sharp">add</span>
-                        <h3>Add Product</h3>
-                    </a>
-                    <a href="../deconnexion.php">
-                        <span class="material-icons-sharp">logout</span>
-                        <h3>Déconnexion</h3>
-                    </a>
-                </div>
-            </aside>
-            <!-- FIN DU ASIDE -->
             <main>
                 <h1>Artistes</h1>
                 <div class="date">
@@ -237,5 +183,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <!-- <script src="js/orders.js"></script> -->
         <script src="assets/js/app.js"></script>
+        <?php 
+            $content = ob_get_clean();
+            require('view/template/base.php');
+        ?>
     </body>
 </html>
