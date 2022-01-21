@@ -3,7 +3,6 @@
 
     $_SESSION['visitor'] = isset($_GET['v'])?1:"";
     $_SESSION['connect'] = "";
-    var_dump($_SESSION['visitor']);
 
     if($_SESSION['visitor']){
        
