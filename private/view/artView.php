@@ -16,13 +16,14 @@
     echo $art['flashcode'] . '<br>';
     
 ?>
-
-    Main
-
-
+    <div id="qrcode"></div>
 
 <?php
     $content = ob_get_clean();
 
     require('view/template/base.php');
+
+?>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="assets/js/qrcode.js"></script>
 
