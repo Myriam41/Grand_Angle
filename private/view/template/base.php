@@ -30,7 +30,7 @@
     </head>
     
     <body>
-		<header>
+		<header class="right">
 				<?php include('header.php') ?>
 		</header>
 

@@ -1,51 +1,18 @@
-/* VARIABLES */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
-:root {
-  --color-primary: #7380ec;
-  --color-danger: #ff7782;
-  --color-success: #41F1B6;
-  --color-warning: #ffbb55;
-  --color-white: #fff;
-  --color-info-dark: #7D8DA1;
-  --color-info-light: #dce1eb;
-  --color-dark: #363949;
-  --color-light:rgba(132, 139, 200, 0.18);
-  --color-primary-variant: #111e88;
-  --color-dark-variant: #677483;
-  --color-background: #F6F6F9;
-  --card-border-radius: 2rem;
-  --border-radius-1: 0.4rem;
-  --border-radius-2: 0.8rem;
-  --border-radius-3: 1.2rem;
-  --card-padding: 1.8rem;
-  --padding-1: 1.2rem;
-  --box-shadow: 0 2rem 3rem var(--color-light);
-}
-
 /* DARK MODE */
-.dark-theme-variables {
-  --color-background: #181a1e;
-  --color-white: #202528;
-  --color-dark: #edeffd;
-  --color-dark-variant: #a3bdcc;
-  --color-light: rgba(0, 0, 0, 0.4);
-  --box-shadow: 0 2rem 3rem var(--color-light);
-}
-
 .primary {
-  color: var(--color-primary);
+  color: #7380ec;
 }
 
 .danger {
-  color: var(--color-danger);
+  color: #ff7782;
 }
 
 .success {
-  color: var(--color-success);
+  color: #41F1B6;
 }
 
 .warning {
-  color: var(--color-warning);
+  color: #ffbb55;
 }
 
 * {
@@ -61,15 +28,24 @@
 }
 
 body {
+  font-family: "Varela Round", sans-serif;
   margin: 0;
+  padding: 0;
+  outline: 0;
+  appearance: none;
+  border: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  font-size: 14px;
   width: 100vw;
   height: 100vh;
   font-family: poppins, sans-serif;
   font-size: 0.88rem;
-  background-color: var(--color-background);
+  background-color: #F6F6F9;
   user-select: none;
   overflow-x: hidden;
-  color: var(--color-dark);
+  color: #363949;
 }
 
 i {
@@ -126,7 +102,7 @@ section {
   width: 96%;
   margin: 0 auto;
   gap: 1.8rem;
-  grid-template-columns: 14rem auto;
+  grid-template-columns: 14rem auto 23rem;
 }
 
 h3 {
@@ -203,18 +179,17 @@ b {
 /* MAIN */
 main {
   margin-top: 1.4rem;
-  width: auto;
 }
-main.date {
+main .date {
   display: inline-block;
-  background-color: var(--color-light);
-  border-radius: var(--border-radius-1);
+  background-color: rgba(132, 139, 200, 0.18);
+  border-radius: 0.4rem;
   margin-top: 1rem;
   padding: 0.5rem 1.6rem;
 }
 main .date input[type=date] {
   background-color: transparent;
-  color: var(--color-dark);
+  color: #363949;
 }
 main .insights {
   display: grid;
@@ -222,28 +197,28 @@ main .insights {
   gap: 1.6rem;
 }
 main .insights > div {
-  background-color: var(--color-white);
-  padding: var(--card-padding);
-  border-radius: var(--card-border-radius);
+  background-color: #fff;
+  padding: 1.8rem;
+  border-radius: 2rem;
   margin-top: 1rem;
-  box-shadow: var(--box-shadow);
+  box-shadow: 0 2rem 3rem;
   transition: all 300ms ease;
 }
 main .insights > div:hover {
   box-shadow: none;
 }
 main .insights > div span {
-  background-color: var(--color-primary);
+  background-color: #7380ec;
   padding: 0.5rem;
   border-radius: 50%;
-  color: var(--color-white);
+  color: #fff;
   font-size: 2rem;
 }
 main .insights > div.expenses span {
-  background-color: var(--color-danger);
+  background-color: #ff7782;
 }
 main .insights > div.income span {
-  background-color: var(--color-success);
+  background-color: #41F1B6;
 }
 main .insights > div .middle {
   display: flex;
@@ -266,7 +241,7 @@ main .insights svg {
 }
 main .insights svg circle {
   fill: none;
-  stroke: var(--color-primary);
+  stroke: #7380ec;
   stroke-width: 14;
   stroke-linecap: round;
   transform: translate(5px, 5px);
@@ -300,90 +275,6 @@ main .insights small {
   display: block;
 }
 
-main .recent-orders {
-  margin-top: 2rem;
-}
-
-main .recent-orders h2 {
-  margin-bottom: 0.8rem;
-}
-
-main .recent-orders table {
-  background-color: var(--color-white);
-  width: 100%;
-  border-radius: var(--card-border-radius);
-  padding: var(--card-padding);
-  text-align: center;
-  box-shadow: var(--box-shadow);
-  transition: all 300ms ease;
-}
-
-main .recent-orders table:hover {
-  box-shadow: none;
-}
-
-main table tbody td {
-  height: 2.8rem;
-  border-bottom: 1px solid var(--color-light);
-  color: var(--color-dark-variant);
-}
-
-main table tbody tr:last-child td {
-  border: none;
-}
-
-main .recent-orders a {
-  text-align: center;
-  display: block;
-  margin: 1rem auto;
-  color: var(--color-primary);
-}
-
-main .all-artists {
-  margin-top: 2rem;
-  width: 80vw;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  margin: 2rem 0 0 8rem;
-}
-
-main .all-artists h2 {
-  margin-bottom: 0.8rem;
-}
-
-main .all-artists table {
-  background-color: var(--color-white);
-  width: 100%;
-  border-radius: var(--card-border-radius);
-  padding: var(--card-padding);
-  text-align: center;
-  box-shadow: var(--box-shadow);
-  transition: all 300ms ease;
-}
-
-main .all-artists table:hover {
-  box-shadow: none;
-}
-
-main table tbody td {
-  height: 2.8rem;
-  border-bottom: 1px solid var(--color-light);
-  color: var(--color-dark-variant);
-  padding: 30px 0;
-}
-
-main table tbody tr:last-child td {
-  border: none;
-}
-
-main .all-artists a {
-  text-align: center;
-  display: block;
-  margin: 1rem auto;
-  color: var(--color-primary);
-}
-
 /* RIGHT */
 .right {
   margin-top: 1.4rem;
@@ -400,14 +291,14 @@ main .all-artists a {
 }
 
 .right .theme-toggler {
-  background-color: var(--color-light);
+  background-color: rgba(132, 139, 200, 0.18);
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 1.6rem;
   width: 4.2rem;
   cursor: pointer;
-  border-radius: var(--border-radius-1);
+  border-radius: 0.4rem;
 }
 
 .right .theme-toggler span {
@@ -420,9 +311,9 @@ main .all-artists a {
 }
 
 .right .theme-toggler span.active {
-  background-color: var(--color-primary);
+  background-color: #7380ec;
   color: white;
-  border-radius: var(--border-radius-1);
+  border-radius: 0.4rem;
 }
 
 .right .top .profile {
@@ -441,10 +332,10 @@ main .all-artists a {
 }
 
 .right .recent-updates .updates {
-  background-color: var(--color-white);
-  padding: var(--card-padding);
-  border-radius: var(--card-border-radius);
-  box-shadow: var(--box-shadow);
+  background-color: #fff;
+  padding: 1.8rem;
+  border-radius: 2rem;
+  box-shadow: 0 2rem 3rem;
   transition: all 300ms ease;
 }
 
@@ -469,14 +360,14 @@ main .all-artists a {
 }
 
 .right .sales-analytics .item {
-  background-color: var(--color-white);
+  background-color: #fff;
   display: flex;
   align-items: center;
   gap: 1rem;
   margin-bottom: 0.7rem;
-  padding: 1.4rem var(--card-padding);
-  border-radius: var(--border-radius-3);
-  box-shadow: var(--box-shadow);
+  padding: 1.4rem 1.8rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 2rem 3rem;
   transition: all 300ms ease;
 }
 
@@ -494,23 +385,23 @@ main .all-artists a {
 
 .right .sales-analytics .item .icon {
   padding: 0.6rem;
-  color: var(--color-white);
+  color: #fff;
   border-radius: 50%;
-  background-color: var(--color-primary);
+  background-color: #7380ec;
   display: flex;
 }
 
 .right .sales-analytics .item.offline .icon {
-  background-color: var(--color-danger);
+  background-color: #ff7782;
 }
 
 .right .sales-analytics .item.customers .icon {
-  background-color: var(--color-success);
+  background-color: #41F1B6;
 }
 
 .right .sales-analytics .add-product {
   background-color: transparent;
-  border: 2px dashed var(--color-primary);
+  border: 2px dashed #7380ec;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -694,11 +585,24 @@ main table tbody tr td:first-child {
 }
 header {
   display: flex;
-  background-color: #24292f;
-  color: #FFF;
 }
-header h2 {
-  margin: 0;
+
+header .logo {
+  padding-left: 2rem;
+  display: flex;
+  gap: 0.8rem;
+}
+
+header .logo img {
+  width: 2rem;
+  height: 2rem;
+}
+
+header .top {
+  padding-top: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 nav {
@@ -752,7 +656,7 @@ footer p {
 
 aside {
   height: 100vh;
-  /* width: 200px; */
+  width: 200px;
 }
 aside .top {
   display: flex;
@@ -783,7 +687,7 @@ aside .sidebar {
 }
 aside .sidebar a {
   display: flex;
-  color: var(--color-info-dark);
+  color: #7D8DA1;
   margin-left: 2rem;
   gap: 1rem;
   align-items: center;
