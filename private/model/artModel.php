@@ -10,7 +10,8 @@
                 ORDER BY exposer.nombre_vues
                 LIMIT 5';
 
-        $res = connecMySQL($sql);
+        //$res = connecMySQL($sql);
+        $res = $conn->prepare('SELECT * FROM utilisateurs WHERE prenom = ? OR profession = ?');
         
         return $res;
 

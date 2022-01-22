@@ -1,4 +1,5 @@
 <?php
+
 // Connect with MySQL
     define('__HOST__', 'localhost');
     define('__USER__', 'root');
@@ -17,4 +18,11 @@
 
     $pg = pg_connect("host=$host port=5432 user=$user password=$pass dbname=$base");
 */
+
+// PDO
+    $servername = 'localhost';
+    $username = 'root';
+    $password = '';
+    $basename = 'grand_angle2';
+
     
