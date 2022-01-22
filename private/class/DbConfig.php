@@ -15,8 +15,8 @@ class DbConfig {
 
     function dbPostgre() {
         $this -> serverName = 'localhost';
-        $this -> userName = 'root';
-        $this -> pass = 'PGJRV0tel!S:121';
+        $this -> userName = 'postgres';
+        $this -> pass = 'PJRV0tel!S:121';
         $this -> dbName = 'Grand_Angle';
     }
 }

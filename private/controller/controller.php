@@ -1,12 +1,10 @@
 <?php
     @session_start();
-    //include_once('connect.php');
-
-
-    //require('model/expoModel.php');
 
     function home(){
-        require('model/artModel.php');
+        //require('model/artModel.php');
+        include_once('class/ArtModel.php');
+        $arts = new ArtModel();
         require('view/homeView.php');
     }
 

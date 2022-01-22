@@ -51,7 +51,7 @@
         <!-- FIN DU TOP -->
         <div class="recent-orders">
             <h2>Vues de la dernière exposition</h2>
-<?php       getViewsArtsExpo(1); ?>
+<?php       $arts->getViewsArtsExpo(1); ?>
         </div>
 
         <div class="recent-updates">

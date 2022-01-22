@@ -6,7 +6,7 @@
     }else{
         include_once('config.php');
     }
-
+/*
     //On essaie de se connecter
     try{
         $conn = new PDO("mysql:host=$servername;dbname=$basename", $username, $password);
@@ -16,7 +16,7 @@
     }
 
     /*On capture les exceptions si une exception est lancée et on affiche
-    *les informations relatives à celle-ci*/
+    *les informations relatives à celle-ci
     catch(PDOException $e){
     echo "Erreur : " . $e->getMessage();
     }
@@ -24,7 +24,7 @@
     //On ferme la connexion
     $conn = null;
 
-
+*/
     function connecMySQL($sql){
         global $lk;
         
