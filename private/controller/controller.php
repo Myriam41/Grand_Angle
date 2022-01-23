@@ -44,15 +44,18 @@
     }
 
     function logVerif(){
-        require('model/connectModel.php');
+        //require('model/connectModel.php');
+        require('class/ConnectModel.php');
+
+        $log = new ConnectModel();
 
         if(isset($_SESSION['user']) && isset($_SESSION['pass'])){
-            $log = logConnect();
-            //echo $log;
-            if(isset($log) && $log > 0) // nom d'utilisateur et mot de passe correctes
+            $count = $log -> logConnect();
+            echo $count;
+
+            if(isset($count) && $count > 0) // nom d'utilisateur et mot de passe correctes
             {
                     $_SESSION['connect'] = '1'; 
-                    //echo '<br> connect dans log verif =' . $_SESSION['connect'];
                     home();         
             }
             else{
@@ -61,7 +64,7 @@
         }
         else
         {
-        connect();
+        connectAgain();
         }
     }
 

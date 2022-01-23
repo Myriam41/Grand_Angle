@@ -9,14 +9,12 @@ class ArtModel {
         $sql = 'SELECT oeuvres.Nom, exposer.nombre_vues
                 FROM exposer
                 INNER JOIN oeuvres
-                WHERE exposer.code_events = ?
+                WHERE exposer.code_events = 1
                 ORDER BY exposer.nombre_vues
                 LIMIT 5';
         
-        $param = ['exposer.code_events' => 1];
-
         $lk = new Postgre();
-        $res = $lk->connect($sql, $param);
+        $res = $lk->connect($sql);
         
         return $res;
 
