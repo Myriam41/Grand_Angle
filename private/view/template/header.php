@@ -16,7 +16,7 @@
             <small class="text-muted">Admin</small>
         </div>
         <div class="profile-photo">
-            <img src="../img/261746878_453672526326290_2022088434576343659_n.jpg" alt="user_picture">
+            <img src="assets/img/261746878_453672526326290_2022088434576343659_n.jpg" alt="user_picture">
         </div>
     </div>
 </div>

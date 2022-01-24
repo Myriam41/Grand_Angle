@@ -10,8 +10,9 @@ $(document).ready( function(){
         success: function(art_graph){
 
             //$("#artGraph").html(art_graph);
+
             var data = jQuery.parseJSON(art_graph);
-            console.log(data);
+
             var ctx = $("#graph");
             var conf ="";
             conf =  {
@@ -26,7 +27,9 @@ $(document).ready( function(){
                     }
                 },
             };
-                //console.log(conf);
+            console.log(art_graph);
+            console.log(data);
+                console.log(conf);
             var artGraph = new Chart(ctx, conf);
         }
     });

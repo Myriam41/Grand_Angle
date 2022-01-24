@@ -10,10 +10,11 @@
     $titlePage = "";
 
     ob_start();
-    $art = getArtById(1);
+    $art = new ArtModel();
+    $art -> getArtById(1);
 
-    echo $art['titre_oeuvre'] . '<br>';
-    echo $art['flashcode'] . '<br>';
+    echo $art-> getTitre() . '<br>';
+    echo $art-> getFlash() . '<br>';
     
 ?>
     <div id="qrcode"></div>

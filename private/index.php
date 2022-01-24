@@ -5,7 +5,7 @@
     //echo 'connect avant test' . $_SESSION['connect'] .'<br>';
 
     if(!isset($_SESSION['connect']) || trim($_SESSION['connect']) == ""){
-        echo 'connect est vide<br>';
+        //echo 'connect est vide<br>';
         $_SESSION['connect'] = isset($_GET['connect'])?$_GET['connect']:"" ;
     }
 
