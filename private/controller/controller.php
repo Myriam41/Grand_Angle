@@ -3,13 +3,13 @@
 
     function home(){
         //require('model/artModel.php');
-        include_once('class/ArtModel.php');
+        include_once('model/ArtModel.php');
         $arts = new ArtModel();
         require('view/homeView.php');
     }
 
     function art(){
-        require('model/artModel.php');
+        require('model/ArtModel.php');
         require('view/artView.php');
     }
 
@@ -33,6 +33,16 @@
         require('view/usersListView.php');
     }
 
+    function deConnect(){
+
+        if($_SESSION['connect']== 1){
+            session_unset(); // on détruit la/les session(s), soit si vous utilisez une autre session, utilisez de préférence le unset()
+            header('Location:index.php'); // On redirige
+            die();
+        }
+        
+    }
+
     function connect(){
 
         require('private/view/connectView.php');
@@ -45,7 +55,7 @@
 
     function logVerif(){
         //require('model/connectModel.php');
-        require('class/ConnectModel.php');
+        require('model/ConnectModel.php');
 
         $log = new ConnectModel();
 

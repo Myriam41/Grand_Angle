@@ -1,9 +1,5 @@
 <?php
-    $mysqli = new MySQLi('localhost', 'root','','grand_angle2');
-
-    if($mysqli->connect_errno){
-        echo "Failed to connect to MySQL: " . $mysql->connect_errno;
-    }
+    require_once('../class/DbPostgre.php');
 
     $idExpo = isset($_GET['id'])?$_GET['id']:'';
     $colors = ['#ff6384','#36a2eb','#36a2eb','#cc65fe','#ffce56'];
@@ -12,15 +8,16 @@
 
     if($idExpo){
         // Recover dates exposition
-        $getDates = "SELECT exposition.date_debut, exposition.date_fin
+        $sql = "SELECT exposition.date_debut, exposition.date_fin
         FROM exposition
         WHERE code_expo = $idExpo";
-    
-        $dates = $mysqli->query($getDates);
 
-        $expo = $dates->fetch_assoc();
+        $lk = new Postgre();
+        $res = $lk->connect($sql);
 
-        $nbJours = (strtotime($expo['date_fin']) - strtotime($expo['date_debut']))/(60*60*24);
+        while($expo = $res->fetch()){
+            $nbJours = (strtotime($expo['date_fin']) - strtotime($expo['date_debut']))/(60*60*24);
+        }
 
         // create graph labels
         for ($i = 0; $i<= $nbJours ;$i++) {
@@ -41,10 +38,10 @@
         $code = "";
         $datasets = [];
 
-        $arts = $mysqli->query($getArts);
+        $lk2 = new Postgre();
+        $arts= $lk2->connect($getArts);
 
-        while($oeuvre = $arts -> fetch_assoc()){
-
+        while($oeuvre = $arts->fetch()){
             $code = $oeuvre['code_oeuvre'];  
             $array =[];
 
@@ -74,7 +71,6 @@
                 $i++;
             }
             $datasets[] = $tbl;
-            
         }
         
         $data = [];

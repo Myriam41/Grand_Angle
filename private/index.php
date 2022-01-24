@@ -2,7 +2,7 @@
     require_once ('controller/controller.php');
 
     @session_start();
-    echo 'connect avant test' . $_SESSION['connect'] .'<br>';
+    //echo 'connect avant test' . $_SESSION['connect'] .'<br>';
 
     if(!isset($_SESSION['connect']) || trim($_SESSION['connect']) == ""){
         echo 'connect est vide<br>';
@@ -10,7 +10,7 @@
     }
 
     $page = isset($_GET['page'])?$_GET['page']:"home" ;
-    echo $page . '<br>connect index =' . $_SESSION['connect'] ;
+    //echo $page . '<br>connect index =' . $_SESSION['connect'] ;
 
     if($_SESSION['connect'] === '1'){
 

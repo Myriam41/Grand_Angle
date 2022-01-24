@@ -1,5 +1,8 @@
 <?php
-    include_once('../connect.php');
+
+include_once 'class/DbPostgre.php';
+
+class ArtModel {
 
     function get5Art(){
 
@@ -9,9 +12,9 @@
                 WHERE exposer.code_events = 1
                 ORDER BY exposer.nombre_vues
                 LIMIT 5';
-
-        $res = connecMySQL($sql);
-        //$res = $conn->prepare('SELECT * FROM utilisateurs WHERE prenom = ? OR profession = ?');
+        
+        $lk = new Postgre();
+        $res = $lk->connect($sql);
         
         return $res;
 
@@ -25,9 +28,10 @@
                 WHERE exposer.code_expo = $idExpo
                 ORDER BY exposer.nombre_vues DESC";
                 
-       // $views = connecMySQL($sql);
-        $lk = mysqli_connect("localhost", "root", "","grand_angle2");
-        $views = mysqli_query($lk, $sql);
+        //$param = ['exposer.code_expo' => $idExpo];
+
+       $lk = new Postgre();
+       $res = $lk->connect($sql);
 
         echo "<table>";
         echo "<thead>";
@@ -38,7 +42,7 @@
         echo "</thead>";
 
         // corps du tableau
-        while($row = mysqli_fetch_array($views, MYSQLI_ASSOC)){
+        while($row = $res->fetch){
             echo "<tr>";
             
             foreach($row as $k=>$v){
@@ -90,3 +94,7 @@
             echo "</table>";
         }
     }
+}
+
+
+   
