@@ -26,7 +26,6 @@ $(document).ready( function(){
                     }
                 },
             };
-                //console.log(conf);
             var artGraph = new Chart(ctx, conf);
         }
     });

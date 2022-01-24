@@ -1,5 +1,5 @@
 <?php
-    require_once('../class/DbPostgre.php');
+    require_once('class/DbPostgre.php');
 
     $idExpo = isset($_GET['id'])?$_GET['id']:'';
     $colors = ['#ff6384','#36a2eb','#36a2eb','#cc65fe','#ffce56'];
