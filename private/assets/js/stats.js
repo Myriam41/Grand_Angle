@@ -10,8 +10,9 @@ $(document).ready( function(){
         success: function(art_graph){
 
             //$("#artGraph").html(art_graph);
+
             var data = jQuery.parseJSON(art_graph);
-            console.log(data);
+
             var ctx = $("#graph");
             var conf ="";
             conf =  {
@@ -26,6 +27,10 @@ $(document).ready( function(){
                     }
                 },
             };
+<<<<<<< HEAD
+=======
+
+>>>>>>> pdo
             var artGraph = new Chart(ctx, conf);
         }
     });

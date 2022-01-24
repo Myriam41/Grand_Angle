@@ -61,7 +61,7 @@
 
         if(isset($_SESSION['user']) && isset($_SESSION['pass'])){
             $count = $log -> logConnect();
-            echo $count;
+            //echo $count;
 
             if(isset($count) && $count > 0) // nom d'utilisateur et mot de passe correctes
             {

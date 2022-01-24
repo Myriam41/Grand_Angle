@@ -3,12 +3,30 @@
 include_once 'class/DbPostgre.php';
 
 class ArtModel {
+    private $titre;
+    private $flash;
+
+        // Getters
+    public function getTitre() {
+        return $this->titre;
+    }
+    public function getflash() {
+        return $this->flash;
+    }
+
+    // Setters
+    public function setTitre($titre) {
+        $this-> titre = $titre;
+    }
+    public function setFlash($flash) {
+        $this-> flash = $flash;
+    }
 
     function get5Art(){
 
-        $sql = 'SELECT oeuvres.Nom, exposer.nombre_vues
+        $sql = 'SELECT oeuvre.titre_oeuvre, exposer.nombre_vues
                 FROM exposer
-                INNER JOIN oeuvres
+                INNER JOIN oeuvre
                 WHERE exposer.code_events = 1
                 ORDER BY exposer.nombre_vues
                 LIMIT 5';
@@ -27,32 +45,11 @@ class ArtModel {
                 INNER JOIN oeuvre ON exposer.code_oeuvre = oeuvre.code_oeuvre
                 WHERE exposer.code_expo = $idExpo
                 ORDER BY exposer.nombre_vues DESC";
-                
-        //$param = ['exposer.code_expo' => $idExpo];
 
        $lk = new Postgre();
        $res = $lk->connect($sql);
-
-        echo "<table>";
-        echo "<thead>";
-                echo "<tr>";
-                    echo "<th>Titre</th>";
-                    echo "<th>Vues</th>";
-                echo "</tr>";
-        echo "</thead>";
-
-        // corps du tableau
-        while($row = $res->fetch){
-            echo "<tr>";
-            
-            foreach($row as $k=>$v){
-
-                    echo "<td>$v</td>";
-            }
-            echo "</tr>";
-        }
-        echo "</table>";
-
+    
+       return $res;
     }
 
 
@@ -60,7 +57,8 @@ class ArtModel {
 
         $sql = 'SELECT * FROM oeuvres';
 
-        $res = connecMySQL($sql);
+        $lk = new Postgre();
+        $res = $lk->connect($sql);
         
         return $res;
 
@@ -69,11 +67,10 @@ class ArtModel {
     function getArtById($id){
         $sql = "SELECT * FROM oeuvre WHERE code_oeuvre = $id";
 
-        $lk = mysqli_connect("localhost", "root", "","grand_angle2");
-        $res = mysqli_query($lk, $sql);
-        //connecMySQL($sql);
-        $art = mysqli_fetch_array($res, MYSQLI_ASSOC);
-        return $art;
+        $lk = new Postgre();
+        $res = $lk->connect($sql);
+
+        return $res;
     }
 
     function displayArtsAll($res){

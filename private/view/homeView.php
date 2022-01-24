@@ -51,44 +51,31 @@
         <!-- FIN DU TOP -->
         <div class="recent-orders">
             <h2>Vues de la dernière exposition</h2>
-<?php       $arts->getViewsArtsExpo(1); ?>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Vues</th>
+                    </tr>
+                </thead>
+<?php
+                $artsView = new ArtModel();
+                $arts = $artsView -> getViewsArtsExpo(1);
+
+                while($row = $arts ->fetch()){
+?>
+                    <tr>      
+
+                        <td><?= $row ['titre_oeuvre'] ?></td>
+                        <td><?= $row ['nombre_vues'] ?></td>
+         
+                    </tr>
+<?php
+                }
+?>
+                </table>
         </div>
-
-        <div class="recent-updates">
-            <h2>Recent Updates</h2>
-            <div class="updates">
-                <div class="update">
-                    <div class="profile-photo">
-                        <img src="#" alt="#">
-                    </div>
-                    <div class="message">
-                        <p><b>Myriam Stampers</b> a bien reçu sa commande</p>
-                        <small class="text-muted">Il y a 2 minutes</small>
-                    </div>
-                </div>
-                <div class="update">
-                    <div class="profile-photo">
-                        <img src="#" alt="#">
-                    </div>
-                    <div class="message">
-                        <p><b>Myriam Stampers</b> a bien reçu sa commande</p>
-                        <small class="text-muted">Il y a 2 minutes</small>
-                    </div>
-                </div>
-                <div class="update">
-                    <div class="profile-photo">
-                        <img src="#" alt="#">
-                    </div>
-                    <div class="message">
-                        <p><b>Myriam Stampers</b> a bien reçu sa commande</p>
-                        <small class="text-muted">Il y a 2 minutes</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- FIN MAJ RECENTES -->
-
     </div>
 
 <?php
