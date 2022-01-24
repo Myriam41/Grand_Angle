@@ -11,10 +11,13 @@
 
     ob_start();
     $art = new ArtModel();
-    $art -> getArtById(1);
-
-    echo $art-> getTitre() . '<br>';
-    echo $art-> getFlash() . '<br>';
+    $oeuvre = $art -> getArtById(1);
+ 
+    while($row = $oeuvre ->fetch()){
+        
+        echo 'titre :' . $row['titre_oeuvre'] . '<br>';
+        echo 'flash :' . $row['flashcode'] . '<br>';
+   }
     
 ?>
     <div id="qrcode"></div>

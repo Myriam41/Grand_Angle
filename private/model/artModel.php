@@ -70,12 +70,7 @@ class ArtModel {
         $lk = new Postgre();
         $res = $lk->connect($sql);
 
-        while($art = $res->fetch()){
-            $this->setTitre(['titre_oeuvre']);
-            $this->setFlash(['flashcode']);
-        }
-
-       return $art;
+        return $res;
     }
 
     function displayArtsAll($res){

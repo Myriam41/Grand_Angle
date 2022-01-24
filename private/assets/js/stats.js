@@ -27,9 +27,7 @@ $(document).ready( function(){
                     }
                 },
             };
-            console.log(art_graph);
-            console.log(data);
-                console.log(conf);
+
             var artGraph = new Chart(ctx, conf);
         }
     });
