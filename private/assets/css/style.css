@@ -62,17 +62,17 @@ body {
 }
 .corps main {
   width: calc(100% - 200px);
-  padding: 10px;
+  padding: 30px;
 }
-.corps main #top {
+.corps main .topMain {
   display: flex;
   width: 100%;
   padding: 15px;
 }
-.corps main .info {
+.corps main .infoFiche {
   display: flex;
 }
-.corps main .info .container .row input {
+.corps main .infoFiche .container .row input {
   padding: 5px;
   margin: 10px;
 }
@@ -178,6 +178,7 @@ b {
 
 header {
   display: flex;
+  padding-right: 30px;
 }
 header .logo {
   display: flex;
