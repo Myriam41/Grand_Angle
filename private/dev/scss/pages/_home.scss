@@ -1,0 +1,19 @@
+.corps{
+    width: 100%;
+
+    main{
+        width: 100%;
+        .multiPart{
+            display: flex;
+
+            .leftMain{
+                width: 80%;
+            }
+
+            .right{
+                width: 20%;
+            }
+        }
+    }
+}
+

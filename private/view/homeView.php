@@ -14,67 +14,64 @@
     ob_start();
     
 ?>
-    <main>
-        <h1><?= $titlePage ?></h1>
+    <div class='multiPart'>
+        <div class='leftMain'>
+            <h1><?= $titlePage ?></h1>
 
-        <div class="recent-orders">
-            <h2>Les 5 oeuvres les plus vues</h2>
-            <div id="artGraph">
-                <canvas id="graph" width="400" height="200"></canvas>
+            <div class="recent-orders">
+                <h2>Les 5 oeuvres les plus vues</h2>
+                <div id="artGraph">
+                    <canvas id="graph" width="400" height="200"></canvas>
+                </div>
+            </div>
+
+            <div class="recent-orders">
+                <h2>Oeuvres non livrées</h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Titre</th>
+                            <th>Artiste</th>
+                            <th>Date livraison</th>
+                            <th>Exposition</th>
+                            <th>Date exposition</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--  -->
+                </table>
+                
             </div>
         </div>
+        
+        <!-- Partie droite -->
+        <div class="right">
+            <div class="recent-orders">
+                <h2>Vues de la dernière exposition</h2>
 
-        <div class="recent-orders">
-            <h2>Oeuvres non livrées</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Titre</th>
+                            <th>Vues</th>
+                        </tr>
+                    </thead>
+<?php
+                    $artsView = new ArtModel();
+                    $arts = $artsView -> getViewsArtsExpo(1);
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Titre</th>
-                        <th>Artiste</th>
-                        <th>Date livraison</th>
-                        <th>Exposition</th>
-                        <th>Date exposition</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!--  -->
-            </table>
+                    while($row = $arts ->fetch()){
+?>
+                        <tr>      
+
+                            <td><?= $row ['titre_oeuvre'] ?></td>
+                            <td><?= $row ['nombre_vues'] ?></td>
             
-        </div>
-    </main>
-    
-    <!-- Partie droite -->
-    <div class="right">
-        <?php include('template/rightTop.php') ?>
-
-        <!-- FIN DU TOP -->
-        <div class="recent-orders">
-            <h2>Vues de la dernière exposition</h2>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Titre</th>
-                        <th>Vues</th>
-                    </tr>
-                </thead>
-<?php
-                $artsView = new ArtModel();
-                $arts = $artsView -> getViewsArtsExpo(1);
-
-                while($row = $arts ->fetch()){
-?>
-                    <tr>      
-
-                        <td><?= $row ['titre_oeuvre'] ?></td>
-                        <td><?= $row ['nombre_vues'] ?></td>
-         
-                    </tr>
-<?php
-                }
-?>
-                </table>
+                        </tr>
+<?php               }               
+?>              </table>
+            </div>
         </div>
     </div>
 

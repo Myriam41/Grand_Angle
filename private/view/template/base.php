@@ -7,7 +7,7 @@
         <title> <?= $title ?> </title>
         
         <!-- CDN BOOTSTRAP -->
-        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/css/bootstrap.min.css">  -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
         
         <!-- CDN FONT-AWESOME (icônes) 	-->
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -34,12 +34,13 @@
 				<?php include('header.php') ?>
 		</header>
 
-		<div class="container">
+		<div class="corps">
 			<aside>
 				<?php include('aside.php') ?>
 			</aside>
-
-			<?= $content ?>
+			<main>
+				<?= $content ?>
+			</main>
 		</div>
 
 		<!-- JS -->
