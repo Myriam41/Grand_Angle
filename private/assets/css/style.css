@@ -471,6 +471,7 @@ table tbody tr:last-child td {
 }
 .corps main .multiPart .leftMain {
   width: 80%;
+  padding: 20px;
 }
 .corps main .multiPart .right {
   width: 20%;

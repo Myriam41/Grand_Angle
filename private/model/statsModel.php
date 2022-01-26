@@ -4,18 +4,7 @@
     require_once('../class/DbPostgre.php');
     */
 
-    try{
-        $conn = new PDO("pgsql:host=localhost;dbname=Grand_Angle", "postgres", "PJRV0tel!S:121");
-        //On définit le mode d'erreur de PDO sur Exception
-        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        //echo 'Connexion réussie';
-    }
-
-    catch(PDOException $e)
-    {
-    echo "Erreur : " . $e->getMessage();
-    }
-
+    $conn = new PDO("pgsql:host=localhost;dbname=Grand_Angle", "postgres", "PJRV0tel!S:121");
 
     $idExpo = isset($_GET['id'])?$_GET['id']:'';
     $colors = ['#ff6384','#36a2eb','#36a2eb','#cc65fe','#ffce56'];
@@ -36,7 +25,7 @@
             $nbJours = (strtotime($expo['date_fin']) - strtotime($expo['date_debut']))/(60*60*24);
         }
 
-        echo $nbJours;
+       // echo $nbJours;
 
         // create graph labels
         for ($i = 0; $i<= $nbJours ;$i++) {
