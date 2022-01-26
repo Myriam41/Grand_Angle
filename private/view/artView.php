@@ -29,13 +29,13 @@
 
     ob_start(); 
 ?>
-    <div id='top'>
+    <div id='topMain'>
         <button type='boutton' class='btn_action'><i class="fas fa-plus"></i></button>
         <button type='boutton' class='btn_action'><i class="fas fa-save"></i></button>
         <h2><?= $titre ?></h2>
         <button type="button" class="btn_sup"><i class="fas fa-trash-alt"></i></button>
     </div>
-    <div class='info'>
+    <div class='infoFiche'>
         <div>
 <?php       if($img != '')        
             {
