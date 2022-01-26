@@ -48,7 +48,7 @@
         <!-- Partie droite -->
         <div class="right">
             <div class="recent-orders">
-                <h2>Vues de la dernière exposition</h2>
+                <h2>Dernière exposition</h2>
 
                 <table>
                     <thead>
