@@ -1,26 +1,9 @@
 <?php
 
 include_once 'class/DbPostgre.php';
+include_once 'class/Art.php';
 
-class ArtModel {
-    private $titre;
-    private $flash;
-
-        // Getters
-    public function getTitre() {
-        return $this->titre;
-    }
-    public function getflash() {
-        return $this->flash;
-    }
-
-    // Setters
-    public function setTitre($titre) {
-        $this-> titre = $titre;
-    }
-    public function setFlash($flash) {
-        $this-> flash = $flash;
-    }
+class ArtModel extends Art{
 
     function get5Art(){
 
