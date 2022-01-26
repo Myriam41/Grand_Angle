@@ -27,10 +27,6 @@ $(document).ready( function(){
                     }
                 },
             };
-<<<<<<< HEAD
-=======
-
->>>>>>> pdo
             var artGraph = new Chart(ctx, conf);
         }
     });
