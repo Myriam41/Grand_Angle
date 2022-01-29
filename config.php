@@ -1,4 +1,5 @@
 <?php
+/*
 // Connect with MySQL
     define('__HOST__', 'localhost');
     define('__USER__', 'root');
