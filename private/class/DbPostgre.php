@@ -1,12 +1,14 @@
 <?php
 include_once 'class/Dbconfig.php';
-include_once 'Dbconfig.php';
+//include_once 'Dbconfig.php';
 
 class Postgre extends DbConfig {
 
     public function connect($sql){
         $dbParam = new DbConfig();
         $dbParam->dbPostgre();
+        $conn = new PDO("pgsql:host=$dbParam->serverName;dbname=$dbParam->dbName", $dbParam->userName, $dbParam->pass);
+ /*
         //On essaie de se connecter
         try{
             $conn = new PDO("pgsql:host=$dbParam->serverName;dbname=$dbParam->dbName", $dbParam->userName, $dbParam->pass);
@@ -19,7 +21,7 @@ class Postgre extends DbConfig {
         {
         echo "Erreur : " . $e->getMessage();
         }
-
+*/
         $req = $conn->prepare($sql);
         $req->execute();
 
