@@ -4,6 +4,7 @@
     function home(){
         //require('model/artModel.php');
         include_once('model/ArtModel.php');
+       // include_once('model/statsModel.php');
         $arts = new ArtModel();
         require('view/homeView.php');
     }

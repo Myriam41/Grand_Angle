@@ -1,5 +1,8 @@
 <?php
-    $conn = pg_connect('host=localhost port=5432 user=postgres password=PJRV0tel!S:121 dbname=Grand_Angle')or die('connection failed');
+
+    require_once('class/DbPostgre.php');
+  //  require_once('../class/DBConfig.php');
+    //require_once('../class/DbPostgre.php');
 
     $idExpo = isset($_GET['id'])?$_GET['id']:'';
     $colors = ['#ff6384','#36a2eb','#36a2eb','#cc65fe','#ffce56'];
@@ -8,23 +11,23 @@
 
     if($idExpo){
         // Recover dates exposition
-        $getDates = "SELECT exposition.date_debut, exposition.date_fin
-        FROM exposition
-        WHERE code_expo = $idExpo";
-    
-        $dates = pg_query($conn, $getDates);
+        $sql = "SELECT exposition.date_debut, exposition.date_fin
+                FROM exposition
+                WHERE code_expo = $idExpo";
 
-        $expo = pg_fetch_array($dates,NULL,PGSQL_ASSOC);
-
-        $nbJours = (strtotime($expo['date_fin']) - strtotime($expo['date_debut']))/(60*60*24);
+        $lk = new Postgre();
+        $res = $lk->connect($sql);
+  
+        while($expo = $res->fetch()){
+            $nbJours = (strtotime($expo['date_fin']) - strtotime($expo['date_debut']))/(60*60*24);
+            $date = $expo['date_debut'];
+        }
 
         // create graph labels
         for ($i = 0; $i<= $nbJours ;$i++) {
-            // var_dump(date('Y-m-d',strtotime($expo['date_debut'] . '+' . $i . 'day')).'<br>');
-           // $date = date('Y-m-d', strtotime($expo['date_debut'] . '+' . $i . 'day'));
-            $labels[] = date('Y-m-d', strtotime($expo['date_debut'] . '+' . $i . 'day'));
+            $labels[] = date('Y-m-d', strtotime($date . '+' . $i . 'day'));
         }
-    
+
         // Recover 5 arts more see
         $getArts = "SELECT exposer.nombre_vues, oeuvre.code_oeuvre, oeuvre.titre_oeuvre
         FROM oeuvre
@@ -37,28 +40,33 @@
         $code = "";
         $datasets = [];
 
-        $arts = pg_query($conn, $getArts);
+        $lk2 = new Postgre();
+        $arts= $lk2->connect($getArts);
 
-        while($oeuvre = pg_fetch_Assoc($arts)){
-
+        while($oeuvre = $arts->fetch()){
             $code = $oeuvre['code_oeuvre'];  
             $array =[];
 
+
             foreach ($labels as $date) {
-                $getVues = "SELECT COUNT(vue.code_vue) as nbvues
+
+                $getVues = "SELECT COUNT(vue.code_vue) as nbVues
                             FROM vue
                             WHERE vue.code_oeuvre = $code and vue.date_vue = date('$date')";
-
-                $nbVues = pg_query($conn, $getVues);
+        
+                $lk3 = new Postgre();
+                $nbVues = $lk3->connect($getVues);
 
                 $tbl =[];
                 $tbl["label"] = $oeuvre['titre_oeuvre'];
-
+                
                 $array[$date] = 0;
-                while( $vues = pg_fetch_Assoc($nbVues)){
+
+                while( $vues = $nbVues->fetch()){
                     $array[$date] = $vues['nbvues'];
                 }
             }
+//débuggé jusqu'ici
             $i = 0;
             foreach($array as $d){
                 $tbl["data"][] = $d;
@@ -68,7 +76,6 @@
                 $i++;
             }
             $datasets[] = $tbl;
-            
         }
         
         $data = [];
@@ -77,4 +84,3 @@
 
         echo $art_graph = json_encode($data) ;
     }
-
