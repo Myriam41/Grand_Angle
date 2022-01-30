@@ -1,6 +1,6 @@
 <?php
     @session_start();
-    if(isset($_GET['erreur'])){
+    if(isset($_GET['erreur']) || isset($_GET['deconnect'])){
         $path = 'index.php';
     }else{
         $path = 'private/index.php';

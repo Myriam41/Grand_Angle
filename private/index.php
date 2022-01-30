@@ -3,7 +3,7 @@
 
     @session_start();
 
-    // Création de $_SESSEION['Connect']
+    // Création de $_SESSION['Connect']
     if(!isset($_SESSION['connect']) || trim($_SESSION['connect']) == ""){
         //echo 'connect est vide<br>';
         $_SESSION['connect'] = isset($_GET['connect'])?$_GET['connect']:"" ;
@@ -12,7 +12,13 @@
     // Définition de la page home par défaut
     $page = isset($_GET['page'])?$_GET['page']:"home" ;
 
+    // Si déconnexion demandée
+    if(isset($_GET['deconnect']) && $_GET['deconnect']=='1'){
+        DeConnect();
+    }
+
     try{
+        
         // Si connexion alors redirection sur une page
         if($_SESSION['connect'] === '1'){
 
@@ -44,6 +50,7 @@
                 throw new Exception('Cette page n\'existe pas ou a été supprimée');
             }
         }
+
 
         // Si essaie de connexion.
         else if(isset($_POST['username']) && isset($_POST['password'])){
