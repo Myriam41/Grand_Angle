@@ -4,7 +4,6 @@
     function home(){
         //require('model/artModel.php');
         include_once('model/ArtModel.php');
-       // include_once('model/statsModel.php');
         $arts = new ArtModel();
         require('view/homeView.php');
     }
@@ -40,42 +39,41 @@
             session_unset(); // on détruit la/les session(s), soit si vous utilisez une autre session, utilisez de préférence le unset()
             header('Location:index.php'); // On redirige
             die();
-        }
-        
+        }     
     }
 
     function connect(){
-
         require('private/view/connectView.php');
     }
 
     function connectAgain(){
-
         require('view/connectView.php');
     }
 
-    function logVerif(){
-        //require('model/connectModel.php');
-        require('model/ConnectModel.php');
+    function connectVerif(){
+        require('model/connectModel.php');
 
         $log = new ConnectModel();
 
+        // Vérificaion de la validité de user et pass
         if(isset($_SESSION['user']) && isset($_SESSION['pass'])){
             $count = $log -> logConnect();
-            //echo $count;
 
-            if(isset($count) && $count > 0) // nom d'utilisateur et mot de passe correctes
-            {
-                    $_SESSION['connect'] = '1'; 
-                    home();         
+            // nom d'utilisateur et mot de passe correctes
+            if(isset($count) && $count > 0) 
+            {   
+                $_SESSION['connect'] = '1';
+                home();       
             }
             else{
-                $_SESSION['connect'] = 'no';
+                header('location: ?erreur=1');
+                exit();
             }
         }
         else
         {
-        connectAgain();
+            header('location: ?erreur=1');
+            exit();
         }
     }
 

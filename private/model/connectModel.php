@@ -7,21 +7,24 @@ include_once 'class/DbPostgre.php';
 class ConnectModel{
 
     function logConnect(){
-        $user = $_SESSION['user']; 
-        $pass = $_SESSION['pass'];
-       
-        $sql = "SELECT count(*) AS nombre
-                FROM utilisateur 
-                where identifiant = '".$user."' and mot_pass = '".$pass."' ";
-         
-        $lk = new Postgre();
-        $res = $lk->connect($sql);
-
-        while($row = $res->fetch()){
-            $count = $row['nombre'];
+        if(isset($_SESSION['user']) && isset($_SESSION['pass'])){
+            $user = $_SESSION['user']; 
+            $pass = $_SESSION['pass'];
+           
+            $sql = "SELECT count(*) AS nombre
+                    FROM utilisateur 
+                    where identifiant = '".$user."' and mot_pass = '".$pass."' ";
+             
+            $lk = new Postgre();
+            $res = $lk->connect($sql);
+    
+            while($row = $res->fetch()){
+                $count = $row['nombre'];
+            }
+    
+            return $count;
         }
 
-        return $count;
     }
 
     // Penser à fermer la connexion

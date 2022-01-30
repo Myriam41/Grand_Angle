@@ -1,29 +1,36 @@
 <?php
     @session_start();
+    if(isset($_GET['erreur'])){
+        $path = 'index.php';
+    }else{
+        $path = 'private/index.php';
+    }
 ?>
 
     <div id="container">
         <!-- zone de connexion -->
         
-        <form action="private/index.php?connect=log" method="POST">
+        <form action="<?= $path ?>" method="POST">
             <h1>Grand Angle</h1>
             
             <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
             <input type="password" placeholder="Entrer le mot de passe" name="password" required>
 
             <input type="submit" id='submit' value='LOGIN' >
-        </form>
-    </div>
 <?php
-    if(isset($_GET['erreur'])){
-        $err = $_GET['erreur'];
+            if(isset($_GET['erreur'])){
+                $err = $_GET['erreur'];
 
-        if($err==1 || $err==2)
-        {
-            echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>"; // utilisateur ou mot de passe incorrect
-        }
-    }
+                if($err==1 || $err==2){
+                    // utilisateur ou mot de passe incorrect
+                    echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>"; 
+                }
+            }
 ?>
+        </form>
+
+    </div>
+
     <style>
         #container{
             width:400px;
