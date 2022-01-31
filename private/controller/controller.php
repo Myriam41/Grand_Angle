@@ -14,6 +14,7 @@
     }
 
     function artsList(){
+
         require('view/artsListView.php');
         
     }
@@ -24,7 +25,8 @@
     }
 
     function artistsList(){
-
+        include_once('model/artistsModel.php');
+        $artists = new ArtistsModel();
         require('view/artistsListView.php');
     }
 
