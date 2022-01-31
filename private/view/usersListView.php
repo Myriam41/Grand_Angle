@@ -18,4 +18,3 @@
 
     require('view/template/base.php');
 ?>
-

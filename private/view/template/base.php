@@ -42,6 +42,7 @@
 
 		<!-- TITLE -->
 		<title><?= $title ?> - Grand Angle</title>
+</head>
                 
     </head>
     
