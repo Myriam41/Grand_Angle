@@ -23,45 +23,10 @@ $(document).ready( function(){
       themeToggler.querySelector('span:nth-child(1)').classList.toggle('active');
       themeToggler.querySelector('span:nth-child(2)').classList.toggle('active');
   })
-<<<<<<< HEAD
+
 
   // Tableaux
   $('#example').DataTable();
-=======
-$('#example').DataTable();
-  // Orders
-  // Orders.forEach(order => {
-  //     const tr = document.createElement('tr');
-  //     const trContent = `
-  //     <td>${order.productName}</td>
-  //     <td>${order.productNumber}</td>
-  //     <td>${order.paymentStatus}</td>
-  //     <td class="${order.shipping ===
-  //     'Declined' ? 'danger' : order.
-  //     shipping === 'Pending' ? 'warning'
-  //     : 'primary'}">${order.shipping}</td>
-  //     <td class="primary">Details</td>
-  //         `;
-  //     tr.innerHTML = trContent;
-  //     document.querySelector('table tbody').appendChild(tr);
-  // })  
->>>>>>> 4e44fbb6b7e3ee9479b59f71ce87b3b4194ebcdd
-
-  // Ouvrir une oeuvre
-  function openArt($id){
-    $.ajax({
-      url: "model/artModel.php",
-      type: "get",
-      data: {
-          id: $id,
-          todo: 'getArt'
-      },
-      success: function(result){
-
-      }
-
-  });
-  }
 
   // GRAPH
  /*
