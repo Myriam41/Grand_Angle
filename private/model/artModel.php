@@ -5,7 +5,27 @@ include_once 'class/Art.php';
 
 class ArtModel extends Art{
 
+<<<<<<< HEAD
     function getArt(){
+=======
+    function getArtsNoLivre(){
+
+        $sql = 'SELECT o.code_oeuvre, o.titre_oeuvre, o.date_livraison, a.nom_usuel, exposition.titre_expo, exposition.date_debut
+                FROM oeuvre o
+                LEFT JOIN artiste a ON o.code_artiste = a.code_artiste
+                LEFT JOIN exposer e ON o.code_oeuvre = e.code_oeuvre
+                LEFT JOIN exposition ON e.code_expo = exposition.code_expo
+                ORDER BY date_debut';
+        
+        $lk = new Postgre();
+        $res = $lk->connect($sql);
+        
+        return $res;
+
+    }
+
+    function get5Art(){
+>>>>>>> tableau
 
         $sql = 'SELECT oeuvre.titre_oeuvre, exposer.nombre_vues
                 FROM exposer

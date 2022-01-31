@@ -17,7 +17,7 @@
         DeConnect();
     }
 
-    try{
+   /* try{*/
         
         // Si connexion alors redirection sur une page
         if($_SESSION['connect'] === '1'){
@@ -46,9 +46,10 @@
                 $id = $_GET['id'];
                 art($id);
             }
+            /*
             else{
                 throw new Exception('Cette page n\'existe pas ou a été supprimée');
-            }
+            }*/
         }
 
 
@@ -69,11 +70,12 @@
             connect();
         }
 
-    }
+    /*    }
+
     catch(Exception $e){
         $error = $e->getMessage();
         require('view/errorView.php');
-    }
+    }*/
 
 
  

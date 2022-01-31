@@ -47,6 +47,22 @@ $('#example').DataTable();
   // })  
 >>>>>>> 4e44fbb6b7e3ee9479b59f71ce87b3b4194ebcdd
 
+  // Ouvrir une oeuvre
+  function openArt($id){
+    $.ajax({
+      url: "model/artModel.php",
+      type: "get",
+      data: {
+          id: $id,
+          todo: 'getArt'
+      },
+      success: function(result){
+
+      }
+
+  });
+  }
+
   // GRAPH
  /*
     const ctx2 = document.getElementById('myChart');
