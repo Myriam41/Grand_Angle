@@ -13,10 +13,9 @@
     
 ?>
 
-    Main
-
 <?php
     $content = ob_get_clean();
 
     require('view/template/base.php');
+?>
 
