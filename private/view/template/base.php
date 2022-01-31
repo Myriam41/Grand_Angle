@@ -13,18 +13,10 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
         <!-- CDN GOOGLE FONT -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
 		<link href="'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap'" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    	<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
-    	<script>
-        	$(document).ready( function () {
-            	$('#example').DataTable();
-        	} );
-    	</script>
+
 		<!-- CDN Material icons        -->
 		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp">
 
@@ -33,15 +25,6 @@
 
         <!-- CSS PERSO -->
         <link rel="stylesheet" href="assets/css/style.css">
-
-		<!-- SCRIPT -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-		<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
-		<script>
-        	$(document).ready( function () {
-            	$('#example').DataTable();
-        	} );
-    	</script>
 
 		<!-- TITLE -->
 		<title><?= $title ?> - Grand Angle</title>
@@ -64,11 +47,15 @@
 		</div>
 
 		<!-- JS -->
-		<script src="vendor/node_modules/chart.js/dist/chart.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+		<!-- Graphs -->
+		<script src="vendor/node_modules/chart.js/dist/chart.js"></script>
+		<!-- Tableaux -->		
 		<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
-		<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script>
 		<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6d61d84b18bd3bda',m:'DibEAyWxF1uIQSCsAtEtwgvDO80Px5e.kubcBZgUWfs-1643620625-0-AaCStdCXDGxx4jAPlblOBhdO3mumKbJx/6QfpV4mG3jVB/T0ZSorJSF+tAF4QjX1Kn7By2ODpTbJMFAi0oaZMRJTu8dY4GsXhPwtACKLVhfVZNr/LminCvEczshg/QqXy1Yu9OJCrhGtrgs/VIo/jtlJkbrbS6sUdF8oumPMifRCnyzzMplAUcs27L1nB/7+8A==',s:[0xcb98f28c52,0x23fa878644],}})();</script>
+		<!-- Icones -->
+		<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script>
 
 		<script src="assets/js/app.js"></script>
     </body>
