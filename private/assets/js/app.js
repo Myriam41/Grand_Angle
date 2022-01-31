@@ -41,6 +41,8 @@ $(document).ready( function(){
       document.querySelector('table tbody').appendChild(tr);
   })  
 
+  $('#example').DataTable();
+
   // GRAPH
  /*
     const ctx2 = document.getElementById('myChart');
