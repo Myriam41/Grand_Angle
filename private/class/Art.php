@@ -7,6 +7,8 @@ class Art {
     private $epaisseur;
     private $largeur;
     private $flash;
+    private $date_livraison;
+    private $estLivre;
     private $descriptionFR;
     private $descriptionEN;
     private $descriptionCH;
@@ -34,6 +36,12 @@ class Art {
     public function getFlash() {
         return $this->flash;
     }
+    public function getDateLivraison() {
+        return $this->date_livraison;
+    }   
+    public function estLivre() {
+        return $this->estLivre;
+    }     
     public function getDescriptionFR() {
         return $this->descriptionFR;
     }
@@ -74,6 +82,12 @@ class Art {
     }
     public function setFlash($flash) {
         $this-> flash = $flash;
+    }
+    public function setDateLIvraison($dateLivraison) {
+        $this-> flash = $dateLivraison;
+    }
+    public function setEstLivre($estLivre) {
+        $this-> flash = $estLivre;
     }
     public function setDescriptionFR($descriptionFR) {
         $this-> titre = $descriptionFR;

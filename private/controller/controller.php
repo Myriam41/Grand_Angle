@@ -4,7 +4,11 @@
     function home(){
         //require('model/artModel.php');
         include_once('model/ArtModel.php');
-        $arts = new ArtModel();
+        $artsView = new ArtModel();
+        $arts = $artsView -> getViewsArtsExpo(1);
+
+        $livraison = new ArtModel();
+        $noLivre = $livraison->getArtsNoLivre();
         require('view/homeView.php');
     }
 

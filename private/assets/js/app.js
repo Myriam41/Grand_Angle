@@ -27,6 +27,22 @@ $(document).ready( function(){
   // Tableaux
   $('#example').DataTable();
 
+  // Ouvrir une oeuvre
+  function openArt($id){
+    $.ajax({
+      url: "model/artModel.php",
+      type: "get",
+      data: {
+          id: $id,
+          todo: 'getArt'
+      },
+      success: function(result){
+
+      }
+
+  });
+  }
+
   // GRAPH
  /*
     const ctx2 = document.getElementById('myChart');
