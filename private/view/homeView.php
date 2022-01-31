@@ -42,11 +42,30 @@
             </table>
             
         </div>
+<<<<<<< Updated upstream
     </main>
     
     <!-- Partie droite -->
     <div class="right">
         <?php include('template/rightTop.php') ?>
+=======
+        
+        <!-- Partie droite -->
+        <div class="right">
+            <div class="recent-orders">
+                <h2>Dernière exposition</h2>
+
+                <table id="example">
+                    <thead>
+                        <tr>
+                            <th>Titre</th>
+                            <th>Vues</th>
+                        </tr>
+                    </thead>
+<?php
+                    $artsView = new ArtModel();
+                    $arts = $artsView -> getViewsArtsExpo(1);
+>>>>>>> Stashed changes
 
         <!-- FIN DU TOP -->
         <div class="recent-orders">

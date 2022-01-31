@@ -23,7 +23,7 @@ $(document).ready( function(){
       themeToggler.querySelector('span:nth-child(1)').classList.toggle('active');
       themeToggler.querySelector('span:nth-child(2)').classList.toggle('active');
   })
-
+$('#example').DataTable();
   // Orders
   // Orders.forEach(order => {
   //     const tr = document.createElement('tr');

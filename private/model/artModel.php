@@ -1,7 +1,7 @@
 <?php
     include_once('../connect.php');
 
-    function get5Art(){
+    function getArt(){
 
         $sql = 'SELECT oeuvres.Nom, exposer.nombre_vues
                 FROM exposer
