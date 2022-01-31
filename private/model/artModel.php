@@ -5,7 +5,7 @@ include_once 'class/Art.php';
 
 class ArtModel extends Art{
 
-    function get5Art(){
+    function getArt(){
 
         $sql = 'SELECT oeuvre.titre_oeuvre, exposer.nombre_vues
                 FROM exposer
