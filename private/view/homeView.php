@@ -90,3 +90,4 @@
     // JS pour affichage du graph
 ?> 
     <script src="assets/js/stats.js"></script>
+    <script src="assets/js/open.js"></script>

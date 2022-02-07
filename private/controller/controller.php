@@ -23,9 +23,19 @@
         
     }
 
-    function exposList(){
+    function expo(){
+        require('model/expoModel.php');
+        require('view/expoView.php');
+    }
 
+    function exposList(){
+        require('model/expoModel.php');
         require('view/exposListView.php');
+    }
+
+    function artist(){
+        require('model/ArtistsModel.php');
+        require('view/artistView.php');
     }
 
     function artistsList(){

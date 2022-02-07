@@ -46,6 +46,16 @@
                 $id = $_GET['id'];
                 art($id);
             }
+
+            if($page == 'art'){
+                $id = $_GET['id'];
+                artist($id);
+            }
+
+            if($page == 'expo'){
+                $id = $_GET['id'];
+                expo($id);
+            }
             /*
             else{
                 throw new Exception('Cette page n\'existe pas ou a été supprimée');
