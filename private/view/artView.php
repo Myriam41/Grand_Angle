@@ -12,10 +12,11 @@
 
     $art = new ArtModel();
     $oeuvre = $art -> getArtById(1);
+    $img ='';
 
     while($row = $oeuvre->fetch()){
-        $titre = $row['titre_oeuvre'];
-        $long = $row['hauteur'];
+        $titre = isset($row['titre_oeuvre'])?$row['titre_oeuvre']:'';
+        $long = isset($row['hauteur'])?$row['hauteur']:'';
         $larg = $row['largeur'];
         $ep = $row['epaisseur'];
       //  $arr = $row['date_arrivee'];
@@ -24,7 +25,7 @@
         $en = $row['descriptionen'];
         $ch = $row['descriptionch'];
         $de = $row['descriptionde'];
-        $img = $row['image'];
+        $img = isset($row['image'])?$row['image']:'';
    }
 
     ob_start(); 
