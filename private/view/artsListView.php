@@ -13,7 +13,7 @@
     
 ?>
         <a href="index.php?page=art&amp;id=1">
-            <i class="fas fa-palette"></i>Vers une Oeuvre
+            <i class="fas fa-palette"></i>Vers une Oeuvre Artiste
         </a>
         <table id="example" class="display" style="width:100%">
         <thead>

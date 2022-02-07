@@ -28,6 +28,28 @@
                     </div>
                 </div>
 
+<<<<<<< HEAD
+            <table>
+                <thead>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Artiste</th>
+                        <th>Date livraison</th>
+                        <th>Exposition</th>
+                        <th>Date exposition</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!--  -->
+            </table>
+            
+        </div>
+    </main>
+    
+    <!-- Partie droite -->
+    <div class="right">
+        <?php include('template/rightTop.php') ?>
+=======
                 <!-- Oeuvres non livrées -->
                 <div class="recent-orders">
                     <h2>Oeuvres non livrées</h2> 
@@ -56,6 +78,7 @@
                     </table>
                 </div>
             </div>
+>>>>>>> 377be86c6db2a56a3edfa253dbf4eb12603eea6b
 
             <!-- partie de droite -->
             <div class="col-4">

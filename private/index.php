@@ -51,7 +51,7 @@
                 $id = $_GET['id'];
                 artist($id);
             }
-
+            
             if($page == 'expo'){
                 $id = $_GET['id'];
                 expo($id);

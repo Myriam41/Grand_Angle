@@ -15,5 +15,13 @@
         return $res;
 
     }
+    function getArtistById($id){
+        $sql = "SELECT * FROM artiste WHERE code_artiste = $id";
+
+        $lk = new Postgre();
+        $res = $lk->connect($sql);
+
+        return $res;
+    }
     }
 ?>

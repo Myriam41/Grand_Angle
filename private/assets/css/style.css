@@ -387,18 +387,22 @@ aside .sidebar .message-count {
 }
 
 .btn_action {
-  padding: 5px;
-  margin: 5px;
+  background-color: #fff;
+  border-radius: 100%;
+}
+.btn_action i {
+  color: #7380ec;
+  margin: 0;
 }
 
 .btn_sup {
-  position: absolute;
-  right: 30px;
+  background-color: #fff;
   border-radius: 100%;
 }
 .btn_sup i {
+  margin: 0;
   color: red;
-  padding: 5px;
+  padding: 10px;
 }
 
 #myChart {
