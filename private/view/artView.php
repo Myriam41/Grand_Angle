@@ -9,22 +9,23 @@
     $title = "";
     $titlePage = "";
     $langs = 1;
+    $id = $_GET['id'];
 
     $art = new ArtModel();
-    $oeuvre = $art -> getArtById(1);
+    $oeuvre = $art -> getArtById($id);
     $img ='';
 
     while($row = $oeuvre->fetch()){
         $titre = isset($row['titre_oeuvre'])?$row['titre_oeuvre']:'';
         $long = isset($row['hauteur'])?$row['hauteur']:'';
-        $larg = $row['largeur'];
-        $ep = $row['epaisseur'];
+        $larg = isset($row['largeur'])?$row['largeur']:'';
+        $ep = isset($row['epaisseur'])?$row['epaisseur']:'';
       //  $arr = $row['date_arrivee'];
-        $fr = $row['descriptionfr'];
-        $ru = $row['descriptionru'];
-        $en = $row['descriptionen'];
-        $ch = $row['descriptionch'];
-        $de = $row['descriptionde'];
+        $fr = isset($row['descriptionfr'])?$row['descriptionfr']:'';
+        $ru = isset($row['descriptionru'])?$row['descriptionru']:'';
+        $en = isset($row['descriptionen'])?$row['descriptionen']:'';
+        $ch = isset($row['descriptionch'])?$row['descriptionch']:'';
+        $de = isset($row['descriptionde'])?$row['descriptionde']:'';
         $img = isset($row['image'])?$row['image']:'';
    }
 
