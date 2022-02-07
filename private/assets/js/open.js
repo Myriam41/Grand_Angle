@@ -4,12 +4,12 @@ function openArt($id){
 }
 
 function openArtist($id){
-  var id = this.id;
-  window.open('index.php?page=artist&id='+id);
+  var idArtist = $id.id;
+  window.open('index.php?page=artist&id='+idArtist);
 }
 
 function openExpo($id){
-  var id = this.id;
+  var id = $id.id;
   window.open('index.php?page=expot&id='+id);
 }
 

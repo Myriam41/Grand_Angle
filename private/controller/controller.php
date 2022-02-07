@@ -36,7 +36,7 @@
     }
 
     function artist(){
-        require('model/ArtistsModel.php');
+        require('model/artistsModel.php');
         require('view/artistView.php');
     }
 

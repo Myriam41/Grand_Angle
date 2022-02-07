@@ -16,7 +16,14 @@
 
     }
     function getArtistById($id){
-        $sql = "SELECT * FROM artiste WHERE code_artiste = $id";
+        $sql = "SELECT code_artiste, 
+                        nom, prenom, 
+                        nom_usuel, tel, mail, adresse, 
+                        cp, ville, pays, photo, 
+                        biographiefr, biographieen, biographieru, 
+                        biographiech, biographiede 
+                FROM artiste 
+                WHERE code_artiste = $id";
 
         $lk = new Postgre();
         $res = $lk->connect($sql);
