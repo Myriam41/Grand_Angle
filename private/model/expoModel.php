@@ -6,7 +6,7 @@ class ExpoModel extends Expo{
 
     function getExpoAll(){
 
-        $sql = 'SELECT * FROM expo';
+        $sql = 'SELECT * FROM exposition';
 
         $lk = new Postgre();
         $res = $lk->connect($sql);
@@ -27,7 +27,7 @@ class ExpoModel extends Expo{
     }
 
     function setExpoById($id){
-        $sql = "UPDATEexposition
+        $sql = "UPDATE exposition
                 SET titre_expo = '', 
                     date_debut = '',
                     date_fin = '',
