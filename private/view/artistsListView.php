@@ -11,9 +11,10 @@
      ob_start();
 ?>
 <body>
-<a href="index.php?page=artist&amp;id=1">
-            <i class="fas fa-palette"></i>Vers un artiste
-        </a>
+    <a href="index.php?page=artist&amp;id=1">
+        <i class="fas fa-palette"></i>Vers un artiste
+    </a>
+    
     <table id="example" class="display" style="width:100%">
         <thead>
             <tr>

@@ -11,21 +11,24 @@
     $langs = 1;
 
     $artist = new ArtistsModel();
-    $artistList = $artist -> getArtistById(1);
-    $img ='';
+    $artiste = $artist -> getArtistById(1);
 
-    while($row = $artistsList->fetch()){
-        $titre = isset($row['nom_usuel'])?$row['nom_usuel']:'';
-        $long = isset($row['hauteur'])?$row['hauteur']:'';
-        $larg = $row['largeur'];
-        $ep = $row['epaisseur'];
-      //  $arr = $row['date_arrivee'];
-        $fr = $row['descriptionfr'];
-        $ru = $row['descriptionru'];
-        $en = $row['descriptionen'];
-        $ch = $row['descriptionch'];
-        $de = $row['descriptionde'];
-        $img = isset($row['image'])?$row['image']:'';
+    while($row = $artiste->fetch()){
+        $nom = isset($row['nom'])?$row['nom']:'';
+        $prenom = isset($row['prenom'])?$row['prenom']:'';
+        $nomUsuel = isset($row['nom_usuel'])?$row['nom_usuel']:'';
+        $tel = isset($row['tel'])?$row['tel']:'';
+        $mail = isset($row['mail'])?$row['mail']:'';
+        $adresse = isset($row['adresse'])?$row['adresse']:'';
+        $cp = isset($row['cp'])?$row['cp']:'';
+        $ville = isset($row['ville'])?$row['ville']:'';
+        $pays = isset($row['pays'])?$row['pays']:'';
+        $photo = isset($row['photo'])?$row['photo']:'';
+        $fr = isset($row['biographiefr'])?$row['biographiefr']:'';
+        $ru = isset($row['biographieen'])?$row['biographieen']:'';
+        $en = isset($row['biographiech'])?$row['biographiech']:'';
+        $ch = isset($row['biographieru'])?$row['biographieru']:'';
+        $de = isset($row['biographiede'])?$row['biographiede']:'';
    }
 
     ob_start(); 
@@ -33,12 +36,12 @@
     <div id='topMain'>
         <button type='boutton' class='btn_action'><i class="fas fa-plus"></i></button>
         <button type='boutton' class='btn_action'><i class="fas fa-save"></i></button>
-        <h2><?= $titre ?></h2>
+        <h2><?= $nom ?></h2>
         <button type="button" class="btn_sup"><i class="fas fa-trash-alt"></i></button>
     </div>
     <div class='infoFiche'>
         <div>
-<?php       if($img != '')        
+<?php       if($photo != '')        
             {
 ?>              <img class="mini" src="<?= $img ?>" alt="<?= $titre ?>">           
 <?php       }else
@@ -74,5 +77,4 @@
 
 ?>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <script src="assets/js/qrcode.js"></script>
 
