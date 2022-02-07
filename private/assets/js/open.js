@@ -1,7 +1,6 @@
 function openArt($id){
-  var idArt = this.id;
+  var idArt = $id.id;
   window.open('index.php?page=art&id='+idArt);
-
 }
 
 function openArtist($id){
