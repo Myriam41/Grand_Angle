@@ -20,7 +20,7 @@
     }
 
     function artsList(){
-
+        require('model/ArtModel.php');
         require('view/artsListView.php');
         
     }
