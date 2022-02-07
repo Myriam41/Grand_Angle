@@ -2,55 +2,85 @@
     require_once ('controller/controller.php');
 
     @session_start();
-    //echo 'connect avant test' . $_SESSION['connect'] .'<br>';
 
+    // Création de $_SESSION['Connect']
     if(!isset($_SESSION['connect']) || trim($_SESSION['connect']) == ""){
-    //    echo 'connect est vide<br>';
+        //echo 'connect est vide<br>';
         $_SESSION['connect'] = isset($_GET['connect'])?$_GET['connect']:"" ;
     }
 
+    // Définition de la page home par défaut
     $page = isset($_GET['page'])?$_GET['page']:"home" ;
-    //echo $page . '<br>connect index =' . $_SESSION['connect'] ;
 
-    if($_SESSION['connect'] === '1'){
+    // Si déconnexion demandée
+    if(isset($_GET['deconnect']) && $_GET['deconnect']=='1'){
+        DeConnect();
+    }
 
-        if($page == 'home'){
-            home();
-        }
+   /* try{*/
         
-        if($page == 'artsList'){
-            artsList();
+        // Si connexion alors redirection sur une page
+        if($_SESSION['connect'] === '1'){
+
+            if($page == 'home'){
+                home();
+            }
+            
+            if($page == 'artsList'){
+                artsList();
+            }
+
+            if($page == 'artistsList'){
+                artistsList();
+            }
+
+            if($page == 'exposList'){
+                exposList();
+            }
+
+            if($page == 'usersList'){
+                usersList();
+            }
+
+            if($page == 'art'){
+                $id = $_GET['id'];
+                art($id);
+            }
+
+            if($page == 'artist'){
+                $id = $_GET['id'];
+                artist($id);
+            }
+            /*
+            else{
+                throw new Exception('Cette page n\'existe pas ou a été supprimée');
+            }*/
         }
 
-        if($page == 'artistsList'){
-            artistsList();
+
+        // Si essaie de connexion.
+        else if(isset($_POST['username']) && isset($_POST['password'])){
+        
+            $_SESSION['user'] = htmlspecialChars($_POST['username']); 
+            $_SESSION['pass'] = htmlspecialChars($_POST['password']);
+            connectVerif();
         }
 
-        if($page == 'exposList'){
-            exposList();
-        }
-
-        if($page == 'usersList'){
-            usersList();
-        }
-
-        if($page == 'art'){
-            $id = $_GET['id'];
-            art($id);
-        }
-
-
-    }else if($_SESSION['connect'] == 'log'){
-    
-        $_SESSION['user'] = $_POST['username']; 
-        $_SESSION['pass'] = $_POST['password'];
-        logVerif();
-
-        if($_SESSION['connect'] == 'no'){
+        else if(isset($_GET['erreur'])){
             connectAgain();
         }
-    }
-    else{
-        connect();
-    }
 
+        // Si pas connecté vers page de connexion
+        else{
+            connect();
+        }
+
+    /*    }
+
+    catch(Exception $e){
+        $error = $e->getMessage();
+        require('view/errorView.php');
+    }*/
+
+
+ 

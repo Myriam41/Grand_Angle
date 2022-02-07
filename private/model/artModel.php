@@ -1,16 +1,21 @@
 <?php
-    include_once('../connect.php');
 
-    function get5Art(){
+include_once 'class/DbPostgre.php';
+include_once 'class/Art.php';
 
-        $sql = 'SELECT oeuvres.Nom, exposer.nombre_vues
-                FROM exposer
-                INNER JOIN oeuvres
-                WHERE exposer.code_events = 1
-                ORDER BY exposer.nombre_vues
-                LIMIT 5';
+class ArtModel extends Art{
 
-        $res = connecMySQL($sql);
+    function getArtsNoLivre(){
+
+        $sql = 'SELECT o.code_oeuvre, o.titre_oeuvre, o.date_livraison, a.nom_usuel, exposition.titre_expo, exposition.date_debut
+                FROM oeuvre o
+                LEFT JOIN artiste a ON o.code_artiste = a.code_artiste
+                LEFT JOIN exposer e ON o.code_oeuvre = e.code_oeuvre
+                LEFT JOIN exposition ON e.code_expo = exposition.code_expo
+                ORDER BY date_debut';
+        
+        $lk = new Postgre();
+        $res = $lk->connect($sql);
         
         return $res;
 
@@ -23,31 +28,11 @@
                 INNER JOIN oeuvre ON exposer.code_oeuvre = oeuvre.code_oeuvre
                 WHERE exposer.code_expo = $idExpo
                 ORDER BY exposer.nombre_vues DESC";
-                
-       // $views = connecMySQL($sql);
-        $lk = mysqli_connect("localhost", "root", "","grand_angle2");
-        $views = mysqli_query($lk, $sql);
 
-        echo "<table>";
-        echo "<thead>";
-                echo "<tr>";
-                    echo "<th>Titre</th>";
-                    echo "<th>Vues</th>";
-                echo "</tr>";
-        echo "</thead>";
-
-        // corps du tableau
-        while($row = mysqli_fetch_array($views, MYSQLI_ASSOC)){
-            echo "<tr>";
-            
-            foreach($row as $k=>$v){
-
-                    echo "<td>$v</td>";
-            }
-            echo "</tr>";
-        }
-        echo "</table>";
-
+       $lk = new Postgre();
+       $res = $lk->connect($sql);
+    
+       return $res;
     }
 
 
@@ -55,37 +40,29 @@
 
         $sql = 'SELECT * FROM oeuvres';
 
-        $res = connecMySQL($sql);
+        $lk = new Postgre();
+        $res = $lk->connect($sql);
         
         return $res;
 
     }
 
     function getArtById($id){
-        $sql = "SELECT * FROM oeuvre WHERE code_oeuvre = $id";
+        $sql = "SELECT o.code_oeuvre, o.titre_oeuvre, o.date_livraison, a.nom_usuel, exposition.titre_expo, exposition.date_debut 
+                FROM oeuvre o
+                INNER JOIN artiste a ON a.code_artiste = o.code_artiste
+                INNER JOIN exposer ON exposer.code_oeuvre = o.code_oeuvre
+                INNER JOIN exposition ON exposition.code_expo = exposer.code_expo
+                WHERE o.code_oeuvre = $id";
 
-        $lk = mysqli_connect("localhost", "root", "","grand_angle2");
-        $res = mysqli_query($lk, $sql);
-        //connecMySQL($sql);
-        $art = mysqli_fetch_array($res, MYSQLI_ASSOC);
-        return $art;
+        $lk = new Postgre();
+        $res = $lk->connect($sql);
+
+        return $res;
     }
 
-    function displayArtsAll($res){
-        if($res){
 
-            echo "<table>";
+}
 
-            // corps du tableau
-            while($row = mysqli_fetch_array($res, MYSQLI_ASSOC)){
-                echo "<tr>";
-                
-                foreach($row as $k=>$v){
 
-                        echo "<td>$v</td>";
-                }
-                echo "</tr>";
-            }
-            echo "</table>";
-        }
-    }
+   

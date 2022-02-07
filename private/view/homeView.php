@@ -14,19 +14,21 @@
     ob_start();
     
 ?>
-    <main>
-        <h1><?= $titlePage ?></h1>
+    <div class='container'>
+        <div class=row>
+            <!-- partie de gauche -->
+            <div class="col-8">
+                <h1><?= $titlePage ?></h1>
 
-        <div class="recent-orders">
-            <h2>Les 5 oeuvres les plus vues</h2>
-            <div id="artGraph">
-                <canvas id="graph" width="400" height="200"></canvas>
-            </div>
-        </div>
+                <!-- Graph des vues -->
+                <div class="recent-orders">
+                    <h2>Les 5 oeuvres les plus vues</h2>
+                    <div id="artGraph">
+                        <canvas id="graph" width="400" height="200"></canvas>
+                    </div>
+                </div>
 
-        <div class="recent-orders">
-            <h2>Oeuvres non livrées</h2>
-
+<<<<<<< HEAD
             <table>
                 <thead>
                     <tr>
@@ -47,50 +49,62 @@
     <!-- Partie droite -->
     <div class="right">
         <?php include('template/rightTop.php') ?>
+=======
+                <!-- Oeuvres non livrées -->
+                <div class="recent-orders">
+                    <h2>Oeuvres non livrées</h2> 
 
-        <!-- FIN DU TOP -->
-        <div class="recent-orders">
-            <h2>Vues de la dernière exposition</h2>
-<?php       getViewsArtsExpo(1); ?>
-        </div>
+                    <table id="example" class="display" style="width:100%">
+                        <thead>
+                            <tr>
+                                <th>Titre</th>
+                                <th>Artiste</th>
+                                <th>Date livraison</th>
+                                <th>Exposition</th>
+                                <th>Date exposition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+<?php                       while($art = $noLivre ->fetch()){ ?>
+                            <tr id="<?= $art['code_oeuvre'] ?>" onclick="openArt(this.id)">
+                                <td><?= $art['titre_oeuvre'] ?></td>
+                                <td><?= $art['nom_usuel'] ?></td>
+                                <td><?= $art['date_livraison'] ?></td>
+                                <td><?= $art['titre_expo'] ?></td>   
+                                <td><?= $art['date_debut'] ?></td>
+                            </tr>
+<?php                       } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+>>>>>>> 377be86c6db2a56a3edfa253dbf4eb12603eea6b
 
-        <div class="recent-updates">
-            <h2>Recent Updates</h2>
-            <div class="updates">
-                <div class="update">
-                    <div class="profile-photo">
-                        <img src="#" alt="#">
-                    </div>
-                    <div class="message">
-                        <p><b>Myriam Stampers</b> a bien reçu sa commande</p>
-                        <small class="text-muted">Il y a 2 minutes</small>
-                    </div>
-                </div>
-                <div class="update">
-                    <div class="profile-photo">
-                        <img src="#" alt="#">
-                    </div>
-                    <div class="message">
-                        <p><b>Myriam Stampers</b> a bien reçu sa commande</p>
-                        <small class="text-muted">Il y a 2 minutes</small>
-                    </div>
-                </div>
-                <div class="update">
-                    <div class="profile-photo">
-                        <img src="#" alt="#">
-                    </div>
-                    <div class="message">
-                        <p><b>Myriam Stampers</b> a bien reçu sa commande</p>
-                        <small class="text-muted">Il y a 2 minutes</small>
-                    </div>
+            <!-- partie de droite -->
+            <div class="col-4">
+                <div class="recent-orders">
+                    <h2>Dernière exposition</h2>
+
+                    <table class='table'>
+                        <thead>
+                            <tr>
+                                <th>Titre</th>
+                                <th>Vues</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+<?php                       while($row = $arts ->fetch()){?>
+                                <tr>      
+                                    <td><?= $row ['titre_oeuvre'] ?></td>
+                                    <td><?= $row ['nombre_vues'] ?></td>      
+                                </tr>
+<?php                       }?>     
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-
-        <!-- FIN MAJ RECENTES -->
-
     </div>
-
 <?php
     $content = ob_get_clean();
 

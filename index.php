@@ -4,10 +4,9 @@
     $_SESSION['visitor'] = isset($_GET['v'])?1:"";
     $_SESSION['connect'] = "";
 
-
     if($_SESSION['visitor']){
        
-        require('visitor/index.php');
+        require('visitor/index.html');
 
     }else{
 

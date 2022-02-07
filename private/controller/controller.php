@@ -1,21 +1,24 @@
 <?php
     @session_start();
-    //include_once('connect.php');
-
-
-    //require('model/expoModel.php');
 
     function home(){
-        require('model/artModel.php');
+        //require('model/artModel.php');
+        include_once('model/ArtModel.php');
+        $artsView = new ArtModel();
+        $arts = $artsView -> getViewsArtsExpo(1);
+
+        $livraison = new ArtModel();
+        $noLivre = $livraison->getArtsNoLivre();
         require('view/homeView.php');
     }
 
     function art(){
-        require('model/artModel.php');
+        require('model/ArtModel.php');
         require('view/artView.php');
     }
 
     function artsList(){
+
         require('view/artsListView.php');
         
     }
@@ -26,7 +29,8 @@
     }
 
     function artistsList(){
-
+        include_once('model/artistsModel.php');
+        $artists = new ArtistsModel();
         require('view/artistsListView.php');
     }
 
@@ -35,35 +39,44 @@
         require('view/usersListView.php');
     }
 
-    function connect(){
+    function DeConnect(){
+        session_unset(); // on détruit la/les session(s), soit si vous utilisez une autre session, utilisez de préférence le unset()
+        connectAgain();
+        die();
+    }
 
+    function connect(){
         require('private/view/connectView.php');
     }
 
     function connectAgain(){
-
         require('view/connectView.php');
     }
 
-    function logVerif(){
+    function connectVerif(){
         require('model/connectModel.php');
 
+        $log = new ConnectModel();
+
+        // Vérificaion de la validité de user et pass
         if(isset($_SESSION['user']) && isset($_SESSION['pass'])){
-            $log = logConnect();
-            //echo $log;
-            if(isset($log) && $log > 0) // nom d'utilisateur et mot de passe correctes
-            {
-                    $_SESSION['connect'] = '1'; 
-                    //echo '<br> connect dans log verif =' . $_SESSION['connect'];
-                    home();         
+            $count = $log -> logConnect();
+
+            // nom d'utilisateur et mot de passe correctes
+            if(isset($count) && $count > 0) 
+            {   
+                $_SESSION['connect'] = '1';
+                home();       
             }
             else{
-                $_SESSION['connect'] = 'no';
+                header('location: ?erreur=1');
+                exit();
             }
         }
         else
         {
-        connect();
+            header('location: ?erreur=1');
+            exit();
         }
     }
 

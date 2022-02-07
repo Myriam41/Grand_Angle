@@ -4,4 +4,5 @@
 .git
 
 config.php
-private/model/stats_Exemple.php
+DbConfig
+private/class/DbConfig.php

@@ -10,7 +10,14 @@ $(document).ready( function(){
         success: function(art_graph){
 
             //$("#artGraph").html(art_graph);
+            try {
+                JSON.parse(art_graph);
+            }
+            catch (error) {
+                console.log('Error parsing JSON:', error, data);
+            }
             var data = jQuery.parseJSON(art_graph);
+            
             console.log(data);
             var ctx = $("#graph");
             var conf ="";
@@ -26,10 +33,13 @@ $(document).ready( function(){
                     }
                 },
             };
-                //console.log(conf);
+
             var artGraph = new Chart(ctx, conf);
+            console.log(data);
         }
+
     });
+
 });
 
 

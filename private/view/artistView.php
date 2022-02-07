@@ -10,12 +10,12 @@
     $titlePage = "";
     $langs = 1;
 
-    $art = new ArtModel();
-    $oeuvre = $art -> getArtById(1);
+    $artist = new ArtistsModel();
+    $artistList = $artist -> getArtistById(1);
     $img ='';
 
-    while($row = $oeuvre->fetch()){
-        $titre = isset($row['titre_oeuvre'])?$row['titre_oeuvre']:'';
+    while($row = $artistsList->fetch()){
+        $titre = isset($row['nom_usuel'])?$row['nom_usuel']:'';
         $long = isset($row['hauteur'])?$row['hauteur']:'';
         $larg = $row['largeur'];
         $ep = $row['epaisseur'];
@@ -62,7 +62,7 @@
             </div>
 
         </div>
-        <div id="qrcode"></div>
+        <!-- <div id="qrcode"></div> -->
 
     </div>
     <textarea></textarea>

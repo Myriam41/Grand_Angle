@@ -1,4 +1,4 @@
-const href = "http://localhost/Grand_Angle/Grand_Angle/index.php?v";
+const href = "http://192.168.0.11:8000/index.php?v";
 const size = 300;
 
 new QRCode(document.querySelector("#qrcode"), {

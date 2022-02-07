@@ -1,0 +1,20 @@
+.btn_action{
+    background-color: $color-white;
+    border-radius: 100% ;
+
+    i{
+        color: $color-primary;
+        margin: 0;
+    }
+}
+
+.btn_sup{
+    background-color: $color-white;
+    border-radius: 100%;
+
+    i{
+        margin: 0;
+        color: red;
+        padding: 10px;
+    }
+}
