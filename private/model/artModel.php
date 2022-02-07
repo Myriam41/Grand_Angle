@@ -38,7 +38,7 @@ class ArtModel extends Art{
 
     function getArtsAll(){
 
-        $sql = 'SELECT * FROM oeuvres';
+        $sql = 'SELECT * FROM oeuvre';
 
         $lk = new Postgre();
         $res = $lk->connect($sql);
