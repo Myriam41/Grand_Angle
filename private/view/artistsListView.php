@@ -14,7 +14,6 @@
     <a href="index.php?page=artist&amp;id=1">
         <i class="fas fa-palette"></i>Vers un artiste
     </a>
-    
     <table id="example" class="display" style="width:100%">
         <thead>
             <tr>
@@ -36,11 +35,11 @@
             $artists = $artistView -> getArtistsAll();
 
             while( $row = $artists->fetch()){ ?>
-                <tr id="<? $row['code_artiste'] ?>">
+                <tr>
                     <td>
                         <button class="btn_action"><i class="fas fa-pencil-alt"></i></button>
                     </td>
-                    <td><?= $row['code_artiste'] ?></td>
+                    <td id="<?= $row['code_artiste'] ?>" onclick="openArtist(this)"><?= $row['code_artiste'] ?></td>
                     <td><?= $row['nom'] ?></td>
                     <td><?= $row['prenom'] ?></td>
                     <td><?= $row['nom_usuel'] ?></td>

@@ -9,9 +9,10 @@
     $title = "";
     $titlePage = "";
     $langs = 1;
+    $id = $_GET['id'];
 
     $artist = new ArtistsModel();
-    $artiste = $artist -> getArtistById(1);
+    $artiste = $artist -> getArtistById($id);
 
     while($row = $artiste->fetch()){
         $nom = isset($row['nom'])?$row['nom']:'';
