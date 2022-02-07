@@ -47,7 +47,7 @@
                 art($id);
             }
 
-            if($page == 'art'){
+            if($page == 'artist'){
                 $id = $_GET['id'];
                 artist($id);
             }
