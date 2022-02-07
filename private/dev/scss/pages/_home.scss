@@ -3,17 +3,9 @@
 
     main{
         width: 100%;
-        .multiPart{
-            display: flex;
 
-            .leftMain{
-                width: 80%;
-                padding: 20px;
-            }
-
-            .right{
-                width: 20%;
-            }
+        .table{
+            padding: 5px;
         }
     }
 }

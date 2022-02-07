@@ -466,15 +466,8 @@ table tbody tr:last-child td {
 .corps main {
   width: 100%;
 }
-.corps main .multiPart {
-  display: flex;
-}
-.corps main .multiPart .leftMain {
-  width: 80%;
-  padding: 20px;
-}
-.corps main .multiPart .right {
-  width: 20%;
+.corps main .table {
+  padding: 5px;
 }
 
 /*!
