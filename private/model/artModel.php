@@ -61,6 +61,19 @@ class ArtModel extends Art{
         return $res;
     }
 
+    function setArtById($id){
+        $sql = "UPDATE oeuvre
+                SET code_oeuvre = '',
+                    titre_oeuvre = '', 
+                    date_livraison = '' 
+                WHERE code_oeuvre = $id";
+
+        $lk = new Postgre();
+        $res = $lk->connect($sql);
+
+        return $res;
+    }
+
 
 }
 

@@ -1,6 +1,8 @@
 <?php
     @session_start();
 
+    //Controlle l'ouverture des pages
+
     function home(){
         //require('model/artModel.php');
         include_once('model/ArtModel.php');
