@@ -11,46 +11,48 @@
      ob_start();
 ?>
 <body>
-
+<a href="index.php?page=artist&amp;id=1">
+            <i class="fas fa-palette"></i>Vers un artiste
+        </a>
     <table id="example" class="display" style="width:100%">
         <thead>
             <tr>
-                <th>Name</th>
-                <th>Position</th>
-                <th>Office</th>
-                <th>Age</th>
-                <th>Start date</th>
-                <th>Start date</th>
+                <th></th>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Nom usuel</th>
+                <th>Téléphone</th>
+                <th>Mail</th>
+                <th>Photo</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
         
             <?php 
-            $artistsView = new ArtistsModel();
-            $artists = $artistsView -> getArtistsAll();
+            $artistView = new ArtistsModel();
+            $artists = $artistView -> getArtistsAll();
 
             while( $row = $artists->fetch()){ ?>
                 <tr id="<? $row['code_artiste'] ?>">
+                    <td>
+                        <button class="btn_action"><i class="fas fa-pencil-alt"></i></button>
+                    </td>
+                    <td><?= $row['code_artiste'] ?></td>
                     <td><?= $row['nom'] ?></td>
                     <td><?= $row['prenom'] ?></td>
                     <td><?= $row['nom_usuel'] ?></td>
                     <td><?= $row['tel'] ?></td>
                     <td><?= $row['mail'] ?></td>
                     <td><?= $row['photo'] ?></td>
+                    <td>
+                        <button class="btn_sup"><i class="fas fa-trash-alt"></i></button>
+                    </td>
                 </tr>
     <?php   } ?>
 
         </tbody>
-            <tfoot>
-                <tr>
-                    <th>Name</th>
-                    <th>Position</th>
-                    <th>Office</th>
-                    <th>Age</th>
-                    <th>Start date</th>
-                    <th>Salary</th>
-                </tr>
-            </tfoot>
     </table>
 </body>
 <?php 
