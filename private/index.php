@@ -56,6 +56,11 @@
                 $id = $_GET['id'];
                 expo($id);
             }
+
+            if($page == 'user'){
+                $id = $_GET['id'];
+                user($id);
+            }
             /*
             else{
                 throw new Exception('Cette page n\'existe pas ou a été supprimée');

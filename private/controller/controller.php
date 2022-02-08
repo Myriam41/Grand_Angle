@@ -51,6 +51,11 @@
         require('view/usersListView.php');
     }
 
+    function user(){
+        require('model/userModel.php');
+        require('view/userView.php');
+    }
+
     function DeConnect(){
         session_unset(); // on détruit la/les session(s), soit si vous utilisez une autre session, utilisez de préférence le unset()
         connectAgain();
