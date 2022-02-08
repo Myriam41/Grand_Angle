@@ -35,7 +35,6 @@ class ArtModel extends Art{
        return $res;
     }
 
-
     function getArtsAll(){
 
         $sql = 'SELECT * FROM oeuvre';
@@ -74,6 +73,13 @@ class ArtModel extends Art{
         return $res;
     }
 
+    function delArt($id){
+        $sql = "DELETE FROM oeuvre
+                WHERE code_oeuvre = $id";
+
+        $lk = new Postgre();
+        $res = $lk->connect($sql);
+    }
 
 }
 

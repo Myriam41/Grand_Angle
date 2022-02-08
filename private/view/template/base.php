@@ -57,6 +57,7 @@
 		<!-- Icones -->
 		<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script>
 		<script src="assets/js/open.js"></script>
+		<script src="assets/js/delete.js"></script>
 		<script src="assets/js/app.js"></script>
     </body>
 </html>

@@ -17,56 +17,57 @@
         DeConnect();
     }
 
-   /* try{*/
+    // Si delete demandé
+    if(isset($_GET['delete'])){
+        $name = $_GET['delete'];
+        $id = $_GET['id'];
+
+        include_once('controller/delController.php');
+        $name($id);
+    }
+
+    if($_SESSION['connect'] === '1'){
+
+        if($page == 'home'){
+            home();
+        }
         
-        // Si connexion alors redirection sur une page
-        if($_SESSION['connect'] === '1'){
-
-            if($page == 'home'){
-                home();
-            }
-            
-            if($page == 'artsList'){
-                artsList();
-            }
-
-            if($page == 'artistsList'){
-                artistsList();
-            }
-
-            if($page == 'exposList'){
-                exposList();
-            }
-
-            if($page == 'usersList'){
-                usersList();
-            }
-
-            if($page == 'art'){
-                $id = $_GET['id'];
-                art($id);
-            }
-
-            if($page == 'artist'){
-                $id = $_GET['id'];
-                artist($id);
-            }
-            
-            if($page == 'expo'){
-                $id = $_GET['id'];
-                expo($id);
-            }
-
-            if($page == 'user'){
-                $id = $_GET['id'];
-                user($id);
-            }
-            /*
-            else{
-                throw new Exception('Cette page n\'existe pas ou a été supprimée');
-            }*/
+        if($page == 'artsList'){
+            artsList();
         }
 
+        if($page == 'artistsList'){
+            artistsList();
+        }
+
+        if($page == 'exposList'){
+            exposList();
+        }
+
+        if($page == 'usersList'){
+            usersList();
+        }
+
+        if($page == 'art'){
+            $id = $_GET['id'];
+            art($id);
+        }
+
+        if($page == 'artist'){
+            $id = $_GET['id'];
+            artist($id);
+        }
+        
+        if($page == 'expo'){
+            $id = $_GET['id'];
+            expo($id);
+        }
+
+        if($page == 'user'){
+            $id = $_GET['id'];
+            user($id);
+        }
+    }
 
         // Si essaie de connexion.
         else if(isset($_POST['username']) && isset($_POST['password'])){

@@ -53,7 +53,7 @@
                     <td><?= $row['code_typeoeuvre'] ?></td>
                     <td><?= $row['code_artiste'] ?></td>
                     <td>
-                        <button class="btn_sup"><i class="fas fa-trash-alt"></i></button>
+                        <button class="btn_sup" name="<?= $row['code_oeuvre'] ?>" onclick="delArt(this)"><i class="fas fa-trash-alt"></i></button>
                     </td>    
                 </tr>
         <?php    } ?>
