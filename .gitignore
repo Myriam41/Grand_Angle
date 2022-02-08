@@ -7,3 +7,4 @@ config.php
 DbConfig
 private/class/DbConfig.php
 private/class/DbConfig.php
+private/class/DbConfig.php

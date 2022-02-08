@@ -18,7 +18,6 @@
         <thead>
             <tr>
                 <th></th>
-                <th>Id</th>
                 <th>Nom</th>
                 <th>Prénom</th>
                 <th>Nom usuel</th>
@@ -36,10 +35,7 @@
 
             while( $row = $artists->fetch()){ ?>
                 <tr>
-                    <td>
-                        <button class="btn_action"><i class="fas fa-pencil-alt"></i></button>
-                    </td>
-                    <td id="<?= $row['code_artiste'] ?>" onclick="openArtist(this)"><?= $row['code_artiste'] ?></td>
+                    <td id="<?= $row['code_artiste'] ?>" onclick="openArtist(this)"><button class="btn_action"><i class="fas fa-eye"></i></button></td>
                     <td><?= $row['nom'] ?></td>
                     <td><?= $row['prenom'] ?></td>
                     <td><?= $row['nom_usuel'] ?></td>
