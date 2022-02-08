@@ -47,4 +47,25 @@ class UserModel extends User{
         $lk = new Postgre();
         $res = $lk->connect($sql);
     }
+
+    function addUser($id){
+        $sql = "INSERT INTO utilisateur
+                    (nom, prenom, 
+                    nom_usuel, tel, mail, adresse, 
+                    cp, ville, pays, photo, 
+                    biographiefr, biographieen, biographieru, 
+                    biographiech, biographiede )
+                VALUES ('valeur 1', 'valeur 2', ...)";
+
+        $lk = new Postgre();
+        $res = $lk->connect($sql);
+    }
+    function editUser($id){
+        $sql = "UPDATE utilisateur
+                SET nom_colonne_1 = 'nouvelle valeur'
+                WHERE code_user = $id";
+
+        $lk = new Postgre();
+        $res = $lk->connect($sql);
+    }
 }
