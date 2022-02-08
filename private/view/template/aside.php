@@ -18,7 +18,6 @@
         </a>
         <a href="index.php?page=usersList">
             <i class="fas fa-users"></i>Utilisateurs
-            <span class="message-count">26</span>
         </a>
         <a href="index.php?deconnect=1">
             <i class="fas fa-wifi"></i>Déconnection

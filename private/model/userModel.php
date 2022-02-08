@@ -6,7 +6,8 @@ class UserModel extends User{
 
     function getUserAll(){
 
-        $sql = 'SELECT * FROM utilisateur';
+        $sql = 'SELECT code_user, identifiant, mot_pass, admin 
+        FROM utilisateur';
 
         $lk = new Postgre();
         $res = $lk->connect($sql);

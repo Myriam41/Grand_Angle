@@ -47,8 +47,13 @@
     }
 
     function usersList(){
-
+        require('model/userModel.php');
         require('view/usersListView.php');
+    }
+
+    function user(){
+        require('model/userModel.php');
+        require('view/userView.php');
     }
 
     function DeConnect(){
