@@ -16,16 +16,22 @@ function delArt(elet){
 
 function delArtist(elet){
   var idArtist = elet.id;
-  window.open('index.php?page=artist&id='+ idArtist);
+  if(delConfirm()){
+    location = 'index.php?delete=delArtist&id='+idArtist;
+  }
 }
 
 function delExpo(elet){
   var idExpo = elet.id;
-  window.open('index.php?page=expo&id='+ idExpo);
+  if(delConfirm()){
+    location = 'index.php?delete=delExpo&id='+idExpo;
+  }
 }
 
 function delUser(elet){
   var idUser = elet.id;
-  window.open('index.php?page=user&id='+ idUser);
+  if(delConfirm()){
+    location = 'index.php?delete=delUser&id='+idUser;
+  }
 }
 

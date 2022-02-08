@@ -81,6 +81,27 @@ class ArtModel extends Art{
         $res = $lk->connect($sql);
     }
 
+    function addArt($id){
+        $sql = "INSERT INTO oeuvre
+                    (nom, prenom, 
+                    nom_usuel, tel, mail, adresse, 
+                    cp, ville, pays, photo, 
+                    biographiefr, biographieen, biographieru, 
+                    biographiech, biographiede )
+                VALUES ('valeur 1', 'valeur 2', ...)";
+
+        $lk = new Postgre();
+        $res = $lk->connect($sql);
+    }
+    function editArt($id){
+        $sql = "UPDATE oeuvre
+                SET nom_colonne_1 = 'nouvelle valeur'
+                WHERE code_oeuvre = $id";
+
+        $lk = new Postgre();
+        $res = $lk->connect($sql);
+    }
+
 }
 
 

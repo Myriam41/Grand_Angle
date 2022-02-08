@@ -38,4 +38,25 @@
             $lk = new Postgre();
             $res = $lk->connect($sql);
         }
+
+        function addArtist($id){
+            $sql = "INSERT INTO artiste
+                        (nom, prenom, 
+                        nom_usuel, tel, mail, adresse, 
+                        cp, ville, pays, photo, 
+                        biographiefr, biographieen, biographieru, 
+                        biographiech, biographiede )
+                    VALUES ('valeur 1', 'valeur 2', ...)";
+    
+            $lk = new Postgre();
+            $res = $lk->connect($sql);
+        }
+        function editArtist($id){
+            $sql = "UPDATE artiste
+                    SET nom_colonne_1 = 'nouvelle valeur'
+                    WHERE code_artiste = $id";
+    
+            $lk = new Postgre();
+            $res = $lk->connect($sql);
+        }
     }
