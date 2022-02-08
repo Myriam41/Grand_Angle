@@ -39,4 +39,12 @@ class UserModel extends User{
 
         return $res;
     }
+
+    function delUser($id){
+        $sql = "DELETE FROM utilisateur
+                WHERE code_user = $id";
+
+        $lk = new Postgre();
+        $res = $lk->connect($sql);
+    }
 }

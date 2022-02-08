@@ -43,7 +43,7 @@
                 <td>
                     <button class="btn_action"><i class="fas fa-pencil-alt"></i></button>
                 </td>
-                    <td><?= $row['code_oeuvre'] ?></td>
+                    <td id="<?= $row['code_oeuvre'] ?>" onclick="openArt(this)"><?= $row['code_oeuvre'] ?></td>
                     <td><?= $row['titre_oeuvre'] ?></td>
                     <td><?= $row['hauteur'] ?></td>
                     <td><?= $row['epaisseur'] ?></td>
@@ -53,7 +53,7 @@
                     <td><?= $row['code_typeoeuvre'] ?></td>
                     <td><?= $row['code_artiste'] ?></td>
                     <td>
-                        <button class="btn_sup"><i class="fas fa-trash-alt"></i></button>
+                        <button class="btn_sup" name="<?= $row['code_oeuvre'] ?>" onclick="delArt(this)"><i class="fas fa-trash-alt"></i></button>
                     </td>    
                 </tr>
         <?php    } ?>

@@ -40,4 +40,12 @@ class ExpoModel extends Expo{
 
         return $res;
     }
+
+    function delExpo($id){
+        $sql = "DELETE FROM exposition
+                WHERE code_expo = $id";
+
+        $lk = new Postgre();
+        $res = $lk->connect($sql);
+    }
 }
