@@ -39,11 +39,11 @@
             $art = $artsView -> getArtsAll();
 
             while( $row = $art->fetch()){ ?>
-                <tr id="<? $row['code_oeuvre'] ?>">
+                <tr>
                 <td>
                     <button class="btn_action"><i class="fas fa-pencil-alt"></i></button>
                 </td>
-                    <td><?= $row['code_oeuvre'] ?></td>
+                    <td id="<?= $row['code_oeuvre'] ?>" onclick="openArt(this)"><?= $row['code_oeuvre'] ?></td>
                     <td><?= $row['titre_oeuvre'] ?></td>
                     <td><?= $row['hauteur'] ?></td>
                     <td><?= $row['epaisseur'] ?></td>
