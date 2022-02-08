@@ -29,11 +29,11 @@
          $expo = $exposView -> getExpoAll();
 
          while( $row = $expo->fetch()){ ?>
-            <tr id="<? $row['code_expo'] ?>">
+            <tr>
                 <td>
                     <button class="btn_action"><i class="fas fa-pencil-alt"></i></button>
                 </td>
-                <td><?= $row['code_expo'] ?></td>
+                <td  id="<?= $row['code_expo'] ?>" onclick="openExpo(this)"><?= $row['code_expo'] ?></td>
                 <td><?= $row['date_debut'] ?></td>
                 <td><?= $row['date_fin'] ?></td>
                 <td><?= $row['titre_expo'] ?></td>
