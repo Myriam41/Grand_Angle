@@ -13,3 +13,8 @@ function openExpo(elet){
   window.open('index.php?page=expo&id='+ idExpo);
 }
 
+function openUser(elet){
+  var idUser = elet.id;
+  window.open('index.php?page=user&id='+ idUser);
+}
+

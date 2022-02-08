@@ -47,7 +47,7 @@
     }
 
     function usersList(){
-
+        require('model/userModel.php');
         require('view/usersListView.php');
     }
 
