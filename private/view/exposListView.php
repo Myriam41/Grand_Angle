@@ -63,16 +63,16 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span id="MAC" class="close">&times;</span>
-            <form action='index.php?action=add&page=expoList' method="POST">
+            <form action='index.php?add=addExpo&page=exposList' method="post">
                 <div class="for-group">
                     <label for="titre">Titre</label>
-                    <input type="text" id="titre" class="form-control" placeholder="titre de l'exposition">
+                    <input type="text" id="titre" name="titre" class="form-control" placeholder="titre de l'exposition">
                 </div>
                 <div class="for-group">
                     <label for="debut">Date de début</label>
-                    <input type="date" id="debut" class="form-control" placeholder="00/00/0000">
+                    <input type="date" id="debut" name="debut" class="form-control" placeholder="AAAA-MM-JJ">
                     <label for="fin">Date de Fin</label>
-                    <input type="date" id="fin" class="form-control" placeholder="00/00/0000">
+                    <input type="date" id="fin" name="fin" class="form-control" placeholder="AAAA-MM-JJ">
                     <button type='boutton' class='btn_action'>
                         <i class="fas fa-plus"></i>
                         Ajouter une image

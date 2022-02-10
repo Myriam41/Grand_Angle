@@ -49,14 +49,14 @@ class ExpoModel extends Expo{
         $res = $lk->connect($sql);
     }
 
-    function addExpo($id){
+    function addExpo(){
+        $titre = isset($_POST['titre'])?$_POST['titre']:"";
+        $debut = isset($_POST['debut'])?$_POST['debut']:"";
+        $fin = isset($_POST['debut'])?$_POST['debut']:"";
+        //$image = isset($_POST['image'])?$_POST['image']:"";
         $sql = "INSERT INTO exposition
-                    (nom, prenom, 
-                    nom_usuel, tel, mail, adresse, 
-                    cp, ville, pays, photo, 
-                    biographiefr, biographieen, biographieru, 
-                    biographiech, biographiede )
-                VALUES ('valeur 1', 'valeur 2', ...)";
+                    (titre_expo, date_debut, date_fin) 
+                VALUES ('$titre', '$debut', '$fin')";
 
         $lk = new Postgre();
         $res = $lk->connect($sql);

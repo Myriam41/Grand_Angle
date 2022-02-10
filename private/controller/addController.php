@@ -10,10 +10,12 @@
         artsList();
     }
 
-    function addExpo($id){
+    function addExpo(){
+
+
         include_once('model/expoModel.php');
         $expo = new ExpoModel();
-        $expo -> addExpo($id);
+        $expo -> addExpo();
         exposList();
     }
 

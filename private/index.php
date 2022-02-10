@@ -1,5 +1,7 @@
 <?php
     require_once ('controller/controller.php');
+    require_once ('controller/addController.php');
+    include_once 'class/DbPostgre.php';
 
     @session_start();
 
@@ -24,6 +26,24 @@
 
         include_once('controller/delController.php');
         $name($id);
+    }
+
+    // Si add demandé
+    if(isset($_GET['add'])){
+        $name = $_GET['add'];
+        //  $name();
+
+        $titre = isset($_POST['titre'])?$_POST['titre']:"";
+        $debut = isset($_POST['debut'])?$_POST['debut']:"";
+        $fin = isset($_POST['debut'])?$_POST['debut']:"";
+        //$image = isset($_POST['image'])?$_POST['image']:"";
+        //   echo ($titre.' , '.$debut.' , '.$fin);
+        $sql = "INSERT INTO exposition
+                    (titre_expo, date_debut, date_fin) 
+                VALUES ('$titre', '$debut', '$fin')";
+
+        $lk = new Postgre();
+        $res = $lk->connect($sql);
     }
 
     if($_SESSION['connect'] === '1'){
