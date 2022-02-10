@@ -12,6 +12,7 @@ function editArtist(elet){
 function editExpo(elet){
   var idExpo = elet.id;
   location = 'index.php?edit=editExpo&id='+idExpo;
+  modal.style.display = "block";
 }
 
 function editUser(elet){

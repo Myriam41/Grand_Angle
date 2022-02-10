@@ -32,6 +32,8 @@
 
     function exposList(){
         require('model/expoModel.php');
+        $exposView = new ExpoModel();
+        $expo = $exposView -> getExpoAll();
         require('view/exposListView.php');
     }
 
