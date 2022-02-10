@@ -46,6 +46,52 @@
      </tbody>
     </table>
 
+    <!-- Trigger/Open The Modal -->
+    <!-- Modal pour nouvel enregistrement -->
+    <button id="myBtn">Open Modal</button>
+
+    <!-- The Modal -->
+    <div id="modalAdd" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Modal pour nouvel enregistrement..</p>
+    </div>
+
+    </div>
+
+    <!-- Trigger/Open The Modal -->
+    <!-- Modal pourmodifier enregistrement -->
+    <button id="myBtn">Open Modal</button>
+
+    <!-- The Modal -->
+    <div id="modalEdit" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Modal pour modifier enregistrement..</p>
+    </div>
+
+    </div>
+
+    <!-- Trigger/Open The Modal -->
+    <!-- Modal pour visualiser enregistrement -->
+    <button id="myBtn">Open Modal</button>
+
+    <!-- The Modal -->
+    <div id="modalView" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Modal pour voir enregistrement..</p>
+    </div>
+
+    </div>
+
+
 
 
 <?php
