@@ -17,14 +17,6 @@
         DeConnect();
     }
 
-    // Si ouverture sur Modale
-    if(isset($_Get['action']) && $_Get['action']=='open'){
-        $id = $_GET['id'];
-        if($page=='exposList'){
-            editExpo($id);
-        }
-    }
-
     // Si delete demandé
     if(isset($_GET['delete'])){
         $name = $_GET['delete'];

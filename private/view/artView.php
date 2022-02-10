@@ -16,7 +16,6 @@
     $img ='';
 
     while($row = $oeuvre->fetch()){
-        $code = isset($row['code_oeuvre'])?$row['code_oeuvre']:'';
         $titre = isset($row['titre_oeuvre'])?$row['titre_oeuvre']:'';
         $long = isset($row['hauteur'])?$row['hauteur']:'';
         $larg = isset($row['largeur'])?$row['largeur']:'';
@@ -33,7 +32,7 @@
     ob_start(); 
 ?>
     <div id='topMain'>
-        <button type='boutton' class='btn_action' name="<?=$code?>" onclick="addArt(this)"><i class="fas fa-plus"></i></button>
+        <button type='boutton' class='btn_action'><i class="fas fa-plus"></i></button>
         <button type='boutton' class='btn_action'><i class="fas fa-save"></i></button>
         <h2><?= $titre ?></h2>
         <button type="button" class="btn_sup"><i class="fas fa-trash-alt"></i></button>

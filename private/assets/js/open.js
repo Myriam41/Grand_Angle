@@ -1,24 +1,20 @@
 function openArt(elet){
-  var idArt = elet.name;
-  window.open('index.php?page=artsList&id='+idArt);
-  modal.style.display = "block";
+  var idArt = elet.id;
+  window.open('index.php?page=art&id='+idArt);
 }
 
 function openArtist(elet){
-  var idArtist = elet.name;
-  window.open('index.php?page=artistsList&id='+ idArtist);
-
+  var idArtist = elet.id;
+  window.open('index.php?page=artist&id='+ idArtist);
 }
 
 function openExpo(elet){
-  modal.style.display = "block";
-  var idExpo = elet.name;
-  location = 'index.php?action=open&page=exposList&id='+idExpo;
+  var idExpo = elet.id;
+  window.open('index.php?page=expo&id='+ idExpo);
 }
 
 function openUser(elet){
-  var idUser = elet.name;
-  window.open('index.php?page=usersList&id='+ idUser);
-  modal.style.display = "block";
+  var idUser = elet.id;
+  window.open('index.php?page=user&id='+ idUser);
 }
 

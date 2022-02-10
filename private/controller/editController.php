@@ -12,8 +12,8 @@
 
     function editExpo($id){
         include_once('model/expoModel.php');
-        $expos = new ExpoModel();
-        $expoView = $expos -> editExpo($id);
+        $expo = new ExpoModel();
+        $expo -> editExpo($id);
         exposList();
     }
 
