@@ -16,10 +16,15 @@
     <h2>Liste des expositions</h2> 
     <table id="example" class="display" style="width:100%">
      <thead>
-         <th></th>
-         <th>Id</th>
+         <th>
+            <button type="boutton" id="add" class="btn_action">
+                <i class="fas fa-plus"></i>
+            </button>
+        </th>
+         <th>Ouvrir</th>
          <th>Date de début</th>
          <th>Date de fin</th>
+         <th>Titre</th>
          <th>Image</th>
          <th></th>
      </thead>
@@ -31,9 +36,15 @@
          while( $row = $expo->fetch()){ ?>
             <tr>
                 <td>
-                    <button class="btn_action"><i class="fas fa-pencil-alt"></i></button>
+                    <button class="btn_action" id="edit" name="<?= $row['code_expo']?>">
+                        <i class="fas fa-pencil-alt"></i>
+                    </button>
                 </td>
-                <td  id="<?= $row['code_expo'] ?>" onclick="openExpo(this)"><?= $row['code_expo'] ?></td>
+                <td>
+                    <button class="btn_action" id="view" name="<?= $row['code_expo']?>" onclick="openExpo(this)">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </td>
                 <td><?= $row['date_debut'] ?></td>
                 <td><?= $row['date_fin'] ?></td>
                 <td><?= $row['titre_expo'] ?></td>
@@ -46,54 +57,39 @@
      </tbody>
     </table>
 
-    <!-- Trigger/Open The Modal -->
-    <!-- Modal pour nouvel enregistrement -->
-    <button id="myBtn">Open Modal</button>
 
+    <!-- Modal pour nouvel enregistrement boutton add-->
     <!-- The Modal -->
     <div id="modalAdd" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Modal pour nouvel enregistrement..</p>
-    </div>
-
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span id="MAC" class="close">&times;</span>
+            <p>Modal pour nouvel enregistrement..</p>
+        </div>
     </div>
 
     <!-- Trigger/Open The Modal -->
-    <!-- Modal pourmodifier enregistrement -->
-    <button id="myBtn">Open Modal</button>
-
+    <!-- Modal pour modifier enregistrement -->
     <!-- The Modal -->
     <div id="modalEdit" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Modal pour modifier enregistrement..</p>
-    </div>
-
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span  id="MEC" class="close">&times;</span>
+            <p>Modal pour modifier enregistrement..</p>
+        </div>
     </div>
 
     <!-- Trigger/Open The Modal -->
     <!-- Modal pour visualiser enregistrement -->
-    <button id="myBtn">Open Modal</button>
 
     <!-- The Modal -->
     <div id="modalView" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Modal pour voir enregistrement..</p>
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span  id="MVC" class="close">&times;</span>
+            <p>Modal pour voir enregistrement..</p>
+        </div>
     </div>
-
-    </div>
-
-
-
-
 <?php
     $content = ob_get_clean();
 
