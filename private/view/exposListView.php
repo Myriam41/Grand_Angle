@@ -9,8 +9,7 @@
     $title = "";
     $titlePage = "";
 
-    ob_start();
-    
+    ob_start();   
 ?>
 
     <h2>Liste des expositions</h2> 
@@ -64,7 +63,24 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span id="MAC" class="close">&times;</span>
-            <p>Modal pour nouvel enregistrement..</p>
+            <form action='index.php?action=add&page=expoList' method="POST">
+                <div class="for-group">
+                    <label for="titre">Titre</label>
+                    <input type="text" id="titre" class="form-control" placeholder="titre de l'exposition">
+                </div>
+                <div class="for-group">
+                    <label for="debut">Date de début</label>
+                    <input type="date" id="debut" class="form-control" placeholder="00/00/0000">
+                    <label for="fin">Date de Fin</label>
+                    <input type="date" id="fin" class="form-control" placeholder="00/00/0000">
+                    <button type='boutton' class='btn_action'>
+                        <i class="fas fa-plus"></i>
+                        Ajouter une image
+                    </button>
+                    <button type="button" class="btn btn-primary">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -75,7 +91,24 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span  id="MEC" class="close">&times;</span>
-            <p>Modal pour modifier enregistrement..</p>
+            <form action='index.php?action=edit&page=expoList' method="POST">
+                <div class="for-group">
+                    <label for="titre">Titre</label>
+                    <input type="text" id="titre" class="form-control" placeholder="titre de l'exposition">
+                </div>
+                <div class="for-group">
+                    <label for="debut">Date de début</label>
+                    <input type="date" id="debut" class="form-control" placeholder="00/00/0000">
+                    <label for="fin">Date de Fin</label>
+                    <input type="date" id="fin" class="form-control" placeholder="00/00/0000">
+                    <button type='boutton' class='btn_action'>
+                        <i class="fas fa-plus"></i>
+                        Ajouter une image
+                    </button>
+                    <button type="button" class="btn btn-primary">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -87,7 +120,23 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span  id="MVC" class="close">&times;</span>
-            <p>Modal pour voir enregistrement..</p>
+            <form action='index.php?action=view&page=expoList' method="POST">
+                <div class="for-group">
+                    <label for="titre">Titre</label>
+                    <input type="text" id="titre" class="form-control" placeholder="titre de l'exposition">
+                </div>
+                <div class="for-group">
+                    <label for="debut">Date de début</label>
+                    <input type="date" id="debut" class="form-control" placeholder="00/00/0000">
+                    <label for="fin">Date de Fin</label>
+                    <input type="date" id="fin" class="form-control" placeholder="00/00/0000">
+                    <button type='boutton' class='btn_action'>
+                        <i class="fas fa-plus"></i>
+                        Ajouter une image
+                    </button>
+                    <button type="submit" class="btn btn-primary">Fermer</button>
+                </div>
+            </form>
         </div>
     </div>
 <?php
