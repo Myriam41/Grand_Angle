@@ -383,7 +383,8 @@ aside .sidebar .message-count {
 }
 
 #lang1 {
-  margin-left: 80px;
+  display: flex;
+  margin-bottom: 10px;
 }
 
 .btn_action {

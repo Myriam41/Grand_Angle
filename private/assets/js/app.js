@@ -58,6 +58,7 @@ btnView.onclick = function() {
 // When the user clicks on <span> (x), close the modal
 spanA.onclick = function() {
   modalAdd.style.display = "none";
+  console.log(spanA);
 }
 spanE.onclick = function() {
   modalEdit.style.display = "none";

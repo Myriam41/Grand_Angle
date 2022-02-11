@@ -49,7 +49,7 @@
                 <td><?= $row['titre_expo'] ?></td>
                 <td><?= $row['image'] ?></td>
                 <td>
-                    <button class="btn_sup"><i class="fas fa-trash-alt"></i></button>
+                    <button class="btn_sup"><i class="fas fa-trash-alt" name="<?= $row['code_expo']?>" id="del"></i></button>
                 </td>
             </tr>
     <?php } ?>
@@ -64,19 +64,20 @@
         <div class="modal-content">
             <span id="MAC" class="close">&times;</span>
             <form action='index.php?add=addExpo&page=exposList' method="post">
-                <div class="for-group">
+                <div class="form-group">
                     <label for="titre">Titre</label>
                     <input type="text" id="titre" name="titre" class="form-control" placeholder="titre de l'exposition">
                 </div>
-                <div class="for-group">
+                <div class="form-group">
                     <label for="debut">Date de début</label>
                     <input type="date" id="debut" name="debut" class="form-control" placeholder="AAAA-MM-JJ">
+
                     <label for="fin">Date de Fin</label>
                     <input type="date" id="fin" name="fin" class="form-control" placeholder="AAAA-MM-JJ">
-                    <button type='boutton' class='btn_action'>
-                        <i class="fas fa-plus"></i>
-                        Ajouter une image
-                    </button>
+
+                    <label class="form-label" for="image">Image</label>
+                    <input type="file" class="form-control" id="image" />
+                    
                     <button type="button" class="btn btn-primary">Annuler</button>
                     <button type="submit" class="btn btn-primary">Enregistrer</button>
                 </div>
