@@ -20,8 +20,9 @@
     }
 
     function artsList(){
-        require_once('model/ArtModel.php');
-        require_once('view/artsListView.php');
+        require('model/ArtModel.php');
+        require('model/artistsModel.php');
+        require('view/artsListView.php');
         
     }
 

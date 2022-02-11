@@ -1,6 +1,10 @@
 <?php
 include_once 'class/Dbconfig.php';
+<<<<<<< HEAD
 //include_once 'Dbconfig.php';
+=======
+include_once 'Dbconfig.php';
+>>>>>>> mat_private
 
 class Postgre extends DbConfig {
 

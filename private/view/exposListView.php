@@ -71,12 +71,13 @@
                 <div class="form-group">
                     <label for="debut">Date de début</label>
                     <input type="date" id="debut" name="debut" class="form-control" placeholder="AAAA-MM-JJ">
+
                     <label for="fin">Date de Fin</label>
                     <input type="date" id="fin" name="fin" class="form-control" placeholder="AAAA-MM-JJ">
-                    <button type='boutton' class='btn_action'>
-                        <i class="fas fa-plus"></i>
-                        Ajouter une image
-                    </button>
+
+                    <label class="form-label" for="image">Image</label>
+                    <input type="file" class="form-control" id="image" />
+                    
                     <button type="button" class="btn btn-primary">Annuler</button>
                     <button type="submit" class="btn btn-primary">Enregistrer</button>
                 </div>
