@@ -2,7 +2,7 @@
     require_once ('controller/controller.php');
     require_once ('controller/addController.php');
     include_once('class/Expo.php');
-    include_once 'class/DbPostgre.php';
+    include_once ('class/DbPostgre.php');
 
     @session_start();
 
@@ -31,15 +31,16 @@
 
     // Si add demandé
     if(isset($_GET['add'])){
+                /*
         $name = $_GET['add'];
-        $expo = new Expo();
+        $expo = new ExpoModel();
 
         $expo->setTitre(isset($_POST['titre'])?$_POST['titre']:"");
         $expo->setDateDebut(isset($_POST['debut'])?$_POST['debut']:"");
         $expo->setDateDebut(isset($_POST['debut'])?$_POST['debut']:"");
         //$image = isset($_POST['image'])?$_POST['image']:"";
-        $name();
-        /*
+        //$name();
+
         $sql = "INSERT INTO exposition
                     (titre_expo, date_debut, date_fin) 
                 VALUES ('$titre', '$debut', '$fin')";
