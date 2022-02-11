@@ -1,6 +1,7 @@
 <?php
 include_once 'class/Dbconfig.php';
 include_once 'Dbconfig.php';
+// include_once 'Dbconfig.php';
 
 class Postgre extends DbConfig {
 
