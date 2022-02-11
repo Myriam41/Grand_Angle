@@ -1,7 +1,5 @@
 <?php
     require_once ('controller/controller.php');
-    require_once ('controller/addController.php');
-    include_once('class/Expo.php');
 
     @session_start();
 
@@ -31,21 +29,56 @@
     // Si add demandé
     if(isset($_GET['add'])){
         $name = $_GET['add'];
-        $expo = new Expo();
+        if($name == 'addExpo'){
+            include_once ('model/expoModel.php');
 
-        $expo->setTitre(isset($_POST['titre'])?$_POST['titre']:"");
-        $expo->setDateDebut(isset($_POST['debut'])?$_POST['debut']:"");
-        $expo->setDateDebut(isset($_POST['debut'])?$_POST['debut']:"");
-        //$image = isset($_POST['image'])?$_POST['image']:"";
-        $name();
-        /*
-        $sql = "INSERT INTO exposition
-                    (titre_expo, date_debut, date_fin) 
-                VALUES ('$titre', '$debut', '$fin')";
+            $expoM = new ExpoModel();
+    
+            $expoM->setTitre(isset($_POST['titre'])?$_POST['titre']:"");
+            $expoM->setDateDebut(isset($_POST['debut'])?$_POST['debut']:"");
+            $expoM->setDateFin(isset($_POST['fin'])?$_POST['fin']:"");
+            //$image = isset($_POST['image'])?$_POST['image']:"";
+            $expoM->$name();
+        }
 
-        $lk = new Postgre();
-        $res = $lk->connect($sql);
-        */
+        if($name == 'addUser'){
+            include_once ('model/userModel.php');
+/*
+            $expoM = new UserModel();
+    
+            $expoM->setTitre(isset($_POST['titre'])?$_POST['titre']:"");
+            $expoM->setDateDebut(isset($_POST['debut'])?$_POST['debut']:"");
+            $expoM->setDateFin(isset($_POST['fin'])?$_POST['fin']:"");
+            //$image = isset($_POST['image'])?$_POST['image']:"";
+            $expoM->$name();
+*/
+        }
+
+        if($name == 'addArt'){
+            include_once ('model/artModel.php');
+/*
+            $expoM = new UserModel();
+    
+            $expoM->setTitre(isset($_POST['titre'])?$_POST['titre']:"");
+            $expoM->setDateDebut(isset($_POST['debut'])?$_POST['debut']:"");
+            $expoM->setDateFin(isset($_POST['fin'])?$_POST['fin']:"");
+            //$image = isset($_POST['image'])?$_POST['image']:"";
+            $expoM->$name();
+*/
+        }
+
+        if($name == 'addArtist'){
+            include_once ('model/artistsModel.php');
+/*
+            $expoM = new UserModel();
+    
+            $expoM->setTitre(isset($_POST['titre'])?$_POST['titre']:"");
+            $expoM->setDateDebut(isset($_POST['debut'])?$_POST['debut']:"");
+            $expoM->setDateFin(isset($_POST['fin'])?$_POST['fin']:"");
+            //$image = isset($_POST['image'])?$_POST['image']:"";
+            $expoM->$name();
+*/
+        }
     }
 
     if($_SESSION['connect'] === '1'){

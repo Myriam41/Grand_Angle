@@ -50,9 +50,9 @@ class ExpoModel extends Expo{
     }
 
     function addExpo(){
-        $titre = $expo->getTitre();
-        $debut = $expo->getDateDebut();
-        $fin = $expo->getDateFin();
+        $titre = $this->getTitre();
+        $debut = $this->getDateDebut();
+        $fin = $this->getDateFin();
         //$image = isset($_POST['image'])?$_POST['image']:"";
         $sql = "INSERT INTO exposition
                     (titre_expo, date_debut, date_fin) 
