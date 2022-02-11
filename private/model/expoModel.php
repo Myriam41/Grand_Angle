@@ -24,7 +24,12 @@ class ExpoModel extends Expo{
         $lk = new Postgre();
         $res = $lk->connect($sql);
 
-        return $res;
+        while( $row = $res->fetch()){
+            $this->setCode(isset($row['code_expo'])?$row['code_expo']:'');
+            $this->setTitre(isset($row['titre_expo'])?$row['titre_expo']:'');
+            $this->setDateDebut(isset($row['date_debut'])?$row['date_debut']:'');
+            $this->setDateFin(isset($row['date_fin'])?$row['date_fin']:'');
+        }
     }
 
     function setExpoById($id){
@@ -50,9 +55,9 @@ class ExpoModel extends Expo{
     }
 
     function addExpo(){
-        $titre = $expo->getTitre();
-        $debut = $expo->getDateDebut();
-        $fin = $expo->getDateFin();
+        $titre = $this->getTitre();
+        $debut = $this->getDateDebut();
+        $fin = $this->getDateFin();
         //$image = isset($_POST['image'])?$_POST['image']:"";
         $sql = "INSERT INTO exposition
                     (titre_expo, date_debut, date_fin) 

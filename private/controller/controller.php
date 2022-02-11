@@ -11,44 +11,44 @@
 
         $livraison = new ArtModel();
         $noLivre = $livraison->getArtsNoLivre();
-        require('view/homeView.php');
+        require_once('view/homeView.php');
     }
 
     function art(){
-        require('model/ArtModel.php');
-        require('view/artView.php');
+        require_once('model/ArtModel.php');
+        require_once('view/artView.php');
     }
 
     function artsList(){
-        require('model/ArtModel.php');
-        require('view/artsListView.php');
+        require_once('model/ArtModel.php');
+        require_once('view/artsListView.php');
         
     }
 
     function expo(){
-        require('model/expoModel.php');
-        require('view/expoView.php');
+        require_once('model/expoModel.php');
+        require_once('view/expoView.php');
     }
 
     function exposList(){
-        require('model/expoModel.php');
-        require('view/exposListView.php');
+        require_once('model/expoModel.php');
+        require_once('view/exposListView.php');
     }
 
     function artist(){
-        require('model/artistsModel.php');
-        require('view/artistView.php');
+        require_once('model/artistsModel.php');
+        require_once('view/artistView.php');
     }
 
     function artistsList(){
         include_once('model/artistsModel.php');
         $artists = new ArtistsModel();
-        require('view/artistsListView.php');
+        require_once('view/artistsListView.php');
     }
 
     function usersList(){
-        require('model/userModel.php');
-        require('view/usersListView.php');
+        require_once('model/userModel.php');
+        require_once('view/usersListView.php');
     }
 
     function user(){

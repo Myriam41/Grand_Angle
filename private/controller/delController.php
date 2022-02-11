@@ -25,7 +25,7 @@
     }
 
     function delUser($id){
-        require('model/userModel.php');
+        include_once('model/userModel.php');
         $user = new UserModel();
         $user -> delUser($id);
         usersList();

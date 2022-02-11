@@ -1,7 +1,7 @@
 <?php
     @session_start();
 
-    //Controlle la supression des pages
+    //Controlle la modification des pages
 
     function editArt($id){
         include_once('model/ArtModel.php');

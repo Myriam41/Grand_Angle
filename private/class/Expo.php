@@ -28,9 +28,9 @@ class Expo {
         $this-> titre = $titre;
     }
     public function setDateDebut($dateDebut) {
-        $this-> date = $dateDebut;
+        $this-> dateDebut = $dateDebut;
     }
     public function setDateFin($dateFin) {
-        $this-> titre = $dateFin;
+        $this-> dateFin = $dateFin;
     }
 }
