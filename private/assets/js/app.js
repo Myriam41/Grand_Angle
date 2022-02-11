@@ -62,7 +62,6 @@ spanA.onclick = function() {
 spanE.onclick = function() {
   modalEdit.style.display = "none";
 }
-
 spanV.onclick = function() {
   modalView.style.display = "none";
 }

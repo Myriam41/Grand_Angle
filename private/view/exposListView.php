@@ -49,7 +49,7 @@
                 <td><?= $row['titre_expo'] ?></td>
                 <td><?= $row['image'] ?></td>
                 <td>
-                    <button class="btn_sup"><i class="fas fa-trash-alt"></i></button>
+                    <button class="btn_sup"  name="<?= $row['code_expo']?>" onclick="delExpo(this)"><i class="fas fa-trash-alt"></i></button>
                 </td>
             </tr>
     <?php } ?>
@@ -64,11 +64,11 @@
         <div class="modal-content">
             <span id="MAC" class="close">&times;</span>
             <form action='index.php?add=addExpo&page=exposList' method="post">
-                <div class="for-group">
+                <div class="form-group">
                     <label for="titre">Titre</label>
                     <input type="text" id="titre" name="titre" class="form-control" placeholder="titre de l'exposition">
                 </div>
-                <div class="for-group">
+                <div class="form-group">
                     <label for="debut">Date de début</label>
                     <input type="date" id="debut" name="debut" class="form-control" placeholder="AAAA-MM-JJ">
                     <label for="fin">Date de Fin</label>
@@ -92,11 +92,11 @@
         <div class="modal-content">
             <span  id="MEC" class="close">&times;</span>
             <form action='index.php?action=edit&page=expoList' method="POST">
-                <div class="for-group">
+                <div class="form-group">
                     <label for="titre">Titre</label>
                     <input type="text" id="titre" class="form-control" placeholder="titre de l'exposition">
                 </div>
-                <div class="for-group">
+                <div class="form-group">
                     <label for="debut">Date de début</label>
                     <input type="date" id="debut" class="form-control" placeholder="00/00/0000">
                     <label for="fin">Date de Fin</label>
@@ -121,11 +121,11 @@
         <div class="modal-content">
             <span  id="MVC" class="close">&times;</span>
             <form action='index.php?action=view&page=expoList' method="POST">
-                <div class="for-group">
+                <div class="form-group">
                     <label for="titre">Titre</label>
                     <input type="text" id="titre" class="form-control" placeholder="titre de l'exposition">
                 </div>
-                <div class="for-group">
+                <div class="form-group">
                     <label for="debut">Date de début</label>
                     <input type="date" id="debut" class="form-control" placeholder="00/00/0000">
                     <label for="fin">Date de Fin</label>

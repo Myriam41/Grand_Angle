@@ -10,28 +10,29 @@ function delConfirm(){
 function delArt(elet){
   var idArt = elet.name;
   if(delConfirm()){
-    location = 'index.php?delete=delArt&id='+idArt;
+    location = 'index.php?delete=delArt&page=artList&id='+idArt;
   }
 }
 
 function delArtist(elet){
-  var idArtist = elet.id;
+  var idArtist = elet.name;
   if(delConfirm()){
-    location = 'index.php?delete=delArtist&id='+idArtist;
+    location = 'index.php?delete=delArtist&page=artistList&id='+idArtist;
   }
 }
 
 function delExpo(elet){
-  var idExpo = elet.id;
+  var idExpo = elet.name;
+  alert (idExpo);
   if(delConfirm()){
-    location = 'index.php?delete=delExpo&id='+idExpo;
+    location = 'index.php?delete=delExpo&page=exposList&id='+idExpo;
   }
 }
 
 function delUser(elet){
-  var idUser = elet.id;
+  var idUser = elet.name;
   if(delConfirm()){
-    location = 'index.php?delete=delUser&id='+idUser;
+    location = 'index.php?delete=delUser&usersList&id='+idUser;
   }
 }
 

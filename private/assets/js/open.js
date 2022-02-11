@@ -1,3 +1,5 @@
+/*
+
 function openArt(elet){
   var idArt = elet.id;
   window.open('index.php?page=art&id='+idArt);
@@ -17,4 +19,4 @@ function openUser(elet){
   var idUser = elet.id;
   window.open('index.php?page=user&id='+ idUser);
 }
-
+*/
