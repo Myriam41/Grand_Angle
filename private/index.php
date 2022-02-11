@@ -1,5 +1,6 @@
 <?php
     require_once ('controller/controller.php');
+    include_once 'class/DbPostgre.php';
 
     @session_start();
 
@@ -25,6 +26,24 @@
         include_once('controller/delController.php');
         $name($id);
     }
+
+    //Si addUser demandé
+    if(isset($_GET['add'])){
+        $name = $_GET['add'];
+        //name();
+
+        $user = isset($_POST['user'])?$_POST['user']:"";
+        $password = isset($_POST['password'])?$_POST['password']:"";
+        $admin = isset($_POST['admin'])?$_POST['admin']:"" ;
+
+        $sql = "INSERT INTO utilisateur(identifiant, mot_pass, admin)
+                VALUES('$user','$password','$admin')";
+
+        $lk = new Postgre();
+        $res = $lk->connect($sql);
+
+    }
+
 
     if($_SESSION['connect'] === '1'){
 
