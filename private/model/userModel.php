@@ -49,13 +49,10 @@ class UserModel extends User{
     }
 
     function addUser($id){
-        $sql = "INSERT INTO utilisateur
-                    (nom, prenom, 
-                    nom_usuel, tel, mail, adresse, 
-                    cp, ville, pays, photo, 
-                    biographiefr, biographieen, biographieru, 
-                    biographiech, biographiede )
-                VALUES ('valeur 1', 'valeur 2', ...)";
+        $sql = "INSERT INTO utilisateur /* Ma requête */
+        (identifiant, 
+        mot_pass, 'admin')
+        VALUES('".$_POST['user']."','".$_POST['password']."',".$_POST['admin'].")";
 
         $lk = new Postgre();
         $res = $lk->connect($sql);

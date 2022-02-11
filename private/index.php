@@ -2,6 +2,7 @@
     require_once ('controller/controller.php');
     require_once ('controller/addController.php');
     include_once('class/Expo.php');
+    include_once 'class/DbPostgre.php';
 
     @session_start();
 
@@ -47,6 +48,24 @@
         $res = $lk->connect($sql);
         */
     }
+
+    //Si addUser demandé
+    if(isset($_GET['add'])){
+        $name = $_GET['add'];
+        //name();
+
+        $user = isset($_POST['user'])?$_POST['user']:"";
+        $password = isset($_POST['password'])?$_POST['password']:"";
+        $admin = isset($_POST['admin'])?$_POST['admin']:"" ;
+
+        $sql = "INSERT INTO utilisateur(identifiant, mot_pass, admin)
+                VALUES('$user','$password','$admin')";
+
+        $lk = new Postgre();
+        $res = $lk->connect($sql);
+
+    }
+
 
     if($_SESSION['connect'] === '1'){
 

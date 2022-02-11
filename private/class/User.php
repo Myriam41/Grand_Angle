@@ -22,13 +22,13 @@ class User {
 
     // Setters
     public function setCode($code) {
-        $this-> identifiant = $code;
+        $this-> code = $code;
     }
     public function setIdentifiant($identifiant) {
         $this-> identifiant = $identifiant;
     }
     public function setPass($pass) {
-        $this-> identifiant = $pass;
+        $this-> password = $pass;
     }
     public function setAdmin($admin) {
         $this-> admin = $admin;
