@@ -81,7 +81,16 @@
         }
     }
 
-    if($_SESSION['connect'] === '1'){
+    if(isset($_GET['open'])){
+        require_once ('controller/getController.php');
+        $name = $_GET['open'];
+        $id = $_GET['id'];
+
+        $ret = $name($id);
+        echo($ret);
+    }
+
+    if($_SESSION['connect'] === '1' && !isset($_GET['open'])){
 
         if($page == 'home'){
             home();
@@ -125,7 +134,7 @@
     }
 
         // Si essaie de connexion.
-        else if(isset($_POST['username']) && isset($_POST['password'])){
+        else if(isset($_POST['username'])){
         
             $_SESSION['user'] = htmlspecialChars($_POST['username']); 
             $_SESSION['pass'] = htmlspecialChars($_POST['password']);
@@ -137,7 +146,7 @@
         }
 
         // Si pas connecté vers page de connexion
-        else{
+        else if(!$_SESSION['connect']){
             connect();
         }
 
