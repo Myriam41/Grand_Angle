@@ -22,15 +22,15 @@ class Expo {
 
     // Setters
     public function setCode($code) {
-        $this-> titre = $code;
+        $this-> code = $code;
     }
     public function setTitre($titre) {
         $this-> titre = $titre;
     }
-    public function setDateDebut($date) {
-        $this-> titre = $date;
+    public function setDateDebut($dateDebut) {
+        $this-> date = $dateDebut;
     }
-    public function setDateFin($date) {
-        $this-> titre = $date;
+    public function setDateFin($dateFin) {
+        $this-> titre = $dateFin;
     }
 }

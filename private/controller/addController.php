@@ -11,11 +11,9 @@
     }
 
     function addExpo(){
-
-
         include_once('model/expoModel.php');
-        $expo = new ExpoModel();
-        $expo -> addExpo();
+        $expoM = new ExpoModel();
+        $expoM -> addExpo();
         exposList();
     }
 
