@@ -10,13 +10,13 @@ class User {
     public function getCode() {
         return $this->code;
     }
-    public function getidentifiant() {
+    public function getIdentifiant() {
         return $this->identifiant;
     }
-    public function getpass() {
+    public function getPass() {
         return $this->pass;
     }
-    public function getadmin() {
+    public function getAdmin() {
         return $this->admin;
     }
 
@@ -24,13 +24,13 @@ class User {
     public function setCode($code) {
         $this-> identifiant = $code;
     }
-    public function setidentifiant($identifiant) {
+    public function setIdentifiant($identifiant) {
         $this-> identifiant = $identifiant;
     }
-    public function setpass($pass) {
+    public function setPass($pass) {
         $this-> identifiant = $pass;
     }
-    public function setadmin($admin) {
+    public function setAdmin($admin) {
         $this-> admin = $admin;
     }
 }

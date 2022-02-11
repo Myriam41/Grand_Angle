@@ -28,6 +28,60 @@ $(document).ready( function(){
   // Tableaux
   $('#example').DataTable();
 
+// Gestion des modales
+// Get the modal
+var modalAdd = document.getElementById("modalAdd");
+var modalEdit = document.getElementById("modalEdit");
+var modalView = document.getElementById("modalView");
+
+// Get the button that opens the modal
+var btnAdd = document.getElementById("add");
+var btnEdit = document.getElementById("edit");
+var btnView = document.getElementById("view");
+
+// Get the <span> element that closes the modal
+var spanA = document.getElementById("MAC");
+var spanE = document.getElementById("MEC");
+var spanV= document.getElementById("MVC");
+
+// When the user clicks on the button, open the modal
+btnAdd.onclick = function() {
+  modalAdd.style.display = "block";
+}
+btnEdit.onclick = function() {
+  modalEdit.style.display = "block";
+}
+btnView.onclick = function() {
+  modalView.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+spanA.onclick = function() {
+  modalAdd.style.display = "none";
+}
+spanE.onclick = function() {
+  modalEdit.style.display = "none";
+}
+
+spanV.onclick = function() {
+  modalView.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modalAdd) {
+    modalAdd.style.display = "none";
+  }
+  if (event.target == modalEdit) {
+    modalEdit.style.display = "none";
+  }
+  if (event.target == modalView) {
+    modalView.style.display = "none";
+  }
+}
+
+
+
   // GRAPH
  /*
     const ctx2 = document.getElementById('myChart');
