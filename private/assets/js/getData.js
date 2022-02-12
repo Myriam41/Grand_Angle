@@ -6,8 +6,7 @@ function getAjax(){
     data: data,
 
     success: function(response){
-        let data = JSON.stringify(response);
-        console.log(data);
+        let ret = JSON.stringify(response);
 
         if(action == 'edit'){
           modalEdit.style.display = "block";
@@ -15,10 +14,20 @@ function getAjax(){
         if(action == 'view'){
           modalView.style.display = "block";
         }
-
+        write(ret);
     }
   });
 }
+
+function write(ret){
+  console.log(ret);
+  console.log(data['open']);
+  console.log(ret['titre']);
+  if(data['open'] == 'getExpo'){
+    document.getElementById("titre").value = ret['titre'];
+  }
+}
+
 
 function getArt(elet){
   action = elet.id
@@ -47,7 +56,7 @@ function getExpo(elet){
     'open': 'getExpo',
     'id': id
   };
-    getAjax();
+  getAjax();
 }
 
 function getUser(elet){
