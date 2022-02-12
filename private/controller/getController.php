@@ -1,37 +1,114 @@
 <?php
     @session_start();
-    //Controlle l'appel des données à pour 1 enregistrement
+    $conn = pg_connect('host=localhost port=5432 user=postgres password=PJRV0tel!S:121 dbname=grand_angle3')or die('connection failed');
 
-    if(isset($_GET['open'])){
-        $name = $_GET['open'];
-        $id = $_GET['id'];
-        $name($id);
-        echo $name;
+    //Controlle l'appel des données à pour 1 enregistrement
+    if(isset($_POST['open'])){
+        $name = $_POST['open'];
+        $id = $_POST['id'];
+        $data = $name($id);
+    }
+
+    echo json_encode($data);
+
+    function getExpo($id){
+        global $conn;
+
+        $sql = "SELECT code_expo, titre_expo, date_debut, date_fin, image 
+        FROM exposition
+        WHERE code_expo = $id";
+
+        $ret = pg_query($conn, $sql);
+        $retour =[];
+
+        while($row = pg_fetch_Assoc($ret)){
+            $retour['code'] = isset($row['code_expo'])?$row['code_expo']:'';
+            $retour['titre'] = isset($row['titre_expo'])?$row['titre_expo']:'';
+            $retour['debut'] = isset($row['date_debut'])?$row['date_debut']:'';
+            $retour['fin'] = isset($row['date_fin'])?$row['date_fin']:'';
+          
+        }
+        return $retour;
     }
 
     function getArt($id){
-        include_once('model/ArtModel.php');
-        $art = new ArtModel();
-        $art -> getArtById($id);
-    }
+        global $conn;
 
-    function getExpo($id){
-        include_once('model/expoModel.php');
-        $expoGet = new ExpoModel();
-        $ret = $expoGet -> getExpoById($id);
-        echo $ret;
+        $sql = "SELECT o.code_oeuvre, o.titre_oeuvre, o.date_livraison, a.nom, exposition.titre_expo, exposition.date_debut 
+                FROM oeuvre o
+                LEFT JOIN artiste a ON a.code_artiste = o.code_artiste
+                LEFT JOIN exposer ON exposer.code_oeuvre = o.code_oeuvre
+                LEFT JOIN exposition ON exposition.code_expo = exposer.code_expo
+                WHERE o.code_oeuvre = $id";
+
+        $ret = pg_query($conn, $sql);
+        $retour =[];
+
+        while($row = pg_fetch_Assoc($ret)){
+            $retour['code'] = isset($row['code_oeuvre'])?$row['code_oeuvre']:'';
+            $retour['titre'] = isset($row['titre_oeuvre'])?$row['titre_oeuvre']:'';
+            $retour['livraison'] = isset($row['date_livraison'])?$row['date_livraison']:'';
+            $retour['nom'] = isset($row['nom'])?$row['nom']:'';
+            $retour['titre_expo'] = isset($row['titre_expo'])?$row['titre_expo']:'';
+            $retour['debut'] = isset($row['date_debut'])?$row['date_debut']:'';
+        }
+        return $retour;
     }
 
     function getArtist($id){
-        include_once('model/artistsModel.php');
-        $artist = new ArtistsModel();
-        $artist -> getArtistById($id);
+        global $conn;
+
+        $sql = "SELECT code_artiste, 
+                        nom, prenom, 
+                        nom_usuel, tel, mail, adresse, 
+                        cp, ville, pays, photo, 
+                        biographiefr, biographieen, biographieru, 
+                        biographiech, biographiede 
+                FROM artiste 
+                WHERE code_artiste = $id";
+
+        $ret = pg_query($conn, $sql);
+        $retour =[];
+
+        while($row = pg_fetch_Assoc($ret)){
+            $retour['code'] = isset($row['code_artiste'])?$row['code_artiste']:'';
+            $retour['nom'] = isset($row['nom'])?$row['nom']:'';
+            $retour['prenom'] = isset($row['prenom'])?$row['prenom']:'';
+            $retour['nom_usuel'] = isset($row['nom_usuel'])?$row['nom_usuel']:'';
+            $retour['tel'] = isset($row['tel'])?$row['tel']:'';
+            $retour['mail'] = isset($row['mail'])?$row['mail']:'';
+            $retour['cp'] = isset($row['cp'])?$row['cp']:'';
+            $retour['ville'] = isset($row['ville'])?$row['ville']:'';
+            $retour['pays'] = isset($row['pays'])?$row['pays']:'';
+            $retour['photo'] = isset($row['photo'])?$row['photo']:'';
+            $retour['biographiefr'] = isset($row['biographiefr'])?$row['biographiefr']:'';
+            $retour['biographieen'] = isset($row['biographieen'])?$row['biographieen']:'';
+            $retour['biographieru'] = isset($row['biographieru'])?$row['biographieru']:'';
+            $retour['biographiech'] = isset($row['biographiech'])?$row['biographiech']:'';
+            $retour['biographiede'] = isset($row['biographiede'])?$row['biographiede']:'';
+        }
+        return $retour;
 
     }
 
     function getUser($id){
-        require('model/userModel.php');
-        $user = new UserModel();
-        $user -> getUserById($id);
+        global $conn;
+
+        $sql = "SELECT code_user, identifiant, mot_pass, admin
+                FROM utilisateur
+                WHERE code_user = $id";
+
+        $ret = pg_query($conn, $sql);
+        $retour =[];
+
+        while($row = pg_fetch_Assoc($ret)){
+            $retour['code'] = isset($row['code_user'])?$row['code_user']:'';
+            $retour['identifiant'] = isset($row['identifiant'])?$row['identifiant']:'';
+            $retour['mot_pass'] = isset($row['identifiant'])?$row['identifiant']:'';
+            $retour['admin'] = isset($row['identifiant'])?$row['identifiant']:'';
+          
+        }
+        return $retour;
 
     }
+    

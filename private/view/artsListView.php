@@ -42,10 +42,10 @@
             while( $row = $art->fetch()){ ?>
                 <tr>
                 <td>
-                    <button class="btn_action" id="edit" name="<?= $row['code_oeuvre'] ?>"><i class="fas fa-pencil-alt"></i></button>
+                    <button class="btn_action" id="edit" name="<?= $row['code_oeuvre'] ?>" onclick="getArt(this)"><i class="fas fa-pencil-alt"></i></button>
                 </td>
                 <td>
-                    <button class="btn_action" id="view" name="<?= $row['code_oeuvre'] ?>" onclick="openArt(this)"><i class="fas fa-eye"></i></button>
+                    <button class="btn_action" id="view" name="<?= $row['code_oeuvre'] ?>" onclick="getArt(this)"><i class="fas fa-eye"></i></button>
                     <td><?= $row['titre_oeuvre'] ?></td>
                     <td><?= $row['hauteur'] ?></td>
                     <td><?= $row['epaisseur'] ?></td>

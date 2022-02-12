@@ -85,57 +85,68 @@
         </div>
     </div>
 
-    <!-- Trigger/Open The Modal -->
     <!-- Modal pour modifier enregistrement -->
     <!-- The Modal -->
     <div id="modalEdit" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
-            <span  id="MEC" class="close">&times;</span>
-            <form action='index.php?action=edit&page=expoList' method="POST">
-                <div class="form-group">
-                    <label for="titre">Titre</label>
-                    <input type="text" id="titre" class="form-control" value= "<?= isset($expoGet)?$expoGet->getTitre():'';?>" placeholder="titre de l'exposition">
+            <span id="MEC" class="close">&times;</span>
+            <form class="form-group" action='index.php?action=edit&page=expoList' method="post">
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="title">Titre</label>
+                        <input type="text" id="title" name="title" class="form-control" placeholder="Titre">
+                        <div class="row">
+                            <div class="col">
+                                <label for="debut">Debut</label>
+                                <input type="date" id="debut" name="debut" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label for="fin">Fin</label>
+                                <input type="date" id="fin" name="fin" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label class="form-label" for="image">Image</label>
+                                <input type="file" class="form-control" id="image" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
                 <div class="form-group">
-                    <label for="debut">Date de début</label>
-                    <input type="date" id="debut" class="form-control"  value= "<?= isset($expoGet)?$expoGet->getDateDebut():''; ?>">
-                    <label for="fin">Date de Fin</label>
-                    <input type="date" id="fin" class="form-control"  value= "<?= isset($expoGet)?$expoGet->getDateFin():''; ?>">
-                    <button type='boutton' class='btn_action'>
-                        <i class="fas fa-plus"></i>
-                        Ajouter une image
-                    </button>
-                    <button type="button" class="btn btn-primary">Annuler</button>
                     <button type="submit" class="btn btn-primary">Enregistrer</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <!-- Trigger/Open The Modal -->
-    <!-- Modal pour visualiser enregistrement -->
 
+    <!-- Modal pour visualiser enregistrement -->
     <!-- The Modal -->
     <div id="modalView" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
             <span  id="MVC" class="close">&times;</span>
-            <form action='index.php?action=view&page=expoList' method="POST">
-                <div class="form-group">
-                    <label for="titre">Titre</label>
-                    <input type="text" id="titre" class="form-control" placeholder="titre de l'exposition">
-                </div>
-                <div class="form-group">
-                    <label for="debut">Date de début</label>
-                    <input type="date" id="debut" class="form-control" placeholder="00/00/0000">
-                    <label for="fin">Date de Fin</label>
-                    <input type="date" id="fin" class="form-control" placeholder="00/00/0000">
-                    <button type='boutton' class='btn_action'>
-                        <i class="fas fa-plus"></i>
-                        Ajouter une image
-                    </button>
-                    <button type="submit" class="btn btn-primary">Fermer</button>
+            <form class="form-group" action='index.php?action=edit&page=expoList' method="post">
+                <div class="form-group row">
+                    <div class="col">
+                        <label for="title">Titre</label>
+                        <input type="text" id="title" name="title" class="form-control" placeholder="Titre">
+                        <div class="row">
+                            <div class="col">
+                                <label for="debut">Debut</label>
+                                <input type="date" id="debut" name="debut" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label for="fin">Fin</label>
+                                <input type="date" id="fin" name="fin" class="form-control">
+                            </div>
+                            <div class="col">
+                                <label class="form-label" for="image">Image</label>
+                                <input type="file" class="form-control" id="image" />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>

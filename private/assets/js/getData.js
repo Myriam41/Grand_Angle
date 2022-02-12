@@ -1,40 +1,70 @@
-// pour permettre l'ouverture de la modale, 
-// la récupération des données doit se réaliser 
-// sans rafraichissement de la page
+function getAjax(){
+  $.ajax({
+    url: 'controller/getController.php',
+    method: "POST",
+    dataType : "json",
+    data: data,
 
-  function getArt(){
- 
-  }
-  
-  function getArtist(){
- 
-  }
-  
-  function getExpo(elet){
-    id = elet.name;
-    alert(id);
+    success: function(response){
+        let ret = JSON.stringify(response);
 
-    $.ajax({
-      url: 'controller/getController.php',
-      data: {
-            open: getExpo,
-            id: id
-      },
-      success: function(ret){
-          try {
-              JSON.parse(ret);
-          }
-          catch (error) {
-              console.log('Error parsing JSON:', error, data);
-          }
-          var data = jQuery.parseJSON(ret);
-          alert(data);
-      }
-
+        if(action == 'edit'){
+          modalEdit.style.display = "block";
+        }
+        if(action == 'view'){
+          modalView.style.display = "block";
+        }
+        write(ret);
+    }
   });
-  }
-  
-  function getUser(elet){
-    var idUser = elet.id;
+}
 
+function write(ret){
+  console.log(ret);
+  console.log(data['open']);
+  console.log(ret['titre']);
+  if(data['open'] == 'getExpo'){
+    document.getElementById("titre").value = ret['titre'];
   }
+}
+
+
+function getArt(elet){
+  action = elet.id
+  id = elet.name;
+  data = {
+    'open': 'getArt',
+    'id': id
+  };
+    getAjax();
+}
+
+function getArtist(elet){
+  action = elet.id
+  id = elet.name;
+  data = {
+    'open': 'getArtist',
+    'id': id
+  };
+    getAjax();
+}
+
+function getExpo(elet){
+  action = elet.id
+  id = elet.name;
+  data = {
+    'open': 'getExpo',
+    'id': id
+  };
+  getAjax();
+}
+
+function getUser(elet){
+  action = elet.id
+  id = elet.name;
+  data = {
+    'open': 'getUser',
+    'id': id
+  };
+    getAjax();
+}
