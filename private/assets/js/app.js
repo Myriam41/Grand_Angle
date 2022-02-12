@@ -48,9 +48,11 @@ var spanV= document.getElementById("MVC");
 btnAdd.onclick = function() {
   modalAdd.style.display = "block";
 }
+/*
 btnEdit.onclick = function() {
   modalEdit.style.display = "block";
 }
+*/
 btnView.onclick = function() {
   modalView.style.display = "block";
 }

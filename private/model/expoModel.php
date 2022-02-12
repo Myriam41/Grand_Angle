@@ -17,6 +17,7 @@ class ExpoModel extends Expo{
     }
 
     function getExpoById($id){
+
         $sql = "SELECT code_expo, titre_expo, date_debut, date_fin, image 
                 FROM exposition
                 WHERE code_expo = $id";
