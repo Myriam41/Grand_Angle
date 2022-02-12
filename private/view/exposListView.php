@@ -85,7 +85,6 @@
         </div>
     </div>
 
-    <!-- Trigger/Open The Modal -->
     <!-- Modal pour modifier enregistrement -->
     <!-- The Modal -->
     <div id="modalEdit" class="modal">

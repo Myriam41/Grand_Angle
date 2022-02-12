@@ -35,12 +35,12 @@
             while( $row = $artists->fetch()){ ?>
                 <tr>
                     <td>
-                    <button class="btn_action" id="edit" name="<?= $row['code_artiste'] ?>">
+                    <button class="btn_action" id="edit" name="<?= $row['code_artiste'] ?>" onclick="getArtist(this)">
                         <i class="fas fa-pencil-alt"></i>
                     </button>
                     </td>
                     <td>
-                        <button class="btn_action" id="view" name="<?= $row['code_artiste'] ?>" onclick="openArtist(this)">
+                        <button class="btn_action" id="view" name="<?= $row['code_artiste'] ?>" onclick="getArtist(this)">
                         <i class="fas fa-eye"></i>
                         </button>
                     </td>

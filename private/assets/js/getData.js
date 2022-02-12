@@ -20,7 +20,7 @@ function getAjax(){
   });
 }
 
-function getArt(){
+function getArt(elet){
   action = elet.id
   id = elet.name;
   data = {
@@ -30,7 +30,8 @@ function getArt(){
     getAjax();
 }
 
-function getArtist(){
+function getArtist(elet){
+  action = elet.id
   id = elet.name;
   data = {
     'open': 'getArtist',
@@ -50,6 +51,7 @@ function getExpo(elet){
 }
 
 function getUser(elet){
+  action = elet.id
   id = elet.name;
   data = {
     'open': 'getUser',
