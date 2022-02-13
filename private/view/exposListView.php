@@ -91,11 +91,11 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span id="MEC" class="close">&times;</span>
-            <form class="form-group" action='index.php?action=edit&page=expoList' method="post">
+            <form class="form-group" action='index.php?edit=editExpo&page=expoList' method="post">
                 <div class="form-group row">
                     <div class="col">
                         <label for="title">Titre</label>
-                        <input type="text" id="title" name="title" class="form-control" placeholder="Titre">
+                        <input type="text" id="title1" name="title" class="form-control" placeholder="Titre">
                         <div class="row">
                             <div class="col">
                                 <label for="debut">Debut</label>
@@ -127,19 +127,19 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span  id="MVC" class="close">&times;</span>
-            <form class="form-group" action='index.php?action=edit&page=expoList' method="post">
+            <form class="form-group" action='index.php?view=viewExpo&page=expoList' method="post">
                 <div class="form-group row">
                     <div class="col">
                         <label for="title">Titre</label>
-                        <input type="text" id="title" name="title" class="form-control" placeholder="Titre">
+                        <input type="text" id="title2" name="title" class="form-control" placeholder="Titre">
                         <div class="row">
                             <div class="col">
                                 <label for="debut">Debut</label>
-                                <input type="date" id="debut" name="debut" class="form-control">
+                                <input type="date" id="debut2" name="debut" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="fin">Fin</label>
-                                <input type="date" id="fin" name="fin" class="form-control">
+                                <input type="date" id="fin2" name="fin" class="form-control">
                             </div>
                             <div class="col">
                                 <label class="form-label" for="image">Image</label>
