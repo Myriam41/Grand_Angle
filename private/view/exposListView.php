@@ -99,11 +99,11 @@
                         <div class="row">
                             <div class="col">
                                 <label for="debut">Debut</label>
-                                <input type="date" id="debut" name="debut" class="form-control">
+                                <input type="date" id="debut1" name="debut" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="fin">Fin</label>
-                                <input type="date" id="fin" name="fin" class="form-control">
+                                <input type="date" id="fin1" name="fin" class="form-control">
                             </div>
                             <div class="col">
                                 <label class="form-label" for="image">Image</label>

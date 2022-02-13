@@ -6,7 +6,7 @@ function getAjax(){
     data: data,
 
     success: function(response){
-        let ret = JSON.stringify(response);
+        let ret = response;
 
         if(action == 'edit'){
           modalEdit.style.display = "block";
@@ -24,7 +24,10 @@ function write(ret){
   console.log(data['open']);
   console.log(ret['titre']);
   if(data['open'] == 'getExpo'){
-    document.getElementById("titre").value = ret['titre'];
+
+    document.getElementById("title").value = ret['titre'];
+    document.getElementById("debut1").value = ret['debut'];
+    document.getElementById("fin").value = ret['fin'];
   }
 }
 
