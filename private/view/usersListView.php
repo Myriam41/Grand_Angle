@@ -36,12 +36,12 @@
          while( $row = $user->fetch()){ ?>
             <tr>
                 <td>
-                    <button class="btn_action" id="edit" name="<?= $row['code_user'] ?>">
+                    <button class="btn_action" id="edit" name="<?= $row['code_user'] ?>" onclick="editUser(this)">
                     <i class="fas fa-pencil-alt"></i>
                   </button>
                 </td>
                 <td>
-                  <button class="btn_action" id="view" name="<?= $row['code_user'] ?>" onclick="openUser(this)">
+                  <button class="btn_action" id="view" name="<?= $row['code_user'] ?>" onclick="getUser(this)">
                   <i class="fas fa-eye"></i>
                 </button>
                 </td>
@@ -49,7 +49,7 @@
                 <td><?= $row['mot_pass'] ?></td>
                 <td><?= $row['admin'] ?></td>
                 <td>
-                    <button class="btn_sup"><i class="fas fa-trash-alt" name="<?= $row['code_user'] ?>" id="del"></i></button>
+                    <button class="btn_sup"><i class="fas fa-trash-alt" onclick="delUser(this)" name="<?= $row['code_user'] ?>" id="del"></i></button>
                 </td>
             </tr>
     <?php } ?>

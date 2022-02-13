@@ -51,7 +51,7 @@
                     <td><?= $row['mail'] ?></td>
                     <td><?= $row['photo'] ?></td>
                     <td>
-                        <button class="btn_sup" name="<?= $row['code_artiste'] ?>" id="del"><i class="fas fa-trash-alt"></i></button>
+                        <button class="btn_sup" name="<?= $row['code_artiste'] ?>" onclick="delArtist(this)" id="del"><i class="fas fa-trash-alt"></i></button>
                     </td>
                 </tr>
     <?php   } ?>
