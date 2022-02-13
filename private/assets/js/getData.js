@@ -20,14 +20,20 @@ function getAjax(){
 }
 
 function write(ret){
-  console.log(ret);
-  console.log(data['open']);
-  console.log(ret['titre']);
+  var n = '';
+   if(action == 'edit'){
+    n = 1;
+   }
+   if(action == 'view'){
+    n = 2;
+   }
+   
   if(data['open'] == 'getExpo'){
 
-    document.getElementById("title").value = ret['titre'];
-    document.getElementById("debut1").value = ret['debut'];
-    document.getElementById("fin").value = ret['fin'];
+    document.getElementById("title" + n).value = ret['titre'];
+    document.getElementById("debut" + n).value = ret['debut'];
+    document.getElementById("fin" + n).value = ret['fin'];
+
   }
 }
 

@@ -45,39 +45,56 @@
         if($name == 'addUser'){
             include_once ('model/userModel.php');
 
-            $expoM = new UserModel();
-    
-            $expoM->setTitre(isset($_POST['titre'])?$_POST['titre']:"");
-            $expoM->setDateDebut(isset($_POST['debut'])?$_POST['debut']:"");
-            $expoM->setDateFin(isset($_POST['fin'])?$_POST['fin']:"");
-            //$image = isset($_POST['image'])?$_POST['image']:"";
-            $expoM->$name();
+
 
         }
 
         if($name == 'addArt'){
             include_once ('model/artModel.php');
 
-            $expoM = new UserModel();
-    
-            $expoM->setTitre(isset($_POST['titre'])?$_POST['titre']:"");
-            $expoM->setDateDebut(isset($_POST['debut'])?$_POST['debut']:"");
-            $expoM->setDateFin(isset($_POST['fin'])?$_POST['fin']:"");
-            //$image = isset($_POST['image'])?$_POST['image']:"";
-            $expoM->$name();
+
 
         }
 
         if($name == 'addArtist'){
             include_once ('model/artistsModel.php');
 
-            $expoM = new UserModel();
+
+
+        }
+    }
+
+    // Si add demandé
+    if(isset($_GET['edit'])){
+        $name = $_GET['edit'];
+
+        if($name == 'editExpo'){
+            include_once ('model/expoModel.php');
+
+            $expoM = new ExpoModel();
     
             $expoM->setTitre(isset($_POST['titre'])?$_POST['titre']:"");
             $expoM->setDateDebut(isset($_POST['debut'])?$_POST['debut']:"");
             $expoM->setDateFin(isset($_POST['fin'])?$_POST['fin']:"");
             //$image = isset($_POST['image'])?$_POST['image']:"";
             $expoM->$name();
+        }
+
+        if($name == 'editUser'){
+            include_once ('model/userModel.php');
+
+
+        }
+
+        if($name == 'editArt'){
+            include_once ('model/artModel.php');
+
+
+        }
+
+        if($name == 'editArtist'){
+            include_once ('model/artistsModel.php');
+
 
         }
     }
