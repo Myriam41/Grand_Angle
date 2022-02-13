@@ -64,7 +64,7 @@
         }
     }
 
-    // Si add demandé
+    // Si edit demandé
     if(isset($_GET['edit'])){
         $name = $_GET['edit'];
 
@@ -72,10 +72,10 @@
             include_once ('model/expoModel.php');
 
             $expoM = new ExpoModel();
-    
-            $expoM->setTitre(isset($_POST['titre'])?$_POST['titre']:"");
-            $expoM->setDateDebut(isset($_POST['debut'])?$_POST['debut']:"");
-            $expoM->setDateFin(isset($_POST['fin'])?$_POST['fin']:"");
+            $expoM->setTitre(isset($_POST['code1'])?$_POST['code1']:"");
+            $expoM->setTitre(isset($_POST['title1'])?$_POST['title1']:"");
+            $expoM->setDateDebut(isset($_POST['debut1'])?$_POST['debut1']:"");
+            $expoM->setDateFin(isset($_POST['fin1'])?$_POST['fin1']:"");
             //$image = isset($_POST['image'])?$_POST['image']:"";
             $expoM->$name();
         }

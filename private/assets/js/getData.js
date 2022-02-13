@@ -29,7 +29,7 @@ function write(ret){
    }
    
   if(data['open'] == 'getExpo'){
-
+    document.getElementById("code" + n).value = ret['code'];
     document.getElementById("title" + n).value = ret['titre'];
     document.getElementById("debut" + n).value = ret['debut'];
     document.getElementById("fin" + n).value = ret['fin'];

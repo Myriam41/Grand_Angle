@@ -110,6 +110,15 @@ String.prototype.toDate = function(format)
   return new Date(year,month,day,hour,minute,second);
 };
 
+// Envois du formulaire edit
+function envoiForm(){
+  url = document.formEdit.action;
+  id = getElementById('code1');
+	document.formEdit.action = url + id;
+	document.formEdit.submit();
+} 
+
+
 
   // GRAPH
  /*

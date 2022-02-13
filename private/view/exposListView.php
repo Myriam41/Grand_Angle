@@ -91,11 +91,12 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span id="MEC" class="close">&times;</span>
-            <form class="form-group" action='index.php?edit=editExpo&page=expoList' method="post">
+            <form id ="formEdit" class="form-group" action='index.php?edit=editExpo&page=expoList&id=' method="post">
                 <div class="form-group row">
                     <div class="col">
                         <label for="title">Titre</label>
                         <input type="text" id="title1" name="title" class="form-control" placeholder="Titre">
+                        <input id="code1" hidden>
                         <div class="row">
                             <div class="col">
                                 <label for="debut">Debut</label>
@@ -114,7 +115,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    <button type="button" class="btn btn-primary" onclick="envoiForm()">Enregistrer</button>
                 </div>
             </form>
         </div>
@@ -132,6 +133,7 @@
                     <div class="col">
                         <label for="title">Titre</label>
                         <input type="text" id="title2" name="title" class="form-control" placeholder="Titre">
+                        <input id="code2" hidden>
                         <div class="row">
                             <div class="col">
                                 <label for="debut">Debut</label>
