@@ -11,6 +11,7 @@
 
     echo json_encode($data);
 
+
     function getExpo($id){
         global $conn;
 
@@ -42,6 +43,8 @@
                 WHERE o.code_oeuvre = $id";
 
         $ret = pg_query($conn, $sql);
+
+        /*
         $retour =[];
 
         while($row = pg_fetch_Assoc($ret)){
@@ -53,6 +56,7 @@
             $retour['debut'] = isset($row['date_debut'])?$row['date_debut']:'';
         }
         return $retour;
+        */
     }
 
     function getArtist($id){
