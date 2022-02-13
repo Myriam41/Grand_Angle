@@ -23,7 +23,6 @@ function delArtist(elet){
 
 function delExpo(elet){
   var idExpo = elet.name;
-  alert (idExpo);
   if(delConfirm()){
     location = 'index.php?delete=delExpo&page=exposList&id='+idExpo;
   }

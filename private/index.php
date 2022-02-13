@@ -67,17 +67,19 @@
     // Si edit demandé
     if(isset($_GET['edit'])){
         $name = $_GET['edit'];
+        $id = $_GET['id'];
 
         if($name == 'editExpo'){
             include_once ('model/expoModel.php');
 
             $expoM = new ExpoModel();
-            $expoM->setTitre(isset($_POST['code1'])?$_POST['code1']:"");
+            $expoM->setCode(isset($_POST['code1'])?$_POST['code1']:"");
             $expoM->setTitre(isset($_POST['title1'])?$_POST['title1']:"");
             $expoM->setDateDebut(isset($_POST['debut1'])?$_POST['debut1']:"");
             $expoM->setDateFin(isset($_POST['fin1'])?$_POST['fin1']:"");
             //$image = isset($_POST['image'])?$_POST['image']:"";
-            $expoM->$name();
+            $expoM->$name($id);
+            exposList();
         }
 
         if($name == 'editUser'){

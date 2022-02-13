@@ -91,20 +91,20 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span id="MEC" class="close">&times;</span>
-            <form id ="formEdit" class="form-group" action='index.php?edit=editExpo&page=expoList&id=' method="post">
+            <form name ="formEdit" class="form-group" action='index.php?edit=editExpo&page=expoList&id=' method="post">
                 <div class="form-group row">
                     <div class="col">
-                        <label for="title">Titre</label>
-                        <input type="text" id="title1" name="title" class="form-control" placeholder="Titre">
-                        <input id="code1" hidden>
+                        <label for="title1">Titre</label>
+                        <input type="text" id="title1" name="title1" class="form-control" placeholder="Titre">
+                        <input id="code1" name = "code1" hidden>
                         <div class="row">
                             <div class="col">
-                                <label for="debut">Debut</label>
-                                <input type="date" id="debut1" name="debut" class="form-control">
+                                <label for="debut1">Debut</label>
+                                <input type="date" id="debut1" name="debut1" class="form-control">
                             </div>
                             <div class="col">
-                                <label for="fin">Fin</label>
-                                <input type="date" id="fin1" name="fin" class="form-control">
+                                <label for="fin1">Fin</label>
+                                <input type="date" id="fin1" name="fin1" class="form-control">
                             </div>
                             <div class="col">
                                 <label class="form-label" for="image">Image</label>
@@ -115,7 +115,7 @@
                 </div>
 
                 <div class="form-group">
-                    <button type="button" class="btn btn-primary" onclick="envoiForm()">Enregistrer</button>
+                    <button type="button" name="envoi" class="btn btn-primary" onclick="envoiForm()">Enregistrer</button>
                 </div>
             </form>
         </div>
@@ -131,17 +131,17 @@
             <form class="form-group" action='index.php?view=viewExpo&page=expoList' method="post">
                 <div class="form-group row">
                     <div class="col">
-                        <label for="title">Titre</label>
-                        <input type="text" id="title2" name="title" class="form-control" placeholder="Titre">
-                        <input id="code2" hidden>
+                        <label for="title2">Titre</label>
+                        <input type="text" id="title2" name="title2" class="form-control" placeholder="Titre">
+                        <input id="code2" name="code" hidden>
                         <div class="row">
                             <div class="col">
                                 <label for="debut">Debut</label>
-                                <input type="date" id="debut2" name="debut" class="form-control">
+                                <input type="date" id="debut2" name="debut2" class="form-control">
                             </div>
                             <div class="col">
                                 <label for="fin">Fin</label>
-                                <input type="date" id="fin2" name="fin" class="form-control">
+                                <input type="date" id="fin2" name="fin2" class="form-control">
                             </div>
                             <div class="col">
                                 <label class="form-label" for="image">Image</label>

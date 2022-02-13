@@ -28,95 +28,89 @@ $(document).ready( function(){
   // Tableaux
   $('#example').DataTable();
 
-// Gestion des modales
-// Get the modal
-var modalAdd = document.getElementById("modalAdd");
-var modalEdit = document.getElementById("modalEdit");
-var modalView = document.getElementById("modalView");
+  // Gestion des modales
+  // Get the modal
+  var modalAdd = document.getElementById("modalAdd");
+  var modalEdit = document.getElementById("modalEdit");
+  var modalView = document.getElementById("modalView");
 
-// Get the button that opens the modal
-var btnAdd = document.getElementById("add");
-var btnEdit = document.getElementById("edit");
-var btnView = document.getElementById("view");
+  // Get the button that opens the modal
+  var btnAdd = document.getElementById("add");
+  var btnEdit = document.getElementById("edit");
+  var btnView = document.getElementById("view");
 
-// Get the <span> element that closes the modal
-var spanA = document.getElementById("MAC");
-var spanE = document.getElementById("MEC");
-var spanV= document.getElementById("MVC");
+  // Get the <span> element that closes the modal
+  var spanA = document.getElementById("MAC");
+  var spanE = document.getElementById("MEC");
+  var spanV= document.getElementById("MVC");
 
-// When the user clicks on the button, open the modal
-btnAdd.onclick = function() {
-  modalAdd.style.display = "block";
-}
-/*
-btnEdit.onclick = function() {
-  modalEdit.style.display = "block";
-}
-*/
-btnView.onclick = function() {
-  modalView.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-spanA.onclick = function() {
-  modalAdd.style.display = "none";
-  console.log(spanA);
-}
-spanE.onclick = function() {
-  modalEdit.style.display = "none";
-}
-spanV.onclick = function() {
-  modalView.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modalAdd) {
-    modalAdd.style.display = "none";
+  // When the user clicks on the button, open the modal
+  btnAdd.onclick = function() {
+    modalAdd.style.display = "block";
   }
-  if (event.target == modalEdit) {
+  /*
+  btnEdit.onclick = function() {
+    modalEdit.style.display = "block";
+  }
+  */
+  btnView.onclick = function() {
+    modalView.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  spanA.onclick = function() {
+    modalAdd.style.display = "none";
+    console.log(spanA);
+  }
+  spanE.onclick = function() {
     modalEdit.style.display = "none";
   }
-  if (event.target == modalView) {
+  spanV.onclick = function() {
     modalView.style.display = "none";
   }
-}
 
-//Gestion des dates
-String.prototype.toDate = function(format)
-{
-  var normalized      = this.replace(/[^a-zA-Z0-9]/g, '-');
-  var normalizedFormat= format.toLowerCase().replace(/[^a-zA-Z0-9]/g, '-');
-  var formatItems     = normalizedFormat.split('-');
-  var dateItems       = normalized.split('-');
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modalAdd) {
+      modalAdd.style.display = "none";
+    }
+    if (event.target == modalEdit) {
+      modalEdit.style.display = "none";
+    }
+    if (event.target == modalView) {
+      modalView.style.display = "none";
+    }
+  }
 
-  var monthIndex  = formatItems.indexOf("mm");
-  var dayIndex    = formatItems.indexOf("dd");
-  var yearIndex   = formatItems.indexOf("yyyy");
-  var hourIndex     = formatItems.indexOf("hh");
-  var minutesIndex  = formatItems.indexOf("ii");
-  var secondsIndex  = formatItems.indexOf("ss");
+  //Gestion des dates
+  String.prototype.toDate = function(format)
+  {
+    var normalized      = this.replace(/[^a-zA-Z0-9]/g, '-');
+    var normalizedFormat= format.toLowerCase().replace(/[^a-zA-Z0-9]/g, '-');
+    var formatItems     = normalizedFormat.split('-');
+    var dateItems       = normalized.split('-');
 
-  var today = new Date();
+    var monthIndex  = formatItems.indexOf("mm");
+    var dayIndex    = formatItems.indexOf("dd");
+    var yearIndex   = formatItems.indexOf("yyyy");
+    var hourIndex     = formatItems.indexOf("hh");
+    var minutesIndex  = formatItems.indexOf("ii");
+    var secondsIndex  = formatItems.indexOf("ss");
 
-  var year  = yearIndex>-1  ? dateItems[yearIndex]    : today.getFullYear();
-  var month = monthIndex>-1 ? dateItems[monthIndex]-1 : today.getMonth()-1;
-  var day   = dayIndex>-1   ? dateItems[dayIndex]     : today.getDate();
+    var today = new Date();
 
-  var hour    = hourIndex>-1      ? dateItems[hourIndex]    : today.getHours();
-  var minute  = minutesIndex>-1   ? dateItems[minutesIndex] : today.getMinutes();
-  var second  = secondsIndex>-1   ? dateItems[secondsIndex] : today.getSeconds();
+    var year  = yearIndex>-1  ? dateItems[yearIndex]    : today.getFullYear();
+    var month = monthIndex>-1 ? dateItems[monthIndex]-1 : today.getMonth()-1;
+    var day   = dayIndex>-1   ? dateItems[dayIndex]     : today.getDate();
 
-  return new Date(year,month,day,hour,minute,second);
-};
+    var hour    = hourIndex>-1      ? dateItems[hourIndex]    : today.getHours();
+    var minute  = minutesIndex>-1   ? dateItems[minutesIndex] : today.getMinutes();
+    var second  = secondsIndex>-1   ? dateItems[secondsIndex] : today.getSeconds();
 
-// Envois du formulaire edit
-function envoiForm(){
-  url = document.formEdit.action;
-  id = getElementById('code1');
-	document.formEdit.action = url + id;
-	document.formEdit.submit();
-} 
+    return new Date(year,month,day,hour,minute,second);
+  };
+
+
 
 
 
@@ -149,5 +143,15 @@ function envoiForm(){
     });
 */
 });
+
+  // Envoi du formulaire edit
+  function envoiForm(){
+    url = document.formEdit.action;
+    console.log(url);
+    code = document.getElementById('code1');
+    alert(code.value);
+    document.formEdit.action = url + code.value;
+    document.formEdit.submit();
+  } 
 
 

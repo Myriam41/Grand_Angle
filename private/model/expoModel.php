@@ -68,10 +68,17 @@ class ExpoModel extends Expo{
         $res = $lk->connect($sql);
     }
 
-    function editExpo($id){
+    function editExpo(){
+        $titre = $this->getTitre();
+        $debut = $this->getDateDebut();
+        $fin = $this->getDateFin();
+        $id = $this->getCode();
+
         $sql = "UPDATE exposition
-                SET nom_colonne_1 = 'nouvelle valeur'
-                WHERE code_artiste = $id";
+                SET titre_expo = '$titre',
+                    date_debut = '$debut',
+                    date_fin = '$fin'
+                WHERE code_expo = '$id'";
 
         $lk = new Postgre();
         $res = $lk->connect($sql);
