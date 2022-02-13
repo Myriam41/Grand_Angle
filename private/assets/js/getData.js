@@ -26,6 +26,8 @@ function write(ret){
   if(data['open'] == 'getExpo'){
 
     document.getElementById("title").value = ret['titre'];
+    document.getElementById("debut1").value = ret['debut'];
+    document.getElementById("fin").value = ret['fin'];
   }
 }
 

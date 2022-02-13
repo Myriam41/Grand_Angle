@@ -25,8 +25,8 @@
         while($row = pg_fetch_Assoc($ret)){
             $retour['code'] = isset($row['code_expo'])?$row['code_expo']:'';
             $retour['titre'] = isset($row['titre_expo'])?$row['titre_expo']:'';
-            $retour['debut'] = isset($row['date_debut'])?$row['date_debut']:'';
-            $retour['fin'] = isset($row['date_fin'])?$row['date_fin']:'';
+            $retour['debut'] = isset($row['date_debut'])?date($row['date_debut']):'';
+            $retour['fin'] = isset($row['date_fin'])?date($row['date_fin']):'';
           
         }
         return $retour;
