@@ -50,7 +50,6 @@
 
             $userM->setIdentifiant(isset($_POST['user'])?$_POST['user']:"");
             $userM->setPass(isset($_POST['password'])?$_POST['password']:"");
-            echo $_POST['password'];
             $userM->setAdmin(isset($_POST['admin'])?$_POST['admin']:'');
 
             $userM->$name();
@@ -61,7 +60,22 @@
         if($name == 'addArt'){
             include_once ('model/artModel.php');
 
+            $artM = new ArtModel();
 
+            $artM->setTitre(isset($_POST['title'])?$_POST['title']:"");
+            $artM->setHauteur(isset($_POST['height'])?$_POST['height']:"");
+            $artM->setLargeur(isset($_POST['width'])?$_POST['width']:"");
+            $artM->setEpaisseur(isset($_POST['epaisseur'])?$_POST['epaisseur']:"");
+            $artM->setCodeType(isset($_POST['typeArt'])?$_POST['typeArt']:"");
+            $artM->setCodeArtiste(isset($_POST['artist'])?$_POST['artist']:"");
+            $artM->setDescriptionFR(isset($_POST['desc'])?$_POST['desc']:"");
+            $artM->setDescriptionEN(isset($_POST['desc'])?$_POST['desc']:"");
+            $artM->setDescriptionCH(isset($_POST['desc'])?$_POST['desc']:"");
+            $artM->setDescriptionRU(isset($_POST['desc'])?$_POST['desc']:"");
+            $artM->setDescriptionDE(isset($_POST['desc'])?$_POST['desc']:"");
+
+            $artM->$name();
+            artsList();
 
         }
 
