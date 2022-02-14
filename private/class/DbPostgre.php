@@ -4,7 +4,7 @@ include_once 'Dbconfig.php';
 
 class Postgre extends DbConfig {
 
-    public function connect($sql){
+    static function connect($sql){
         $dbParam = new DbConfig();
         $dbParam->dbPostgre();
         $conn = new PDO("pgsql:host=$dbParam->serverName;dbname=$dbParam->dbName", $dbParam->userName, $dbParam->pass);

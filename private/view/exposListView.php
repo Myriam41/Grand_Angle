@@ -70,10 +70,10 @@
                 </div>
                 <div class="form-group">
                     <label for="debut">Date de début</label>
-                    <input type="date" id="debut" name="debut" class="form-control" placeholder="AAAA-MM-JJ">
+                    <input type="date" id="debut" name="debut" class="form-control">
 
                     <label for="fin">Date de Fin</label>
-                    <input type="date" id="fin" name="fin" class="form-control" placeholder="AAAA-MM-JJ">
+                    <input type="date" id="fin" name="fin" class="form-control">
 
                     <label class="form-label" for="image">Image</label>
                     <input type="file" class="form-control" id="image" />
