@@ -29,9 +29,12 @@ function delExpo(elet){
 }
 
 function delUser(elet){
+  console.log(elet);
   var idUser = elet.name;
+  console.log(elet.name);
+
   if(delConfirm()){
-    location = 'index.php?delete=delUser&usersList&id='+idUser;
+    location = 'index.php?delete=delUser&page=usersList&id='+ idUser;
   }
 }
 

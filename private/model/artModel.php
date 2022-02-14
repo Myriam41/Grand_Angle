@@ -82,16 +82,16 @@ class ArtModel extends Art{
     }
 
     function addArt($id){
-        $sql = "INSERT INTO oeuvre
-                    (nom, prenom, 
-                    nom_usuel, tel, mail, adresse, 
-                    cp, ville, pays, photo, 
-                    biographiefr, biographieen, biographieru, 
-                    biographiech, biographiede )
-                VALUES ('valeur 1', 'valeur 2', ...)";
+        // $sql = "INSERT INTO oeuvre
+        //             (nom, prenom, 
+        //             nom_usuel, tel, mail, adresse, 
+        //             cp, ville, pays, photo, 
+        //             biographiefr, biographieen, biographieru, 
+        //             biographiech, biographiede )
+        //         VALUES ('valeur 1', 'valeur 2', ...)";
 
-        $lk = new Postgre();
-        $res = $lk->connect($sql);
+        // $lk = new Postgre();
+        // $res = $lk->connect($sql);
     }
     function editArt($id){
         $sql = "UPDATE oeuvre

@@ -33,19 +33,19 @@
         if($name == 'addExpo'){
             include_once ('model/expoModel.php');
 
-            $expoMA = new ExpoModel();
+            $expoM = new ExpoModel();
     
-            $expoMA->setTitre(isset($_POST['titre'])?$_POST['titre']:"");
-            $expoMA->setDateDebut(isset($_POST['debut'])?$_POST['debut']:"");
-            $expoMA->setDateFin(isset($_POST['fin'])?$_POST['fin']:"");
+            $expoM->setTitre(isset($_POST['titre'])?$_POST['titre']:"");
+            $expoM->setDateDebut(isset($_POST['debut'])?$_POST['debut']:"");
+            $expoM->setDateFin(isset($_POST['fin'])?$_POST['fin']:"");
             //$image = isset($_POST['image'])?$_POST['image']:"";
-            $expoMA->$name();
+            $expoM->$name();
             exposList();
         }
 
         if($name == 'addUser'){
             include_once ('model/userModel.php');
-
+            usersList();
 
 
         }
