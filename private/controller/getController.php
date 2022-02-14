@@ -1,6 +1,6 @@
 <?php
     @session_start();
-    $conn = pg_connect('host=localhost port=5432 user=postgres password=PJRV0tel!S:121 dbname=grand_angle3')or die('connection failed');
+    $conn = pg_connect('host=localhost port=5432 user=postgres password=mathieu dbname=Grand_Angle')or die('connection failed');
 
     //Controlle l'appel des données à pour 1 enregistrement
     if(isset($_POST['open'])){
@@ -78,6 +78,7 @@
             $retour['nom_usuel'] = isset($row['nom_usuel'])?$row['nom_usuel']:'';
             $retour['tel'] = isset($row['tel'])?$row['tel']:'';
             $retour['mail'] = isset($row['mail'])?$row['mail']:'';
+            $retour['adresse'] = isset($row['adresse'])?$row['adresse']:'';
             $retour['cp'] = isset($row['cp'])?$row['cp']:'';
             $retour['ville'] = isset($row['ville'])?$row['ville']:'';
             $retour['pays'] = isset($row['pays'])?$row['pays']:'';
@@ -105,8 +106,8 @@
         while($row = pg_fetch_Assoc($ret)){
             $retour['code'] = isset($row['code_user'])?$row['code_user']:'';
             $retour['identifiant'] = isset($row['identifiant'])?$row['identifiant']:'';
-            $retour['mot_pass'] = isset($row['identifiant'])?$row['identifiant']:'';
-            $retour['admin'] = isset($row['identifiant'])?$row['identifiant']:'';
+            $retour['mot_pass'] = isset($row['mot_pass'])?$row['mot_pass']:'';
+            $retour['admin'] = isset($row['admin'])?$row['admin']:'';
           
         }
         return $retour;

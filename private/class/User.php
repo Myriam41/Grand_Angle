@@ -28,7 +28,7 @@ class User {
         $this-> identifiant = $identifiant;
     }
     public function setPass($pass) {
-        $this-> password = $pass;
+        $this-> pass = $pass;
     }
     public function setAdmin($admin) {
         $this-> admin = $admin;

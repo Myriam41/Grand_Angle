@@ -24,7 +24,12 @@ class UserModel extends User{
         $lk = new Postgre();
         $res = $lk->connect($sql);
 
-        return $res;
+        while( $row = $res->fetch()){
+            $this->setCode(isset($row['code_user'])?$row['code_user']:'');
+            $this->setIdentifiant(isset($row['identifiant'])?$row['identifiant']:'');
+            $this->setPass(isset($row['mot_pass'])?$row['mot_pass']:'');
+            $this->setAdmin(isset($row['admin'])?$row['admin']:'');
+        }
     }
 
     function setUserById($id){
@@ -48,19 +53,31 @@ class UserModel extends User{
         $res = $lk->connect($sql);
     }
 
-    function addUser($id){
+    function addUser(){
+        $user = $this->getIdentifiant();
+        $password = $this->getPass();
+        $admin = $this->getAdmin();
+        // $id = $this->getCode();
+
         $sql = "INSERT INTO utilisateur /* Ma requête */
         (identifiant, 
-        mot_pass, 'admin')
-        VALUES('".$_POST['user']."','".$_POST['password']."',".$_POST['admin'].")";
+        mot_pass, admin)
+        VALUES('$user', '$password', '$admin')";
 
         $lk = new Postgre();
         $res = $lk->connect($sql);
     }
-    function editUser($id){
+    function editUser(){
+        $user = $this->getIdentifiant();
+        $password = $this->getPass();
+        $admin = $this->getAdmin();
+        $id = $this->getCode();
+
         $sql = "UPDATE utilisateur
-                SET nom_colonne_1 = 'nouvelle valeur'
-                WHERE code_user = $id";
+                SET identifiant = '$user',
+                    mot_pass = '$password',
+                    admin = '$admin'
+                WHERE code_user = '$id'";
 
         $lk = new Postgre();
         $res = $lk->connect($sql);
