@@ -40,7 +40,7 @@
                     </button>
                 </td>
                 <td>
-                    <button class="btn_action" id="view" name="<?= $row['code_expo']?>" onclick="getExpo(this)">
+                    <button class="btn_action" id="view" name="<?= $row['code_expo']?>" onclick="openExpo(this)">
                         <i class="fas fa-eye"></i>
                     </button>
                 </td>
