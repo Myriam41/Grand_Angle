@@ -1,7 +1,7 @@
 <?php
 
-include_once 'class/DbPostgre.php';
-include_once 'class/Art.php';
+include_once ('class/DbPostgre.php');
+include_once ('class/Art.php');
 
 class ArtModel extends Art{
 

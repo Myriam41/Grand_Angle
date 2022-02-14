@@ -20,9 +20,9 @@
     }
 
     function artsList(){
-        require('model/ArtModel.php');
-        require('model/artistsModel.php');
-        require('view/artsListView.php');
+        require_once('model/ArtModel.php');
+        require_once('model/artistsModel.php');
+        require_once('view/artsListView.php');
         
     }
 
@@ -53,8 +53,8 @@
     }
 
     function user(){
-        require('model/userModel.php');
-        require('view/userView.php');
+        require_once('model/userModel.php');
+        require_once('view/userView.php');
     }
 
     function DeConnect(){
@@ -64,15 +64,15 @@
     }
 
     function connect(){
-        require('private/view/connectView.php');
+        require_once('private/view/connectView.php');
     }
 
     function connectAgain(){
-        require('view/connectView.php');
+        require_once('view/connectView.php');
     }
 
     function connectVerif(){
-        require('model/connectModel.php');
+        require_once('model/connectModel.php');
 
         $log = new ConnectModel();
 

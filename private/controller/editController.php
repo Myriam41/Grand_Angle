@@ -25,7 +25,7 @@
     }
 
     function editUser($id){
-        require('model/userModel.php');
+        require_once('model/userModel.php');
         $user = new UserModel();
         $user -> editUser($id);
         usersList();
