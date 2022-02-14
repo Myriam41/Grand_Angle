@@ -1,6 +1,5 @@
 <?php
     @session_start();
-    // include_once '../class/DbPostgre.php';
     // si la session existe pas soit si l'on est pas connecté on redirige
      if(!isset($_SESSION['user'])){
          header('Location: ../index.php');
@@ -11,10 +10,9 @@
     $titlePage = "";
 
     ob_start();
-    // require '../class/DbPostgre.php';
 ?>
 
-<h2>Liste des expositions</h2> 
+<h2>Liste des Utilisateurs</h2> 
     <table id="example" class="display" style="width:100%">
      <thead>
          <th>
@@ -37,8 +35,8 @@
             <tr>
                 <td>
                     <button class="btn_action" id="edit" name="<?= $row['code_user'] ?>" onclick="getUser(this)">
-                        <i class="fas fa-pencil-alt"></i>
-                    </button>
+                    <i class="fas fa-pencil-alt"></i>
+                  </button>
                 </td>
                 <td>
                   <button class="btn_action" id="view" name="<?= $row['code_user'] ?>" onclick="getUser(this)">
@@ -49,9 +47,9 @@
                 <td><?= $row['mot_pass'] ?></td>
                 <td><?= $row['admin'] ?></td>
                 <td>
-                    <button class="btn_sup"  name="<?= $row['code_user'] ?>" onclick="delUser(this)">
-                        <i class="fas fa-trash-alt"></i>
-                    </button>
+                <button class="btn_sup" name="<?= $row['code_user'] ?>" onclick="delUser(this)">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
                 </td>
             </tr>
     <?php } ?>
@@ -71,7 +69,7 @@
                 </div>
                 <div class="form-group">
                     <label for="password">Mot de passe</label>
-                    <input type="password" id="password" name="password" class="form-control" placeholder="AAAA-MM-JJ">
+                    <input type="password" id="password" name="password" class="form-control">
                     <label for="admin">Admin</label>
                     <select name="admin" id="admin">
                       <option value="0">Non</option>
@@ -93,19 +91,20 @@
             <span id="MEC" class="close">&times;</span>
             <form action='index.php?action=edit&page=UsersList' method="post">
                 <div class="form-group">
+                    <input hidden class="code1">
                     <label for="user1">Identifiant</label>
                     <input type="text" id="user1" name="user1" class="form-control" placeholder="Identifiant">
                 </div>
                 <div class="form-group">
                     <label for="password1">Mot de passe</label>
-                    <input type="password" id="password1" name="password1" class="form-control" placeholder="AAAA-MM-JJ">
+                    <input type="password" id="password1" name="password1" class="form-control" placeholder="Mot de passe">
                     <label for="admin1">Admin</label>
                     <select name="admin1" id="admin1">
                       <option value="0">Non</option>
                       <option value="1">Oui</option>
                     </select>
                     <button type="button" class="btn btn-primary">Annuler</button>
-                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    <button type="submit" class="btn btn-primary" onclick="envoiForm()">Enregistrer</button>
                 </div>
             </form>
         </div>
@@ -121,19 +120,18 @@
             <span id="MVC" class="close">&times;</span>
             <form action='index.php?action=view&page=UsersList' method="post">
                 <div class="form-group">
+                    <input hidden2 class="code2">
                     <label for="user2">Identifiant</label>
-                    <input type="text" id="user2" name="user2" class="form-control" placeholder="Identifiant">
+                    <input readonly type="text" id="user2" name="user2" class="form-control" placeholder="Identifiant">
                 </div>
                 <div class="form-group">
                     <label for="password2">Mot de passe</label>
-                    <input type="password2" id="password2" name="password2" class="form-control" placeholder="AAAA-MM-JJ">
+                    <input readonly type="password" id="password2" name="password2" class="form-control" placeholder="Mot de passe">
                     <label for="admin2">Admin</label>
-                    <select name="admin2" id="admin2">
+                    <select disabled name="admin2" id="admin2">
                       <option value="0">Non</option>
                       <option value="1">Oui</option>
                     </select>
-                    <button type="button" class="btn btn-primary">Annuler</button>
-                    <button type="submit" class="btn btn-primary">Enregistrer</button>
                 </div>
             </form>
         </div>

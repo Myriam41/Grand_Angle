@@ -45,8 +45,16 @@
 
         if($name == 'addUser'){
             include_once ('model/userModel.php');
-            usersList();
+            
+            $userM = new UserModel();
 
+            $userM->setIdentifiant(isset($_POST['user'])?$_POST['user']:"");
+            $userM->setPass(isset($_POST['password'])?$_POST['password']:"");
+            echo $_POST['password'];
+            $userM->setAdmin(isset($_POST['admin'])?$_POST['admin']:'');
+
+            $userM->$name();
+            usersList();
 
         }
 
@@ -85,8 +93,15 @@
 
         if($name == 'editUser'){
             include_once ('model/userModel.php');
+            
+            $userM = new UserModel();
+            $userM->setCode(isset($_POST['code1'])?$_POST['code1']:"");
+            $userM->setIdentifiant(isset($_POST['user1'])?$_POST['user1']:"");
+            $userM->setPass(isset($_POST['password1'])?$_POST['password1']:"");
+            $userM->setAdmin(isset($_POST['admin1'])?$_POST['admin1']:"");
 
-
+            $user->$name($id);
+            usersList();
         }
 
         if($name == 'editArt'){
@@ -97,6 +112,8 @@
 
         if($name == 'editArtist'){
             include_once ('model/artistsModel.php');
+
+            $artistM = new ArtistsModel();
 
 
         }

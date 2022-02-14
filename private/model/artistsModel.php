@@ -52,8 +52,36 @@
             $res = $lk->connect($sql);
         }
         function editArtist($id){
+            $nom = $this->getNom();
+            $prenom = $this->getPrenom();
+            $nomUSuel = $this->getNomUsuel();
+            $tel = $this->getTel();
+            $mail = $this->getMail();
+            $adresse = $this->getAdresse();
+            $cp = $this->getCP();
+            $ville = $this->getVille();
+            $biographieFR = $this->getbiographieFR();
+            $biographieEN = $this->getbiographieEN();
+            $biographieCH = $this->getbiographieCH();
+            $biographieRU = $this->getbiographieRU();
+            $biographieDE = $this->getbiographieDE();
+
             $sql = "UPDATE artiste
-                    SET nom_colonne_1 = 'nouvelle valeur'
+                    SET nom = '$nom',
+                    prenom = '$prenom',
+                    nom_usuel = 'nomUsuel',
+                    tel = '$tel',
+                    mail = '$mail',
+                    adresse ='$adresse',
+                    cp = $cp,
+                    ville = '$ville',
+                    pays = '$pays',
+                    photo = '$photo',
+                    biographiefr = '$biographieFR', 
+                    biographieen = '$biographieEN',
+                    biographieru = '$biographieRU',
+                    biographiech = '$biographieCH',
+                    biographiede = '$biographieDE',
                     WHERE code_artiste = $id";
     
             $lk = new Postgre();

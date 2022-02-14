@@ -94,9 +94,9 @@
             <form name ="formEdit" class="form-group" action='index.php?edit=editExpo&page=expoList&id=' method="post">
                 <div class="form-group row">
                     <div class="col">
+                        <input id="code1" name = "code1" hidden>
                         <label for="title1">Titre</label>
                         <input type="text" id="title1" name="title1" class="form-control" placeholder="Titre">
-                        <input id="code1" name = "code1" hidden>
                         <div class="row">
                             <div class="col">
                                 <label for="debut1">Debut</label>

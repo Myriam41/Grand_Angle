@@ -1,6 +1,7 @@
 
-<div id="lang1">
+<div>
     <img class="flag" id="f-en" src="../visitor/assets/img/flag/united-kingdom-flag-png-large.png.jpeg" alt="">
+    <a href="index.php?page=<?php $page ?>?fr"></a>
 </div>
 <div>
     <img class="flag" id="f-ru" src="../visitor/assets/img/flag/2579815-russie-officiellement-drapeau-gratuit-vectoriel.jpg" alt="">
