@@ -26,8 +26,18 @@
         
     }
 
-    function expo(){
+    function expo($id){
         require_once('model/expoModel.php');
+        $expoView = new ExpoModel();
+        $expoView -> getExpoById($id);
+        $code = $expoView->getCode();
+        $titre = $expoView->getTitre();
+        $debut = $expoView->getDateDebut();
+        $fin = $expoView->getDateFin();
+
+        require_once('model/artModel.php');
+        $artExpo = new ArtModel();
+        $arts = $artExpo -> getViewsArtsExpo($id);
         require_once('view/expoView.php');
     }
 

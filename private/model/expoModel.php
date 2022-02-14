@@ -33,26 +33,6 @@ class ExpoModel extends Expo{
         }
     }
 
-    function getExpoViewById($id){
-        $this ->getExpoById($id);
-
-        $sql = "SELECT  o.code_oeuvre, o.titre_oeuvre, o.date_livraison, 
-                FROM oeuvre o
-                INNER JOIN exposer ON o.code_oeuvre = exposer.code_oeuvre
-                INNER JOIN exposition ON exposition.code_exposition = exposer.code_oeuvre
-                WHERE code_expo = $id
-                ORDER BY o.titre_oeuvre";
-
-        $lk = new Postgre();
-        $res2 = $lk->connect($sql);
-
-        while($row = $res2->fetch()){
-            $code = isset($row['code_oeuvre'])?$row['code_oeuvre']:'';
-            $titre = isset($row['titre_oeuvre'])?$row['titre_oeuvre']:'';
-     
-        }
-    }
-
     function setExpoById($id){
         $sql = "UPDATE exposition
                 SET titre_expo = '', 

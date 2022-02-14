@@ -16,7 +16,7 @@
     <table id="example" class="display" style="width:100%">
      <thead>
          <th>
-            <button type="boutton" id="add" class="btn_action">
+            <button type="button" id="add" class="btn_action">
                 <i class="fas fa-plus"></i>
             </button>
         </th>
@@ -40,7 +40,7 @@
                     </button>
                 </td>
                 <td>
-                    <button class="btn_action" id="view" name="<?= $row['code_expo']?>" onclick="openExpo(this)">
+                    <button class="btn_action" id="" name="<?= $row['code_expo']?>" onclick="openExpo(this)">
                         <i class="fas fa-eye"></i>
                     </button>
                 </td>

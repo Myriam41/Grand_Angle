@@ -50,7 +50,6 @@
 
             $userM->setIdentifiant(isset($_POST['user'])?$_POST['user']:"");
             $userM->setPass(isset($_POST['password'])?$_POST['password']:"");
-            echo $_POST['password'];
             $userM->setAdmin(isset($_POST['admin'])?$_POST['admin']:'');
 
             $userM->$name();

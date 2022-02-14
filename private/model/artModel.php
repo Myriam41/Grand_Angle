@@ -7,7 +7,7 @@ class ArtModel extends Art{
 
     function getArtsNoLivre(){
 
-        $sql = 'SELECT o.code_oeuvre, o.titre_oeuvre, o.date_livraison, a.nom_usuel, exposition.titre_expo, exposition.date_debut
+        $sql = 'SELECT o.code_oeuvre, o.titre_oeuvre, o.date_livraison, a.nom, exposition.titre_expo, exposition.date_debut
                 FROM oeuvre o
                 LEFT JOIN artiste a ON o.code_artiste = a.code_artiste
                 LEFT JOIN exposer e ON o.code_oeuvre = e.code_oeuvre
@@ -20,12 +20,14 @@ class ArtModel extends Art{
         return $res;
 
     }
-
+// Fonction utilisée sur le home pour la liste des oeuvres et les vues
+// et pour l'ouverture de la vue expo.
     function getViewsArtsExpo($idExpo){
 
-        $sql = "SELECT oeuvre.titre_oeuvre, exposer.nombre_vues
+        $sql = "SELECT o.titre_oeuvre, exposer.nombre_vues, o.code_oeuvre, o.titre_oeuvre, o.date_livraison, a.nom
                 FROM exposer
-                INNER JOIN oeuvre ON exposer.code_oeuvre = oeuvre.code_oeuvre
+                INNER JOIN oeuvre o ON exposer.code_oeuvre = o.code_oeuvre
+                LEFT JOIN artiste a ON o.code_artiste = a.code_artiste
                 WHERE exposer.code_expo = $idExpo
                 ORDER BY exposer.nombre_vues DESC";
 
@@ -33,6 +35,26 @@ class ArtModel extends Art{
        $res = $lk->connect($sql);
     
        return $res;
+    }
+
+    function getExpoViewById($id){
+       // $this ->getExpoById($id);
+
+        $sql = "SELECT  o.code_oeuvre, o.titre_oeuvre, O.date_livraison
+                FROM oeuvre o
+                INNER JOIN exposer ON o.code_oeuvre = exposer.code_oeuvre
+                INNER JOIN exposition ON exposition.code_expo = exposer.code_expo
+                WHERE exposition.code_expo = $id
+                ORDER BY titre_oeuvre";
+
+        $lk = new Postgre();
+        $res2 = $lk->connect($sql);
+
+        while($row = $res2->fetch()){
+            $code = isset($row['code_oeuvre'])?$row['code_oeuvre']:'';
+            $titre = isset($row['titre_oeuvre'])?$row['titre_oeuvre']:'';
+     
+        }
     }
 
     function getArtsAll(){
