@@ -27,7 +27,6 @@
                 <th>Hauteur</th>
                 <th>Epaisseur</th>
                 <th>Largeur</th>
-                <th>Description</th>
                 <th>Image</th>
                 <th>Type d'oeuvre</th>
                 <th>Artistes</th>
@@ -50,7 +49,6 @@
                     <td><?= $row['hauteur'] ?></td>
                     <td><?= $row['epaisseur'] ?></td>
                     <td><?= $row['largeur'] ?></td>
-                    <td><a href="#">Voir description</a></td>
                     <td><?= $row['image'] ?></td>
                     <td><?= $row['code_typeoeuvre'] ?></td>
                     <td><?= $row['code_artiste'] ?></td>
@@ -75,15 +73,15 @@
                         <div class="row">
                             <div class="col">
                                 <label for="height">Hauteur</label>
-                                <input type="text" id="height" name="height" class="form-control" placeholder="Prénom">
+                                <input type="text" id="height" name="height" class="form-control" placeholder="Hauteur">
                             </div>
                             <div class="col">
-                                <label for="height">Hauteur</label>
-                                <input type="text" id="height" name="height" class="form-control" placeholder="Prénom">
+                                <label for="epaisseur">Epaisseur</label>
+                                <input type="text" id="epaisseur" name="epaisseur" class="form-control" placeholder="Epaisseur">
                             </div>
                             <div class="col">
-                                <label for="height">Hauteur</label>
-                                <input type="text" id="height" name="height" class="form-control" placeholder="Prénom">
+                                <label for="">Largeur</label>
+                                <input type="text" id="" name="" class="form-control" placeholder="Largeur">
                             </div>
                         </div>
                         <label class="form-label" for="image">Image</label>
@@ -135,27 +133,28 @@
             <form class="form-group" action='index.php?action=edit&page=artsList' method="post">
                 <div class="form-group row">
                     <div class="col">
-                        <label for="title">Titre</label>
-                        <input type="text" id="title" name="title" class="form-control" placeholder="Titre">
+                        <input hidden class="code1">
+                        <label for="title1">Titre</label>
+                        <input type="text" id="title1" name="title1" class="form-control" placeholder="Titre">
                         <div class="row">
                             <div class="col">
-                                <label for="height">Hauteur</label>
-                                <input type="text" id="height" name="height" class="form-control" placeholder="Prénom">
+                                <label for="height1">Hauteur</label>
+                                <input type="text" id="height1" name="height1" class="form-control" placeholder="Hauteur">
                             </div>
                             <div class="col">
-                                <label for="height">Hauteur</label>
-                                <input type="text" id="height" name="height" class="form-control" placeholder="Prénom">
+                                <label for="epaisseur1">Epaisseur</label>
+                                <input type="text" id="epaisseur1" name="epaisseur1" class="form-control" placeholder="Epaisseur">
                             </div>
                             <div class="col">
-                                <label for="height">Hauteur</label>
-                                <input type="text" id="height" name="height" class="form-control" placeholder="Prénom">
+                                <label for="width1">Largeur</label>
+                                <input type="text" id="width1" name="width1" class="form-control" placeholder="Largeur">
                             </div>
                         </div>
                         <label class="form-label" for="image">Image</label>
                         <input type="file" class="form-control" id="image" />
                         <div class="row">
                             <div class="col">
-                                <select name="typeArt" id="typeArt" class="form-select">
+                                <select name="typeArt" id="typeArt1" class="form-select">
                                     <option selected>Type d'oeuvre</option>
                                     <option value="1">Tableau</option>
                                     <option value="2">Sculpture</option>
@@ -163,7 +162,7 @@
                                 </select>
                             </div>
                             <div class="col">
-                                <select name="artist" id="artist" class="form-select">
+                                <select name="artist1" id="artist1" class="form-select">
                                     <option selected>Artistes</option>
                                     <?php
                                     $artistView = new ArtistsModel();
@@ -178,7 +177,7 @@
                     </div>
                     <div class="col">
                         <label id="lang1" for="desc"><?= include('template/langs.php') ?></label>
-                        <textarea class="form-control" name="desc" id="desc" cols="30" rows="10" placeholder="Description"></textarea>
+                        <textarea class="form-control" name="desc1" id="desc1" cols="30" rows="10" placeholder="Description"></textarea>
                     </div>
                 </div>
 

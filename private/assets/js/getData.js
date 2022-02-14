@@ -63,7 +63,7 @@ function write(ret){
   }
 
   if(date['open'] == 'getArt'){
-
+    document.getElementById("code" +n).value = ret['code'];
   }
 }
 
