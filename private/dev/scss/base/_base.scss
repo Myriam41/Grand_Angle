@@ -32,6 +32,10 @@ body{
     box-shadow: inset 9px 9px 15px -5px gold;
 }
 
+.scroll {
+	position: fixed;
+	top: 0px;
+}
 .corps{
     display: flex;
     flex-direction: row;
@@ -39,6 +43,8 @@ body{
 
     aside{
         width: 200px;
+        position: relative;
+        top: 200px
 
         h2{
             text-align: center;

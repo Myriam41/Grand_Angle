@@ -38,7 +38,7 @@
 		</header>
 
 		<div class="corps">
-			<aside>
+			<aside id="nav">
 				<?php include('aside.php') ?>
 			</aside>
 			<main>

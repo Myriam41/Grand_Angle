@@ -80,7 +80,21 @@ $(document).ready( function(){
       modalView.style.display = "none";
     }
   }
+
+  window.onscroll = function() {scrollFunction()};
 });
+
+function scrollFunction() {
+	var element = document.getElementById("nav");
+	if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) 
+	{
+		element.classList.add("scroll");
+	} 
+	else 
+	{
+		element.classList.remove("scroll");
+	}
+}
 
   // Envoi du formulaire edit
   function envoiForm(){
@@ -90,6 +104,9 @@ $(document).ready( function(){
     alert(code.value);
     document.formEdit.action = url + code.value;
     document.formEdit.submit();
-  } 
+  }
+
+
+
 
 

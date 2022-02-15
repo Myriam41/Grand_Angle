@@ -49,6 +49,11 @@ body {
   box-shadow: inset 9px 9px 15px -5px gold;
 }
 
+.scroll {
+  position: fixed;
+  top: 0px;
+}
+
 .corps {
   display: flex;
   flex-direction: row;
@@ -56,10 +61,10 @@ body {
 }
 .corps aside {
   width: 200px;
-}
-.corps aside h2 {
-  text-align: center;
-  color: black;
+  position: relative;
+  top: 200px h2;
+  top-text-align: center;
+  top-color: black;
 }
 .corps main {
   width: calc(100% - 200px);
@@ -285,6 +290,7 @@ footer p {
 aside {
   height: 100vh;
   width: 200px;
+  border-left: inset 9px 0px 10px -5px gold;
 }
 aside .close {
   display: inline-block;
