@@ -30,7 +30,7 @@ body{
     user-select: none;
     overflow-x: hidden;
     color: $color-dark;
-    box-shadow: inset 9px 9px 15px -5px gold;
+    //box-shadow: inset 9px 9px 15px -5px gold;
 }
 
 .corps{
@@ -51,7 +51,7 @@ body{
     main{
         width: calc(100% - 200px);
         padding: 30px;
-        box-shadow: inset -5px -4px 9px 5px gold;
+        //box-shadow: inset -5px -4px 9px 5px gold;
         //background-image: url('../img/paysage_montsLac.jpg') ;
         background-color: $secondary;
         .date{
