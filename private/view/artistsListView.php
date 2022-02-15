@@ -6,8 +6,8 @@
          die();
      }
      $title = "";
-     $titlePage = "";
-     $lang = 1;
+     $titlePage = "Les artistes";
+
      ob_start();
 ?>
 <h2>Liste des artistes</h2>

@@ -33,7 +33,7 @@
     </head>
     
     <body>
-		<header class="right">
+		<header>
 				<?php include('header.php') ?>
 		</header>
 
@@ -54,8 +54,9 @@
 		<!-- Tableaux -->		
 		<script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript">(function(){window['__CF$cv$params']={r:'6d61d84b18bd3bda',m:'DibEAyWxF1uIQSCsAtEtwgvDO80Px5e.kubcBZgUWfs-1643620625-0-AaCStdCXDGxx4jAPlblOBhdO3mumKbJx/6QfpV4mG3jVB/T0ZSorJSF+tAF4QjX1Kn7By2ODpTbJMFAi0oaZMRJTu8dY4GsXhPwtACKLVhfVZNr/LminCvEczshg/QqXy1Yu9OJCrhGtrgs/VIo/jtlJkbrbS6sUdF8oumPMifRCnyzzMplAUcs27L1nB/7+8A==',s:[0xcb98f28c52,0x23fa878644],}})();</script>
-		<!-- Icones -->
+		<!-- Icones 	-->	
 		<script async src='/cdn-cgi/bm/cv/669835187/api.js'></script>
+
 		<script src="assets/js/getData.js"></script>
 		<script src="assets/js/delete.js"></script>
 		<script src="assets/js/open.js"></script>

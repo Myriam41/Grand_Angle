@@ -1,8 +1,10 @@
+    <!--
     <div class="top">
         <div class="close" id="close-btn">
             <span class="material-icons-sharp">close</span>
         </div>
     </div>
+-->
     <div class="sidebar">
         <a href="index.php?page=home" class="active">
             <i class="fas fa-home"></i>Accueil

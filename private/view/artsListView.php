@@ -7,8 +7,7 @@
      }
      
     $title = "";
-    $titlePage = "";
-    $lang = 1;
+    $titlePage = "Les oeuvres";
 
     ob_start();
     

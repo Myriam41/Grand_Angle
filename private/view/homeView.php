@@ -18,8 +18,6 @@
         <div class=row>
             <!-- partie de gauche -->
             <div class="col-8">
-                <h1><?= $titlePage ?></h1>
-
                 <!-- Graph des vues -->
                 <div class="recent-orders">
                     <h2>Les 5 oeuvres les plus vues</h2>
@@ -46,7 +44,7 @@
 <?php                       while($art = $noLivre ->fetch()){ ?>
                             <tr id="<?= $art['code_oeuvre'] ?>" onclick="openArt(this)">
                                 <td><?= $art['titre_oeuvre'] ?></td>
-                                <td><?= $art['nom_usuel'] ?></td>
+                                <td><?= $art['nom'] ?></td>
                                 <td><?= $art['date_livraison'] ?></td>
                                 <td><?= $art['titre_expo'] ?></td>   
                                 <td><?= $art['date_debut'] ?></td>

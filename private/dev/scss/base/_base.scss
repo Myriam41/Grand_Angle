@@ -11,6 +11,7 @@
 }
 
 body{
+    
     font-family: $varela;
     margin: 0;
     padding: 0;
@@ -29,12 +30,14 @@ body{
     user-select: none;
     overflow-x: hidden;
     color: $color-dark;
+    box-shadow: inset 9px 9px 15px -5px gold;
 }
 
 .corps{
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 100%; 
+    
 
     aside{
         width: 200px;
@@ -47,8 +50,10 @@ body{
 
     main{
         width: calc(100% - 200px);
-        padding: 30px;   
-
+        padding: 30px;
+        box-shadow: inset -5px -4px 9px 5px gold;
+        //background-image: url('../img/paysage_montsLac.jpg') ;
+        background-color: $secondary;
         .date{
             display: inline-block;
             background-color: $color-light;
