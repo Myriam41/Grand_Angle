@@ -6,13 +6,12 @@
          die();
      }
     
-    $title = "";
-    $titlePage = "";
+    $title = "utilisateurs";
+    $titlePage = "Liste des utilisateurs";
 
     ob_start();
 ?>
 
-<h2>Liste des Utilisateurs</h2> 
     <table id="example" class="display" style="width:100%">
      <thead>
          <th>

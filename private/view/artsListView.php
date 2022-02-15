@@ -6,14 +6,14 @@
          die();
      }
      
-    $title = "";
-    $titlePage = "";
+    $title = "oeuvres";
+    $titlePage = "Liste des oeuvres";
     $lang = 1;
 
     ob_start();
     
 ?>
-<h2>Liste des oeuvres</h2>
+
         <table id="example" class="display" style="width:100%">
         <thead>
             <tr>

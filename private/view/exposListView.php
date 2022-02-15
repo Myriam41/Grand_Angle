@@ -11,8 +11,6 @@
 
     ob_start();   
 ?>
-
-    <h2>Liste des expositions</h2> 
     <table id="example" class="display" style="width:100%">
      <thead>
          <th>

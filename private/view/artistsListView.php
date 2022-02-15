@@ -5,12 +5,12 @@
          header('Location: ../index.php');
          die();
      }
-     $title = "";
-     $titlePage = "";
+     $title = "artists";
+     $titlePage = "Liste des artistes";
      $lang = 1;
      ob_start();
 ?>
-<h2>Liste des artistes</h2>
+
     <table id="example" class="display" style="width:100%">
         <thead>
                 <th>

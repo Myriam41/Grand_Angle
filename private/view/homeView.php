@@ -7,7 +7,7 @@
      }
      
     $title = "Accueil";
-    $titlePage = "Accueil";
+    $titlePage = "Dashboard";
 
     //$_SESSION['expoID'] = getLastExpo();
 
@@ -18,7 +18,6 @@
         <div class=row>
             <!-- partie de gauche -->
             <div class="col-8">
-                <h1><?= $titlePage ?></h1>
 
                 <!-- Graph des vues -->
                 <div class="recent-orders">
