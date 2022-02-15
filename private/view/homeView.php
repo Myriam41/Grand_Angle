@@ -45,7 +45,7 @@
 <?php                       while($art = $noLivre ->fetch()){ ?>
                             <tr id="<?= $art['code_oeuvre'] ?>" onclick="openArt(this)">
                                 <td><?= $art['titre_oeuvre'] ?></td>
-                                <td><?= $art['nom_usuel'] ?></td>
+                                <td><?= $art['nom'] ?></td>
                                 <td><?= $art['date_livraison'] ?></td>
                                 <td><?= $art['titre_expo'] ?></td>   
                                 <td><?= $art['date_debut'] ?></td>
