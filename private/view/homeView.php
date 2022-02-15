@@ -20,7 +20,7 @@
             <div class="col-8">
 
                 <!-- Graph des vues -->
-                <div class="recent-orders">
+                <div class="recent-orders cadres">
                     <h2>Les 5 oeuvres les plus vues</h2>
                     <div id="artGraph">
                         <canvas id="graph" width="400" height="200"></canvas>
@@ -28,7 +28,7 @@
                 </div>
 
                 <!-- Oeuvres non livrées -->
-                <div class="recent-orders">
+                <div class="recent-orders cadres">
                     <h2>Oeuvres non livrées</h2> 
 
                     <table id="example" class="display" style="width:100%">
@@ -58,7 +58,7 @@
 
             <!-- partie de droite -->
             <div class="col-4">
-                <div class="recent-orders">
+                <div class="recent-orders cadres">
                     <h2>Dernière exposition</h2>
 
                     <table class='table'>
@@ -89,4 +89,3 @@
     // JS pour affichage du graph
 ?> 
     <script src="assets/js/stats.js"></script>
-    <script src="assets/js/open.js"></script>

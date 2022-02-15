@@ -11,6 +11,7 @@
 
     ob_start();   
 ?>
+<div class="cadres">
     <table id="example" class="display" style="width:100%">
      <thead>
          <th>
@@ -53,7 +54,7 @@
     <?php } ?>
      </tbody>
     </table>
-
+</div>
 
     <!-- Modal pour nouvel enregistrement boutton add-->
     <!-- The Modal -->

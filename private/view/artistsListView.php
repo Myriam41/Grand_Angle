@@ -10,7 +10,7 @@
      $lang = 1;
      ob_start();
 ?>
-
+<div class="cadres">
     <table id="example" class="display" style="width:100%">
         <thead>
                 <th>
@@ -21,7 +21,7 @@
                 <th>Ouvrir</th>
                 <th>Nom</th>
                 <th>Prénom</th>
-                <th>Nom usuel</th>
+                <th>Nom</th>
                 <th>Téléphone</th>
                 <th>Mail</th>
                 <th>Pays</th>
@@ -59,6 +59,7 @@
     <?php   } ?>
         </tbody>
     </table>
+</div>
     <!-- Modal pour nouvel enregistrement boutton add-->
     <!-- The Modal -->
     <div id="modalAdd" class="modal">

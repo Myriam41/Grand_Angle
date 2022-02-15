@@ -33,7 +33,7 @@
     </head>
     
     <body>
-		<header class="right">
+		<header>
 				<?php include('header.php') ?>
 		</header>
 

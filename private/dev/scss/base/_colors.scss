@@ -7,7 +7,8 @@ $secondary:#FFF;
 $secondary-dark:darken($secondary, 40%);
 $secondary-light:lighten($secondary, 40%);
 
-$tertiary:#9fa8ad;;
+$tertiary:#9fa8ad;
+$tertiary-light:lighten($tertiary, 40%);
 
 $color-primary: #7380ec;
 $color-danger: #ff7782;
