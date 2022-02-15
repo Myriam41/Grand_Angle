@@ -200,6 +200,9 @@ header .logo img {
   width: 2rem;
   height: 2rem;
 }
+header p {
+  margin: 0px;
+}
 header .topRight {
   display: flex;
   justify-content: flex-end;
@@ -207,7 +210,7 @@ header .topRight {
   padding-top: 1rem;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 30px;
 }
 header .topRight button {
   display: none;

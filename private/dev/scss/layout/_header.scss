@@ -13,6 +13,10 @@ header{
         }
     }
 
+    p{
+        margin: 0px;
+    }
+
     .topRight{
         display: flex;
         justify-content: flex-end;
@@ -20,7 +24,7 @@ header{
         padding-top: 1rem;
         position: absolute;
         top: 0;
-        right: 0;
+        right: 30px;
 
         button{
             display: none;
