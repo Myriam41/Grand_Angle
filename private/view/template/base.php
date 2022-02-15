@@ -28,23 +28,25 @@
 
 		<!-- TITLE -->
 		<title><?= $title ?> - Grand Angle</title>
-</head>
-                
-    </head>
+	</head>
     
     <body>
 		<header>
 				<?php include('header.php') ?>
 		</header>
-
-		<div class="corps">
-			<aside>
-				<?php include('aside.php') ?>
-			</aside>
-			<main>
-				<?= $content ?>
-			</main>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="corps">
+					<aside class="col-2">
+						<?php include('aside.php') ?>
+					</aside>
+					<main class = "col-10">
+						<?= $content ?>
+					</main>
+				</div>
+			</div>
 		</div>
+
 
 		<!-- JS -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

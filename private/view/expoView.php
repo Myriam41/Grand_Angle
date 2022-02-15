@@ -23,15 +23,12 @@
 
     ob_start(); 
 ?>
-    <div class="container">
-        <div class="row">
+    <div class="p-2">
+        <div class="row cadres p-2">
             <div id='topMain'>
                 <div class="col-2">
-                    <button type='boutton' class='btn_action'>
-                        <i class="fas fa-plus"></i>
-                    </button>
-                    <button type='boutton' class='btn_action'>
-                        <i class="fas fa-save"></i>
+                    <button class="btn_action" id="edit" name="<?= $row['code_expo']?>" onclick="getExpo(this)">
+                        <i class="fas fa-pencil-alt"></i>
                     </button>
                 </div>
                 <div class="col-8">
@@ -42,7 +39,7 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row cadres">
             <div class='infoFiche'>
                 <div>
 <?php               if($img != ''){?> 
@@ -50,8 +47,9 @@
 <?php               }else{?> 
                         <button type='boutton' class='btn_action'><i class="fas fa-plus"></i>Ajouter une image</button>           
 <?php               }
-?>          </div>
+?>              </div>
             <textarea></textarea>
+            </div>
         </div>
         <div class="row">
             <h2>Liste des oeuvres</h2> 
@@ -86,7 +84,7 @@
                         <td><?= $row['titre_oeuvre'] ?></td>
                         <td><?= $row['date_livraison'] ?></td>
                         <td><?= $row['nom'] ?></td>
-                        <td>QR</td>
+                        <td>image</td>
                         <td>
                             <button class="btn_sup"  name="<?= $row['code_oeuvre']?>" onclick="delExpo(this)"><i class="fas fa-trash-alt"></i></button>
                         </td>
