@@ -1,7 +1,9 @@
+
 <div>
     <img class="flag" id="f-en" src="../visitor/assets/img/flag/united-kingdom-flag.jpeg" alt="en">
     <a href="index.php?page=<?php $page ?>?fr"></a>
 </div>
+
 <div>
     <img class="flag" id="f-ru" src="../visitor/assets/img/flag/russie-flag.jpg" alt="ru">
 </div>

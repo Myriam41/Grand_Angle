@@ -124,7 +124,7 @@
         $id = $_GET['id'];
 
         $ret = $name($id);
-        echo($ret);
+
     }
 
     if($_SESSION['connect'] === '1' && !isset($_GET['open'])){

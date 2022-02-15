@@ -4,8 +4,9 @@
             <img src="assets/img/25623.png" alt="logo">
             <h2>Grand <span>Angle.</span></h2>
         </div>
+
         <div class="col-3" id="lang1">
-            <?=include('langs.php')?>
+            <?php include('langs.php')?>
         </div>
         <div class="col-3">
             <h1><?= $titlePage ?></h1>
