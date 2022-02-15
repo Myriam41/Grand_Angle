@@ -6,8 +6,8 @@
          die();
      }
      
-    $title = "";
-    $titlePage = "";
+    $title = "expositions";
+    $titlePage = "Les expositions";
 
     ob_start();   
 ?>

@@ -4,25 +4,25 @@ $(document).ready( function(){
   const menuBtn = document.querySelector('#menu-btn');
   const closeBtn = document.querySelector('#close-btn');
   // Toggle
-  const themeToggler = document.querySelector('.theme-toggler');
+  //const themeToggler = document.querySelector('.theme-toggler');
 
   // Ouverture menu
-  menuBtn.addEventListener('click', () => {
-      sideMenu.style.display = 'block';
-  })
+  // menuBtn.addEventListener('click', () => {
+  //     sideMenu.style.display = 'block';
+  // })
 
   // Fermeture menu
-  closeBtn.addEventListener('click', () => {
-      sideMenu.style.display = 'none';
-  })
+  // closeBtn.addEventListener('click', () => {
+  //     sideMenu.style.display = 'none';
+  // })
 
   // Changement de thème
-  themeToggler.addEventListener('click', () =>{
-      document.body.classList.toggle('dark-theme-variables');
+  // themeToggler.addEventListener('click', () =>{
+  //     document.body.classList.toggle('dark-theme-variables');
 
-      themeToggler.querySelector('span:nth-child(1)').classList.toggle('active');
-      themeToggler.querySelector('span:nth-child(2)').classList.toggle('active');
-  })
+  //     themeToggler.querySelector('span:nth-child(1)').classList.toggle('active');
+  //     themeToggler.querySelector('span:nth-child(2)').classList.toggle('active');
+  // })
 
 
   // Tableaux
