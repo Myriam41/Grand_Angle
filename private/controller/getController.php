@@ -1,6 +1,7 @@
 <?php
     @session_start();
-    $conn = pg_connect('host=localhost port=5432 user=postgres password=mathieu dbname=Grand_Angle')or die('connection failed');
+    //$conn = pg_connect('host=localhost port=5432 user=postgres password=mathieu dbname=Grand_Angle')or die('connection failed');
+    $conn = pg_connect('host=localhost port=5432 user=postgres password=PJRV0tel!S:121 dbname=grand-angle3')or die('connection failed');
 
     //Controlle l'appel des données à pour 1 enregistrement
     if(isset($_POST['open'])){

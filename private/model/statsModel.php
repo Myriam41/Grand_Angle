@@ -1,5 +1,5 @@
 <?php
-    $conn = pg_connect('host=localhost port=5432 user=postgres password=mathieu dbname=Grand_Angle')or die('connection failed');
+    $conn = pg_connect('host=localhost port=5432 user=postgres password=PJRV0tel!S:121 dbname=Grand_Angle')or die('connection failed');
 
     $idExpo = isset($_GET['id'])?$_GET['id']:'';
     $colors = ['#ff6384','#36a2eb','#36a2eb','#cc65fe','#ffce56'];
