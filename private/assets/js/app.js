@@ -36,8 +36,8 @@ $(document).ready( function(){
 
   // Get the button that opens the modal
   var btnAdd = document.getElementById("add");
-  var btnEdit = document.getElementById("edit");
-  var btnView = document.getElementById("view");
+ // var btnEdit = document.getElementById("edit");
+  //var btnView = document.getElementById("view");
 
   // Get the <span> element that closes the modal
   var spanA = document.getElementById("MAC");
@@ -48,19 +48,18 @@ $(document).ready( function(){
   btnAdd.onclick = function() {
     modalAdd.style.display = "block";
   }
-  /*
-  btnEdit.onclick = function() {
-    modalEdit.style.display = "block";
-  }
-  */
-  btnView.onclick = function() {
-    modalView.style.display = "block";
-  }
+  
+  // btnEdit.onclick = function() {
+  //   modalEdit.style.display = "block";
+  // }
+ 
+  // btnView.onclick = function() {
+  //   modalView.style.display = "block";
+  // }
 
   // When the user clicks on <span> (x), close the modal
   spanA.onclick = function() {
     modalAdd.style.display = "none";
-    console.log(spanA);
   }
   spanE.onclick = function() {
     modalEdit.style.display = "none";
@@ -82,67 +81,20 @@ $(document).ready( function(){
     }
   }
 
-  //Gestion des dates
-  // String.prototype.toDate = function(format)
-  // {
-  //   var normalized      = this.replace(/[^a-zA-Z0-9]/g, '-');
-  //   var normalizedFormat= format.toLowerCase().replace(/[^a-zA-Z0-9]/g, '-');
-  //   var formatItems     = normalizedFormat.split('-');
-  //   var dateItems       = normalized.split('-');
-
-  //   var monthIndex  = formatItems.indexOf("mm");
-  //   var dayIndex    = formatItems.indexOf("dd");
-  //   var yearIndex   = formatItems.indexOf("yyyy");
-  //   var hourIndex     = formatItems.indexOf("hh");
-  //   var minutesIndex  = formatItems.indexOf("ii");
-  //   var secondsIndex  = formatItems.indexOf("ss");
-
-  //   var today = new Date();
-
-  //   var year  = yearIndex>-1  ? dateItems[yearIndex]    : today.getFullYear();
-  //   var month = monthIndex>-1 ? dateItems[monthIndex]-1 : today.getMonth()-1;
-  //   var day   = dayIndex>-1   ? dateItems[dayIndex]     : today.getDate();
-
-  //   var hour    = hourIndex>-1      ? dateItems[hourIndex]    : today.getHours();
-  //   var minute  = minutesIndex>-1   ? dateItems[minutesIndex] : today.getMinutes();
-  //   var second  = secondsIndex>-1   ? dateItems[secondsIndex] : today.getSeconds();
-
-  //   return new Date(year,month,day,hour,minute,second);
-  // };
-
-
-
-
-
-  // GRAPH
- /*
-    const ctx2 = document.getElementById('myChart');
-    const myChart = new Chart(ctx2, {
-        type: 'line',
-        data: {
-            labels: ['03/01/2022', '04/01/2022', '05/01/2022', '06/01/2022', '07/01/2022', '08/01/2022', '09/01/2022'],
-            datasets: [
-              {
-                label: 'taleau 1',
-                data: [10, 26, 52, 46, 20],
-              },
-              {
-                label: 'tableau 2',
-                data: [50, 30, 2, 23, 50],
-              }
-            ]
-        },
-        options: {
-            responsive: true,
-            plugins: {
-              legend: {
-                position: 'top',
-              },
-            }
-        },
-    });
-*/
+  window.onscroll = function() {scrollFunction()};
 });
+
+function scrollFunction() {
+	var element = document.getElementById("nav");
+	if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) 
+	{
+		element.classList.add("scroll");
+	} 
+	else 
+	{
+		element.classList.remove("scroll");
+	}
+}
 
   // Envoi du formulaire edit
   function envoiForm(){
@@ -152,6 +104,9 @@ $(document).ready( function(){
     alert(code.value);
     document.formEdit.action = url + code.value;
     document.formEdit.submit();
-  } 
+  }
+
+
+
 
 

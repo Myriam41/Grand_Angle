@@ -16,7 +16,11 @@ function getAjax(){
           modalView.style.display = "block";
         }
         write(ret);
+    },
+    error: function(){
+      alert('ouverture ne peut se faire');
     }
+
   });
 }
 
@@ -91,6 +95,8 @@ function getArtist(elet){
 function getExpo(elet){
   action = elet.id
   id = elet.name;
+  console.log(action);
+  console.log(id);
   data = {
     'open': 'getExpo',
     'id': id

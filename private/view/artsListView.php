@@ -6,14 +6,15 @@
          die();
      }
      
-    $title = "";
-    $titlePage = "Les oeuvres";
+    $title = "oeuvres";
+    $titlePage = "Liste des oeuvres";
+    $lang = 1;
 
     ob_start();
     
 ?>
-<h2>Liste des oeuvres</h2>
-        <table id="example" class="display" style="width:100%">
+<div class="cadres">
+    <table id="example" class="display" style="width:100%">
         <thead>
             <tr>
                 <th>
@@ -57,7 +58,8 @@
                 </tr>
         <?php    } ?>
         </tbody>
-        </table>
+    </table>
+</div>
     <!-- Modal pour nouvel enregistrement boutton add-->
     <!-- The Modal -->
     <div id="modalAdd" class="modal">

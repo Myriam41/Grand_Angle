@@ -6,13 +6,12 @@
          die();
      }
     
-    $title = "";
-    $titlePage = "";
+    $title = "utilisateurs";
+    $titlePage = "Liste des utilisateurs";
 
     ob_start();
 ?>
-
-<h2>Liste des Utilisateurs</h2> 
+<div class="cadres">
     <table id="example" class="display" style="width:100%">
      <thead>
          <th>
@@ -55,7 +54,7 @@
     <?php } ?>
      </tbody>
     </table>
-
+</div>
     <!-- Modal pour nouvel enregistrement boutton add-->
     <!-- The Modal -->
     <div id="modalAdd" class="modal">

@@ -5,12 +5,12 @@
          header('Location: ../index.php');
          die();
      }
-     $title = "";
-     $titlePage = "Les artistes";
-
+     $title = "artists";
+     $titlePage = "Liste des artistes";
+     $lang = 1;
      ob_start();
 ?>
-<h2>Liste des artistes</h2>
+<div class="cadres">
     <table id="example" class="display" style="width:100%">
         <thead>
                 <th>
@@ -21,7 +21,7 @@
                 <th>Ouvrir</th>
                 <th>Nom</th>
                 <th>Prénom</th>
-                <th>Nom usuel</th>
+                <th>Nom</th>
                 <th>Téléphone</th>
                 <th>Mail</th>
                 <th>Pays</th>
@@ -59,6 +59,7 @@
     <?php   } ?>
         </tbody>
     </table>
+</div>
     <!-- Modal pour nouvel enregistrement boutton add-->
     <!-- The Modal -->
     <div id="modalAdd" class="modal">

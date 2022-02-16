@@ -44,6 +44,14 @@ body {
   user-select: none;
   color: #363949;
   box-shadow: inset 9px 9px 15px -5px gold;
+<<<<<<< HEAD
+=======
+}
+
+.scroll {
+  position: fixed;
+  top: 0px;
+>>>>>>> design
 }
 
 .corps {
@@ -51,6 +59,7 @@ body {
   flex-direction: row;
   width: 100%;
 }
+<<<<<<< HEAD
 .corps aside h2 {
   text-align: center;
   color: black;
@@ -69,6 +78,19 @@ body {
 .corps main .date input[type=date] {
   background-color: transparent;
   color: #363949;
+=======
+.corps aside {
+  width: 200px;
+  position: relative;
+  top: 200px h2;
+  top-text-align: center;
+  top-color: black;
+}
+.corps main {
+  width: calc(100% - 200px);
+  padding: 15px;
+  background-image: url("../img/paysage_montsLac.jpg");
+>>>>>>> design
 }
 .corps main #topMain {
   display: flex;
@@ -79,7 +101,6 @@ body {
 }
 .corps main .infoFiche .container .row input {
   padding: 5px;
-  margin: 10px;
 }
 
 .cadres {
@@ -105,15 +126,12 @@ section {
   text-align: center;
 }
 
-/*
-.container{
-    display: grid;
-    width: 96%;
-    margin: 0 auto;
-    gap: 1.8rem;
-    grid-template-columns: 14rem auto 23rem;
+.cadres {
+  background-color: white;
+  padding: 20px;
+  border-radius: 5%;
 }
-*/
+
 h3 {
   text-transform: uppercase;
   color: gold;
@@ -178,10 +196,6 @@ b {
   color: #363949;
 }
 
-.right {
-  margin-top: 1.4rem;
-}
-
 header {
   display: flex;
   padding: 30px;
@@ -195,17 +209,23 @@ header .logo img {
   width: 2rem;
   height: 2rem;
 }
+header p {
+  margin: 0px;
+}
 header .topRight {
   display: flex;
   justify-content: flex-end;
   gap: 2rem;
-  padding-top: 1rem;
+  padding-top: 30px;
   position: absolute;
   top: 0;
   right: 30px;
+<<<<<<< HEAD
 }
 header .topRight p {
   margin: 0px;
+=======
+>>>>>>> design
 }
 header .topRight button {
   display: none;
@@ -296,7 +316,12 @@ footer p {
 
 aside {
   height: 100vh;
+<<<<<<< HEAD
   width: 250px;
+=======
+  width: 200px;
+  border-left: inset 9px 0px 10px -5px gold;
+>>>>>>> design
 }
 aside .close {
   display: inline-block;

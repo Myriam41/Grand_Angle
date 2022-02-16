@@ -33,6 +33,10 @@ body{
     box-shadow: inset 9px 9px 15px -5px gold;
 }
 
+.scroll {
+	position: fixed;
+	top: 0px;
+}
 .corps{
     display: flex;
     flex-direction: row;
@@ -40,7 +44,9 @@ body{
     
 
     aside{
-        //width: 200px;
+        width: 200px;
+        position: relative;
+        top: 200px
 
         h2{
             text-align: center;
@@ -49,25 +55,9 @@ body{
     }
 
     main{
-        //width: calc(100% - 200px);
-        //padding: 5px;
-        //width: 100%;
-        box-shadow: inset -5px -4px 9px 5px gold;
-        //background-image: url('../img/paysage_montsLac.jpg') ;
-        background-color: $secondary;
-        .date{
-            display: inline-block;
-            background-color: $color-light;
-            border-radius: $border-radius-1;
-            margin-top: 1rem;
-            padding: 0.5rem 1.6rem;
-    
-    
-            input[type="date"]{
-                background-color: transparent;
-                color: $color-dark;
-            }
-        }
+        width: calc(100% - 200px);
+        padding: 15px;
+        background-image: url('../img/paysage_montsLac.jpg');  
 
         #topMain{
             display: flex;
@@ -82,7 +72,7 @@ body{
                 .row{
                     input{
                         padding: 5px;
-                        margin: 10px;
+                       // margin: 10px;
                     }
                 }
             }
@@ -112,16 +102,11 @@ section{
     text-align: center;
 }
 
-/*
-.container{
-    display: grid;
-    width: 96%;
-    margin: 0 auto;
-    gap: 1.8rem;
-    grid-template-columns: 14rem auto 23rem;
+.cadres{
+    background-color: $tertiary-light;
+    padding: 20px;
+    border-radius: 5%;
 }
-*/
-
 
 h3{
     text-transform: uppercase;
@@ -186,8 +171,4 @@ p{
 
 b{
     color: $color-dark;
-}
-
-.right{
-    margin-top: 1.4rem;
 }
