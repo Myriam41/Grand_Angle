@@ -4,25 +4,25 @@ $(document).ready( function(){
   const menuBtn = document.querySelector('#menu-btn');
   const closeBtn = document.querySelector('#close-btn');
   // Toggle
-  const themeToggler = document.querySelector('.theme-toggler');
+  //const themeToggler = document.querySelector('.theme-toggler');
 
   // Ouverture menu
-  menuBtn.addEventListener('click', () => {
-      sideMenu.style.display = 'block';
-  })
+  // menuBtn.addEventListener('click', () => {
+  //     sideMenu.style.display = 'block';
+  // })
 
   // Fermeture menu
-  closeBtn.addEventListener('click', () => {
-      sideMenu.style.display = 'none';
-  })
+  // closeBtn.addEventListener('click', () => {
+  //     sideMenu.style.display = 'none';
+  // })
 
   // Changement de thème
-  themeToggler.addEventListener('click', () =>{
-      document.body.classList.toggle('dark-theme-variables');
+  // themeToggler.addEventListener('click', () =>{
+  //     document.body.classList.toggle('dark-theme-variables');
 
-      themeToggler.querySelector('span:nth-child(1)').classList.toggle('active');
-      themeToggler.querySelector('span:nth-child(2)').classList.toggle('active');
-  })
+  //     themeToggler.querySelector('span:nth-child(1)').classList.toggle('active');
+  //     themeToggler.querySelector('span:nth-child(2)').classList.toggle('active');
+  // })
 
 
   // Tableaux
@@ -83,32 +83,32 @@ $(document).ready( function(){
   }
 
   //Gestion des dates
-  String.prototype.toDate = function(format)
-  {
-    var normalized      = this.replace(/[^a-zA-Z0-9]/g, '-');
-    var normalizedFormat= format.toLowerCase().replace(/[^a-zA-Z0-9]/g, '-');
-    var formatItems     = normalizedFormat.split('-');
-    var dateItems       = normalized.split('-');
+  // String.prototype.toDate = function(format)
+  // {
+  //   var normalized      = this.replace(/[^a-zA-Z0-9]/g, '-');
+  //   var normalizedFormat= format.toLowerCase().replace(/[^a-zA-Z0-9]/g, '-');
+  //   var formatItems     = normalizedFormat.split('-');
+  //   var dateItems       = normalized.split('-');
 
-    var monthIndex  = formatItems.indexOf("mm");
-    var dayIndex    = formatItems.indexOf("dd");
-    var yearIndex   = formatItems.indexOf("yyyy");
-    var hourIndex     = formatItems.indexOf("hh");
-    var minutesIndex  = formatItems.indexOf("ii");
-    var secondsIndex  = formatItems.indexOf("ss");
+  //   var monthIndex  = formatItems.indexOf("mm");
+  //   var dayIndex    = formatItems.indexOf("dd");
+  //   var yearIndex   = formatItems.indexOf("yyyy");
+  //   var hourIndex     = formatItems.indexOf("hh");
+  //   var minutesIndex  = formatItems.indexOf("ii");
+  //   var secondsIndex  = formatItems.indexOf("ss");
 
-    var today = new Date();
+  //   var today = new Date();
 
-    var year  = yearIndex>-1  ? dateItems[yearIndex]    : today.getFullYear();
-    var month = monthIndex>-1 ? dateItems[monthIndex]-1 : today.getMonth()-1;
-    var day   = dayIndex>-1   ? dateItems[dayIndex]     : today.getDate();
+  //   var year  = yearIndex>-1  ? dateItems[yearIndex]    : today.getFullYear();
+  //   var month = monthIndex>-1 ? dateItems[monthIndex]-1 : today.getMonth()-1;
+  //   var day   = dayIndex>-1   ? dateItems[dayIndex]     : today.getDate();
 
-    var hour    = hourIndex>-1      ? dateItems[hourIndex]    : today.getHours();
-    var minute  = minutesIndex>-1   ? dateItems[minutesIndex] : today.getMinutes();
-    var second  = secondsIndex>-1   ? dateItems[secondsIndex] : today.getSeconds();
+  //   var hour    = hourIndex>-1      ? dateItems[hourIndex]    : today.getHours();
+  //   var minute  = minutesIndex>-1   ? dateItems[minutesIndex] : today.getMinutes();
+  //   var second  = secondsIndex>-1   ? dateItems[secondsIndex] : today.getSeconds();
 
-    return new Date(year,month,day,hour,minute,second);
-  };
+  //   return new Date(year,month,day,hour,minute,second);
+  // };
 
 
 

@@ -1,6 +1,6 @@
 header{
     display: flex;
-    padding-right: 30px;
+    padding: 30px;
 
     .logo{
         display: flex;
@@ -20,7 +20,11 @@ header{
         padding-top: 1rem;
         position: absolute;
         top: 0;
-        right: 0;
+        right: 30px;
+
+        p{
+            margin:0px;
+        }
 
         button{
             display: none;

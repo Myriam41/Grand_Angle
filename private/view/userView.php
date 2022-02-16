@@ -7,8 +7,8 @@
      }
      
     $title = "";
-    $titlePage = "";
-    $langs = 1;
+    $titlePage = "Les utilisateurs";
+
     $id = $_GET['id'];
 
     $art = new UserModel();

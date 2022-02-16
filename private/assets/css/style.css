@@ -38,14 +38,12 @@ body {
   list-style: none;
   box-sizing: border-box;
   font-size: 14px;
-  width: 100vw;
-  height: 100vh;
   font-family: "poppins", sans-serif;
   font-size: 0.88rem;
   background-color: #F6F6F9;
   user-select: none;
-  overflow-x: hidden;
   color: #363949;
+  box-shadow: inset 9px 9px 15px -5px gold;
 }
 
 .corps {
@@ -53,16 +51,13 @@ body {
   flex-direction: row;
   width: 100%;
 }
-.corps aside {
-  width: 200px;
-}
 .corps aside h2 {
   text-align: center;
   color: black;
 }
 .corps main {
-  width: calc(100% - 200px);
-  padding: 30px;
+  box-shadow: inset -5px -4px 9px 5px gold;
+  background-color: #FFF;
 }
 .corps main .date {
   display: inline-block;
@@ -75,9 +70,8 @@ body {
   background-color: transparent;
   color: #363949;
 }
-.corps main .topMain {
+.corps main #topMain {
   display: flex;
-  width: 100%;
   padding: 15px;
 }
 .corps main .infoFiche {
@@ -86,6 +80,11 @@ body {
 .corps main .infoFiche .container .row input {
   padding: 5px;
   margin: 10px;
+}
+
+.cadres {
+  background-color: gold;
+  padding: 15px;
 }
 
 i {
@@ -100,10 +99,6 @@ h2{
     text-transform: uppercase;
     padding: 15px;
 }
-
-
-
-
 */
 section {
   padding: 30px 0px;
@@ -121,7 +116,7 @@ section {
 */
 h3 {
   text-transform: uppercase;
-  color: #9fa8ad;
+  color: gold;
   font-weight: bolder;
   margin-top: 4em;
   font-size: 13px;
@@ -189,7 +184,7 @@ b {
 
 header {
   display: flex;
-  padding-right: 30px;
+  padding: 30px;
 }
 header .logo {
   display: flex;
@@ -207,7 +202,10 @@ header .topRight {
   padding-top: 1rem;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 30px;
+}
+header .topRight p {
+  margin: 0px;
 }
 header .topRight button {
   display: none;
@@ -271,7 +269,7 @@ nav ul li a:hover {
 }
 
 footer {
-  background-color: #9fa8ad;
+  background-color: gold;
   padding: 20px 0px;
   margin-top: 50px;
 }
@@ -298,7 +296,7 @@ footer p {
 
 aside {
   height: 100vh;
-  width: 200px;
+  width: 250px;
 }
 aside .close {
   display: inline-block;
