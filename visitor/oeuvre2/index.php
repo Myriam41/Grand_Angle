@@ -35,13 +35,13 @@
         <div class="all-lang">
             <div class="lang">
                 <a href="oeuvre/oeuvreEN.php">
-                <img id="f-en" src="../assets/img/flag/united-kingdom-flag-png-large.png.jpeg" alt="">
+                <img id="f-en" src="../assets/img/flag/united-kingdom-flag.jpeg" alt="en">
                 </a>
                 <a href="oeuvre/oeuvreRU.php">
-                <img id="f-ru" src="../assets/img/flag/2579815-russie-officiellement-drapeau-gratuit-vectoriel.jpg" alt="">
+                <img id="f-ru" src="../assets/img/flag/russie-flag.jpg" alt="ru">
                 </a>
                 <a href="oeuvre/oeuvreCH.php">
-                <img id="f-ch" src="../assets/img/flag/china-flag-png-large.png.jpeg" alt="">
+                <img id="f-ch" src="../assets/img/flag/china-flag.jpeg" alt="ch">
                 </a>
                 
                 
@@ -49,10 +49,10 @@
                 
             <div class="lang2">
                 <a href="oeuvre/oeuvreDE.php">
-                <img id="f-de" src="../assets/img/flag/Unknown.png" alt="">
+                <img id="f-de" src="../assets/img/flag/deutch-flag.png" alt="de">
                 </a>
                 <a href="oeuvre/oeuvreFR.php">
-                <img id="f-fr" src="../assets/img/flag/france-flag-png-large.png.jpeg" alt="">
+                <img id="f-fr" src="../assets/img/flag/france-flag.jpeg" alt="fr">
                 </a>
 
                 
