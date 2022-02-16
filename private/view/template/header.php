@@ -8,7 +8,7 @@
     // if(isset($langs) && $langs == 1){
     //     include_once('view/template/langs.php');
     // } -->
-    <label id="lang1" for="desc"><?= include('langs.php') ?></label>
+    <label id="lang1" for="desc"><?php include('langs.php') ?></label>
     <div class="topRight">
         <button id="menu-btn">
             <span class="material-icons-sharp">menu</span>

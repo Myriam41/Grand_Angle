@@ -29,7 +29,7 @@
 		</nav>
         <!-- APERCU DU CODE SCANNÉ -->
         <div class="image">
-            <img class="view" src="../assets/img/25335.jpg" alt="van_gogh">
+            <img class="view" src="../assets/img/guernica-in-color.jpeg" alt="van_gogh">
         </div>
         <!-- CHOIX DES LANGUES -->
         <div class="all-lang">
