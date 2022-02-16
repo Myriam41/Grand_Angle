@@ -109,6 +109,57 @@
 }
 
 @media screen and(max-width: 768px) {
+    #slide-menu{
+        background-color: $black;
+        width: 250px;
+        height: 100vh;
+        position: fixed;
+        z-index: 1000; /* Surposition */
+        font-size: 1.5rem;
+        margin-left: -250px;
+    }
+    .toggle{
+        display: block;
+    }
+    
+    nav#slide-menu.container-fluid{
+        padding-left: 0;
+
+        ul.navigation{
+            flex-direction: column;
+            position: absolute;
+            top: 0;
+            width: 250px;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            
+            li{
+                color: #fff;
+                line-height: 40px;
+                text-indent: 20px ;
+
+    
+                a{
+                    color: #fff;
+                    padding: 20px 0;
+    
+                    transition: all .3ms;
+                }
+                a:hover{
+                    text-decoration: none;
+                    background-color: $green;
+                    padding-left: 20px;
+                }
+            
+                
+            }
+            li:hover{
+                background-color: $green;
+                padding-left: 20px;
+            }
+        }
+    }
     nav.acceuil{
         width: 100%;
         background-color: #ccc;

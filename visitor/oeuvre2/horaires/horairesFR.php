@@ -12,7 +12,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
         
         <!-- STYLESHEET -->
-        <link rel="stylesheet" href="/dist/assets/css/styles.css">
+        <link rel="stylesheet" href="../../assets/css/styles.css">
 
         <!-- FONTS -->
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
@@ -23,21 +23,31 @@
             
         
         <!-- TITLE -->
-        <title>Hello_world</title>
+        <title>Grand Angle. - Horaires</title>
     </head>
     
     <body>
-        <nav class="nav-horaires"> 
+    <nav class="acceuil navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand logo acceuil" href="#">Grand Angle.</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="../accueil/accueilFR.php">Présentation </a>
+                <a class="nav-item nav-link active" href="../horaires/horairesFR.php">Horaires <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="../oeuvre/oeuvreFR.php">Oeuvre</a>
+                <a class="nav-item nav-link" href="../index.php">Retour aux langues</a>
+            </div>
+        </div>
+    </nav>
+    <header>
             <div>
-				<h1 class="logo logo2">Grand Angle.</h1>
-			</div>
-		</nav>
+                <h2>Horaires</h2>
+            </div>
+    </header>
        <section class="horaires">
            <div>
-               <div class="h-lang">
-                <a href="/dist/index.html"><img src="/dist/assets/img/flag/france-flag-png-large.png.jpeg" alt="FRflag"></a>
-               </div>
-               <h3>Horaires</h3>
                <h4>9h → 18h</h4>
                <p>lundi, mercredi, jeudi, vendredi, samedi, dimanche</p>
                <hr>
@@ -53,7 +63,9 @@
                <p><strong>Les 24 et 31 décembre 2021,</strong>&nbsp;le musée du Louvre fermera à 17 h. L'évacuation des salles débutera 30 minutes avant la fermeture.</p>
            </div>
        </section>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="/dist/assets/js/app.js"></script>
+       <script src="../../assets/js/app.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
 </html>
