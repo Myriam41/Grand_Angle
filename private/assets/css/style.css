@@ -288,7 +288,7 @@ footer p {
 }
 
 aside {
-  height: 100vh;
+  height: 70vh;
   width: 200px;
   border-left: inset 9px 0px 10px -5px gold;
 }
@@ -332,7 +332,7 @@ aside .sidebar a i {
 }
 aside .sidebar a:last-child {
   position: absolute;
-  bottom: 2rem;
+  bottom: 5rem;
   width: 100%;
 }
 aside .sidebar a.active {

@@ -111,7 +111,6 @@
                         </div>
                     </div>
                     <div class="col">
-                        <label id="lang1" for="desc"><?= include('template/langs.php') ?></label>
                         <textarea class="form-control" name="desc" id="desc" cols="30" rows="10" placeholder="Description"></textarea>
                     </div>
                 </div>

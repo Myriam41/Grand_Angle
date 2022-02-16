@@ -38,7 +38,6 @@ class ArtModel extends Art{
     }
 
     function getExpoViewById($id){
-       // $this ->getExpoById($id);
 
         $sql = "SELECT  o.code_oeuvre, o.titre_oeuvre, O.date_livraison
                 FROM oeuvre o

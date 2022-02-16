@@ -6,41 +6,13 @@
          die();
      }
      
-    $title = "";
-    $titlePage = "";
-    $langs = 1;
-
-    $img ='';
-
-
-/*
-    $fr = isset($row['descriptionfr'])?$row['descriptionfr']:'';
-    $ru = isset($row['descriptionru'])?$row['descriptionru']:'';
-    $en = isset($row['descriptionen'])?$row['descriptionen']:'';
-    $ch = isset($row['descriptionch'])?$row['descriptionch']:'';
-    $de = isset($row['descriptionde'])?$row['descriptionde']:'';
-*/
-
+    $title = $titre;
+    $titlePage = $titre;
 
     ob_start(); 
 ?>
-    <div id='topMain'>
-        <button type='boutton' class='btn_action'><i class="fas fa-plus"></i></button>
-        <button type='boutton' class='btn_action'><i class="fas fa-save"></i></button>
-        <h2><?= $titre ?></h2>
-        <button type="button" class="btn_sup"><i class="fas fa-trash-alt"></i></button>
-    </div>
-    <div class='infoFiche'>
-        <div>
-<?php       if($img != '')        
-            {
-?>              <img class="mini" src="<?= $img ?>" alt="<?= $titre ?>">           
-<?php       }else
-            {
-?>              <button type='boutton' class='btn_action'><i class="fas fa-plus"></i>Ajouter une image</button>           
-<?php       }
-?>      </div>          
-<div>
+    <div class='cadres'>
+        
 <h2>Liste des oeuvres</h2> 
     <table id="example" class="display" style="width:100%">
      <thead>
@@ -82,13 +54,6 @@
      </tbody>
     </table>
 </div>
-
-
-
-    </div>
-    <textarea></textarea>
-
-
 
 <?php
     $content = ob_get_clean();

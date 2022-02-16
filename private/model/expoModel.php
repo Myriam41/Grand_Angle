@@ -7,7 +7,8 @@ class ExpoModel extends Expo{
     function getExpoAll(){
 
         $sql = 'SELECT code_expo, titre_expo, date_debut, date_fin, image  
-                FROM exposition';
+                FROM exposition
+                ORDER BY date_debut';
 
         $lk = new Postgre();
         $res = $lk->connect($sql);
