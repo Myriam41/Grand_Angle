@@ -11,51 +11,16 @@ hr {
   width: 80%;
   padding: 10px;
 }
-nav {
-  width: 100%;
-  display: flex;
-}
-nav ul.navigation {
-  display: flex;
-  justify-content: flex-end;
-}
-nav ul.navigation li {
-  padding: 20px;
-}
-nav ul.navigation li a {
-  color: #080a3d;
-}
-nav ul.navigation li a:hover {
-  text-decoration: none;
-}
 
-h1 {
-  padding-left: 10rem;
-  position: absolute;
-  top: 0;
-  font-family: "Poppins", sans-serif;
-  color: #0e9d80;
-}
-h1 span {
-  font-family: "Poppins", sans-serif;
-  color: #080a3d;
-}
-
-ul.toggle {
-  display: none;
-}
-ul.toggle i {
-  color: #080a3d;
-}
-/* header div {
+header div {
   height: 300px;
   width: 100%;
   background-image: url(../img/IMG_2502.jpg);
   background-size: cover;
   position: relative;
   margin-bottom: 20px;
-} */
-/* header div h2 {
+}
+header div h2 {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -66,7 +31,7 @@ ul.toggle i {
 
 nav.nav-horaires {
   font-family: "Montserrat", sans-serif;
-  background-image: url(../img/IMG_2502.jpg);
+  background-image: url(/dist/assets/img/IMG_2502.jpg);
   background-size: cover;
   width: 100%;
   height: 250px;
@@ -80,7 +45,7 @@ nav.acceuil {
 }
 nav.acceuil h1.acceuil {
   margin: 0;
-} */
+}
 
 footer {
   background-color: #F1F1F1;
@@ -193,6 +158,16 @@ button.submit {
   border-radius: 20px;
 }
 
+.flag img {
+  top: 0;
+  height: 30px;
+  width: 30px;
+  margin-left: 5px;
+  border-radius: 100%;
+  border: 2px solid #00AB66;
+  cursor: pointer;
+}
+
 h1 {
   font-size: 25px;
   padding: 20px;
@@ -286,7 +261,7 @@ h3, h4 {
 @media screen and (max-width: 768px) {
   nav.nav-horaires {
     font-family: "Montserrat", sans-serif;
-    background-image: url(../img/25335.jpg);
+    background-image: url(/dist/assets/img/IMG_2502.jpg);
     background-size: cover;
     width: 100%;
     height: 250px;
@@ -324,6 +299,53 @@ h3, h4 {
   }
 }
 @media screen and (max-width: 768px) {
+  #slide-menu {
+    background-color: #02020B;
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    z-index: 1000;
+    /* Surposition */
+    font-size: 1.5rem;
+    margin-left: -250px;
+  }
+
+  .toggle {
+    display: block;
+  }
+
+  nav#slide-menu.container-fluid {
+    padding-left: 0;
+  }
+  nav#slide-menu.container-fluid ul.navigation {
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    width: 250px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav#slide-menu.container-fluid ul.navigation li {
+    color: #fff;
+    line-height: 40px;
+    text-indent: 20px;
+  }
+  nav#slide-menu.container-fluid ul.navigation li a {
+    color: #fff;
+    padding: 20px 0;
+    transition: all 0.3ms;
+  }
+  nav#slide-menu.container-fluid ul.navigation li a:hover {
+    text-decoration: none;
+    background-color: #0A210F;
+    padding-left: 20px;
+  }
+  nav#slide-menu.container-fluid ul.navigation li:hover {
+    background-color: #0A210F;
+    padding-left: 20px;
+  }
+
   nav.acceuil {
     width: 100%;
     background-color: #ccc;
@@ -336,7 +358,7 @@ h3, h4 {
   header div {
     height: 300px;
     width: 100%;
-    background-image: url(../img/IMG_2502.jpg);
+    background-image: url(/dist/assets/img/IMG_2502.jpg);
     background-size: cover;
     position: relative;
     margin-bottom: 20px;

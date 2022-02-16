@@ -1,3 +1,23 @@
+$(document).ready(function(){
+    // Quand je clique
+    $('#open').on('click', function(){
+
+        // On déclenche
+        var $nav = $('body')
+
+        // if($nav.css('left') === '0px'){
+        //     val = '250px';
+        // } else{
+        //     val = '0px';
+        // }
+
+        // Ecriture ternaire
+        val = $nav.css('left') === '0px' ? '250px' : '0px';  
+
+        $nav.animate({left: val}, 300)
+    });
+});
+
 // Drapeau
 var fen = document.getElementById('f-en');
 var ffr = document.getElementById('f-fr');
@@ -28,6 +48,7 @@ fen.addEventListener('click', function(){
 
     ffr.classList.remove('active-img');
     fr.classList.remove('active');
+    
 })
 
 // Russe
@@ -103,4 +124,5 @@ ffr.addEventListener('click', function(){
 })
 
 // Changement de langues horaires
+// Lorsque je clique sur le submit, 
 

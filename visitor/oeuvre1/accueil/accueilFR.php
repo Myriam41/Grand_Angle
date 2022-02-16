@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,23 +13,31 @@
         
         <!-- CDN BOOTSTRAP -->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
-        kezhzkhknvknze
         <!-- STYLESHEET -->
-        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="../../assets/css/styles.css">
 
         <!-- FONTS -->
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
         
         <!-- TITLE -->
-        <title>Hello_world</title>
+        <title>Grand Angle. - Présentation</title>
     </head>
     
     <body>
-        <nav class="acceuil">
-            <div>
-				<h1 class="logo acceuil">Grand Angle.</h1>
-			</div>
-		</nav>
+    <nav class="acceuil navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand logo acceuil" href="#">Grand Angle.</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="accueilFR.php">Présentation <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="../horaires/horairesFR.php">Horaires</a>
+                <a class="nav-item nav-link" href="../oeuvre/oeuvreFR.php">Oeuvre</a>
+                <a class="nav-item nav-link" href="../index.php">Retour aux langues</a>
+            </div>
+        </div>
+    </nav>
         <header>
             <div>
                 <h2>Présentation</h2>
@@ -41,7 +52,9 @@
                 Le musée des Beaux-Arts de Lyon compte aujourd'hui parmi les musées français et européens de renom grâce à la richesse de ses collections et au rayonnement de ses expositions. Il nourrit également des projets de partenariats avec les plus grands musées du monde.</p>
             
         </section>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="assets/js/app.js"></script>
+        <script src="../../assets/js/app.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     </body>
 </html>
