@@ -155,7 +155,7 @@
                         <input type="file" class="form-control" id="image" />
                         <div class="row">
                             <div class="col">
-                                <select name="typeArt" id="typeArt1" class="form-select">
+                                <select name="typeArt1" id="typeArt1" class="form-select">
                                     <option selected>Type d'oeuvre</option>
                                     <option value="1">Tableau</option>
                                     <option value="2">Sculpture</option>

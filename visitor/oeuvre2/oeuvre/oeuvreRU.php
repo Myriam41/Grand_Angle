@@ -49,11 +49,11 @@
     <section class="horaires">
            <div>
                <h4>Пабло Пикассо</h4>
-               <img class="view" src="../../assets/img/van-gogh-la-nuit-etoilee-1.jpeg" alt="">
+               <img class="view" src="../../assets/img/guernica-in-color.jpeg" alt="">
                <hr>
                <p>Герника" - это картина испанского художника Пабло Пикассо, одна из самых известных его работ и одна из самых известных картин в мире.</p>
                <hr>
-               <img class="view" src="../../assets/img/Self-Portrait_(Van_Gogh_September_1889).jpeg" alt="">
+               <img class="view" src="../../assets/img/Pablo_picasso_1.jpeg" alt="">
                <hr>
                <p>Пабло Руис Пикассо, родившийся 25 октября 1881 года в Малаге и умерший 8 апреля 1973 года в Мужене, был испанским художником, рисовальщиком, скульптором и гравером, который большую часть своей жизни провел во Франции.</p>
                <!-- <h4>9h → 18h</h4>

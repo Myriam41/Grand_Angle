@@ -49,11 +49,11 @@
        <section class="horaires">
            <div>
                <h4>Par Pablo Picasso</h4>
-               <img class="view" src="../../assets/img/van-gogh-la-nuit-etoilee-1.jpeg" alt="">
+               <img class="view" src="../../assets/img/guernica-in-color.jpeg" alt="">
                <hr>
                <p>Guernica est une peinture du peintre espagnol Pablo Picasso, une de ses œuvres les plus célèbres et un des tableaux les plus connus au monde.</p>
                <hr>
-               <img class="view" src="../../assets/img/Self-Portrait_(Van_Gogh_September_1889).jpeg" alt="">
+               <img class="view" src="../../assets/img/Pablo_picasso_1.jpeg" alt="">
                <hr>
                <p>Pablo Ruiz Picasso, né le 25 octobre 1881 à Malaga et mort le 8 avril 1973 à Mougins, est un peintre, dessinateur, sculpteur et graveur espagnol ayant passé l'essentiel de sa vie en France.</p>
                <!-- <h4>9h → 18h</h4>

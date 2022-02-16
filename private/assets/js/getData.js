@@ -68,6 +68,17 @@ function write(ret){
 
   if(date['open'] == 'getArt'){
     document.getElementById("code" +n).value = ret['code'];
+    document.getElementById("title" +n).value = ret['code'];
+    document.getElementById("height" +n).value = ret['code'];
+    document.getElementById("epaisseur" +n).value = ret['code'];
+    document.getElementById("width" +n).value = ret['code'];
+    document.getElementById("typeArt" +n).value = ret['code'];
+    document.getElementById("artist" +n).value = ret['code'];
+    document.getElementById("descFR" +n).value = ret['code'];
+    document.getElementById("descEN" +n).value = ret['code'];
+    document.getElementById("descCH" +n).value = ret['code'];
+    document.getElementById("descDE" +n).value = ret['code'];
+    document.getElementById("descRU" +n).value = ret['code'];
   }
 }
 

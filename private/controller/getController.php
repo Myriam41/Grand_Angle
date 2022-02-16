@@ -105,7 +105,7 @@
         $retour =[];
 
         while($row = pg_fetch_Assoc($ret)){
-            $retour['code'] = isset($row['code_user'])?$row['code_user']:'';
+            $retour['code_user'] = isset($row['code_user'])?$row['code_user']:'';
             $retour['identifiant'] = isset($row['identifiant'])?$row['identifiant']:'';
             $retour['mot_pass'] = isset($row['mot_pass'])?$row['mot_pass']:'';
             $retour['admin'] = isset($row['admin'])?$row['admin']:'';
