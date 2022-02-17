@@ -37,7 +37,7 @@
                 <a class="nav-item nav-link" href="../accueil/accueilDE.php">Präsentation </a>
                 <a class="nav-item nav-link active" href="../horaires/horairesDE.php">Öffnungszeiten</a>
                 <a class="nav-item nav-link" href="../oeuvre/oeuvreDE.php">Werk</a>
-                <a class="nav-item nav-link" href="../index.php">Zurück zu den Sprachen</a>
+                <a class="nav-item nav-link" href="http://172.16.20.75/Grand_Angle/Grand_Angle/index.php?v=">Zurück zu den Sprachen</a>
             </div>
         </div>
     </nav>

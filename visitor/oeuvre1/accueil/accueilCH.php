@@ -34,7 +34,7 @@
                 <a class="nav-item nav-link active" href="accueilCH.php">演示文稿</a>
                 <a class="nav-item nav-link" href="../horaires/horairesCH.php">时间表</a>
                 <a class="nav-item nav-link" href="../oeuvre/oeuvreCH.php">工作</a>
-                <a class="nav-item nav-link" href="../index.php">返回到语言</a>
+                <a class="nav-item nav-link" href="http://172.16.20.75/Grand_Angle/Grand_Angle/index.php?v=">返回到语言</a>
             </div>
         </div>
     </nav>
