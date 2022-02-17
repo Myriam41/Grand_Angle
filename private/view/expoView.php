@@ -144,7 +144,7 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span id="MEC" class="close">&times;</span>
-            <form class="form-group" name ="formEdit" action='index.php?edit=edit&page=expo&Art&id=' method="post">
+            <form class="form-group" name ="formEdit" action='index.php?edit=editArt&id=' method="post">
                 <div class="form-group row">
                     <div class="col">
                         <input id="code1" name = "code1" hidden>
