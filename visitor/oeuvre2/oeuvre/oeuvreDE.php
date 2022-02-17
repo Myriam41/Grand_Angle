@@ -37,7 +37,7 @@
                 <a class="nav-item nav-link" href="../accueil/accueilDE.php">Präsentation  </a>
                 <a class="nav-item nav-link" href="../horaires/horairesDE.php">Öffnungszeiten</a>
                 <a class="nav-item nav-link active" href="../oeuvre/oeuvreDE.php">Werk</a>
-                <a class="nav-item nav-link" href="../index.php">Retour aux langues</a>
+                <a class="nav-item nav-link" href="../index.php">Zurück zu den Sprachen</a>
             </div>
         </div>
     </nav>
