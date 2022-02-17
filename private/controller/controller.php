@@ -25,6 +25,8 @@
     function artsList(){
         require_once('model/ArtModel.php');
         require_once('model/artistsModel.php');
+        $artistView = new ArtistsModel();
+        $artists = $artistView -> getArtistsAll();
         require_once('view/artsListView.php');
         
     }

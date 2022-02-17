@@ -9,13 +9,14 @@ function getAjax(){
     success: function(response){
         let ret = response;
 
+        write(ret);
+
         if(action == 'edit'){
           modalEdit.style.display = "block";
         }
         if(action == 'view'){
           modalView.style.display = "block";
         }
-        write(ret);
     },
     error: function(){
       alert('ouverture ne peut se faire');
@@ -38,7 +39,6 @@ function write(ret){
     document.getElementById("title" + n).value = ret['titre'];
     document.getElementById("debut" + n).value = ret['debut'];
     document.getElementById("fin" + n).value = ret['fin'];
-
   }
 
   if(data['open'] == 'getArtist'){
@@ -59,29 +59,42 @@ function write(ret){
     document.getElementById("biode" + n).value = ret['biographiede'];
   }
 
-  if(date['open'] == 'getUser'){
+  if(data['open'] == 'getUser'){
     document.getElementById("code" + n).value = ret['code_user'];
     document.getElementById("user" + n).value = ret['identifiant'];
     document.getElementById("password" + n).value = ret['mot_pass'];
     document.getElementById("admin" + n).value = ret['admin'];
   }
 
-  if(date['open'] == 'getArt'){
-    document.getElementById("code" +n).value = ret['code'];
-    document.getElementById("title" +n).value = ret['code'];
-    document.getElementById("height" +n).value = ret['code'];
-    document.getElementById("epaisseur" +n).value = ret['code'];
-    document.getElementById("width" +n).value = ret['code'];
-    document.getElementById("typeArt" +n).value = ret['code'];
-    document.getElementById("artist" +n).value = ret['code'];
-    document.getElementById("descFR" +n).value = ret['code'];
-    document.getElementById("descEN" +n).value = ret['code'];
-    document.getElementById("descCH" +n).value = ret['code'];
-    document.getElementById("descDE" +n).value = ret['code'];
-    document.getElementById("descRU" +n).value = ret['code'];
+  if(data['open'] == 'getArt'){
+    document.getElementById("code" + n).value = ret['code'];
+    document.getElementById("title" + n).value = ret['titre'];
+    document.getElementById("height" + n).value = ret['hauteur'];
+    document.getElementById("epaisseur" + n).value = ret['epaisseur'];
+    document.getElementById("width" + n).value = ret['largeur'];
+    //document.getElementById("typeArt" + n).value = ret['code'];
+    document.getElementById("artist" + n).value = ret['nom'];
+    document.getElementById("descFR" + n).value = ret['descriptionfr'];
+    document.getElementById("descEN" + n).value = ret['descriptionen'];
+    document.getElementById("descCH" + n).value = ret['descriptionch'];
+    document.getElementById("descDE" + n).value = ret['descriptionde'];
+    document.getElementById("descRU" + n).value = ret['descriptionru'];
+
+    document.getElementById('qrcode').innerHTML='';
+    
+    var href = "http://172.16.20.75/Grand_Angle/Grand_Angle/index.php?v="+ ret['code'];
+    const size = 900;
+
+    new QRCode(document.querySelector("#qrcode"), {
+    text: href,
+    width: size,
+    height: size,
+
+    colorDark: "#ffffff",
+    colorLight: "#000000"
+    });
   }
 }
-
 
 function getArt(elet){
   action = elet.id
@@ -106,8 +119,6 @@ function getArtist(elet){
 function getExpo(elet){
   action = elet.id
   id = elet.name;
-  console.log(action);
-  console.log(id);
   data = {
     'open': 'getExpo',
     'id': id

@@ -35,7 +35,11 @@
     function getArt($id){
         global $conn;
 
-        $sql = "SELECT o.code_oeuvre, o.titre_oeuvre, o.date_livraison, a.nom, exposition.titre_expo, exposition.date_debut 
+        $sql = "SELECT o.code_oeuvre, o.titre_oeuvre, o.date_livraison, o.hauteur, 
+                o.epaisseur, o.largeur, o.descriptionfr, o.descriptionen, 
+                o.descriptionru, o.descriptionch, o.descriptionde, a.nom,
+                exposition.titre_expo, exposition.date_debut
+                    
                 FROM oeuvre o
                 LEFT JOIN artiste a ON a.code_artiste = o.code_artiste
                 LEFT JOIN exposer ON exposer.code_oeuvre = o.code_oeuvre
@@ -53,7 +57,16 @@
             $retour['nom'] = isset($row['nom'])?$row['nom']:'';
             $retour['titre_expo'] = isset($row['titre_expo'])?$row['titre_expo']:'';
             $retour['debut'] = isset($row['date_debut'])?$row['date_debut']:'';
+            $retour['epaisseur'] = isset($row['epaisseur'])?$row['epaisseur']:'';
+            $retour['hauteur'] = isset($row['hauteur'])?$row['hauteur']:'';
+            $retour['largeur'] = isset($row['largeur'])?$row['largeur']:'';
+            $retour['descriptionfr'] = isset($row['descriptionfr'])?$row['descriptionfr']:'';
+            $retour['descriptionen'] = isset($row['descriptionen'])?$row['descriptionen']:'';
+            $retour['descriptionru'] = isset($row['descriptionru'])?$row['descriptionru']:'';
+            $retour['descriptionch'] = isset($row['descriptionch'])?$row['descriptionch']:'';
+            $retour['descriptionde'] = isset($row['descriptionde'])?$row['descriptionde']:'';
         }
+
         return $retour;
     }
 

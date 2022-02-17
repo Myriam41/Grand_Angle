@@ -12,7 +12,7 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" rel="stylesheet">
         
         <!-- STYLESHEET -->
-        <link rel="stylesheet" href="../assets/css/styles.css">
+        <link rel="stylesheet" href="visitor/assets/css/styles.css">
 
         <!-- FONTS -->
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
@@ -29,36 +29,34 @@
 		</nav>
         <!-- APERCU DU CODE SCANNÉ -->
         <div class="image">
-            <img class="view" src="../assets/img/25335.jpg" alt="van_gogh">
+            <img class="view" src="visitor/assets/img/25335.jpg" alt="van_gogh">
         </div>
         <!-- CHOIX DES LANGUES -->
         <div class="all-lang">
             <div class="lang">
-                <a href="oeuvre/oeuvreEN.php">
-                <img id="f-en" src="../assets/img/flag/united-kingdom-flag.jpeg" alt="en">
+                <a href="visitor/oeuvre1/oeuvre/oeuvreEN.php">
+                    <img id="f-en" src="visitor/assets/img/flag/united-kingdom-flag.jpeg" alt="en">
                 </a>
-                <a href="oeuvre/oeuvreRU.php">
-                <img id="f-ru" src="../assets/img/flag/russie-flag.jpg" alt="ru">
+                <a href="visitor/oeuvre1/oeuvre/oeuvreRU.php">
+                    <img id="f-ru" src="visitor/assets/img/flag/russie-flag.jpg" alt="ru">
                 </a>
-                <a href="oeuvre/oeuvreCH.php">
-                <img id="f-ch" src="../assets/img/flag/china-flag.jpeg" alt="ch">
+                <a href="visitor/oeuvre1/oeuvre/oeuvreCH.php">
+                    <img id="f-ch" src="visitor/assets/img/flag/china-flag.jpeg" alt="ch">
                 </a>
-                
-                
             </div>
                 
             <div class="lang2">
-                <a href="oeuvre/oeuvreDE.php">
-                <img id="f-de" src="../assets/img/flag/deutch-flag.png" alt="de">
+                <a href="visitor/oeuvre1/oeuvre/oeuvreDE.php">
+                    <img id="f-de" src="visitor/assets/img/flag/deutch-flag.png" alt="de">
                 </a>
-                <a href="oeuvre/oeuvreFR.php">
-                <img id="f-fr" src="../assets/img/flag/france-flag.jpeg" alt="fr">
+                <a href="visitor/oeuvre1/oeuvre/oeuvreFR.php">
+                    <img id="f-fr" src="visitor/assets/img/flag/france-flag.jpeg" alt="fr">
                 </a>
 
                 
             </div>
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-        <script src="../assets/js/app.js"></script>
+        <script src="visitor/assets/js/app.js"></script>
     </body>
 </html>

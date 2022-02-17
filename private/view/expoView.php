@@ -25,7 +25,6 @@
          <th>Titre</th>
          <th>Date de livraison</th>
          <th>Artiste</th>
-         <th>QRCode</th>
          <th></th>
      </thead>
      <tbody>
@@ -45,7 +44,6 @@
                 <td><?= $row['titre_oeuvre'] ?></td>
                 <td><?= $row['date_livraison'] ?></td>
                 <td><?= $row['nom'] ?></td>
-                <td>QR</td>
                 <td>
                     <button class="btn_sup"  name="<?= $row['code_oeuvre']?>" onclick="delExpo(this)"><i class="fas fa-trash-alt"></i></button>
                 </td>
@@ -56,6 +54,7 @@
 </div>
 
 <?php
+
     $content = ob_get_clean();
 
     require('view/template/base.php');

@@ -450,8 +450,8 @@ table tbody tr:last-child td {
 }
 
 #qrcode {
-  height: 100px;
-  width: 100px;
+  height: 300px;
+  width: 300px;
 }
 
 /* The Modal (background) */
