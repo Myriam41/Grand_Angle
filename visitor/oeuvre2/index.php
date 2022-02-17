@@ -60,5 +60,8 @@
         </div>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="../assets/js/app.js"></script>
+        <footer>
+            <p class="align-center py-3 mx-2">Grand Angle - Myriam S. & Mathieu V. &copy;2022</p>
+        </footer>
     </body>
 </html>

@@ -52,6 +52,9 @@
                 The Musée des Beaux-Arts de Lyon is now one of the most renowned French and European museums thanks to the richness of its collections and the influence of its exhibitions. It also has partnership projects with the world's greatest museums.</p>
             
         </section>
+        <footer>
+            <p class="align-center py-3 mx-2">Grand Angle - Myriam S. & Mathieu V. &copy;2022</p>
+        </footer>
         <script src="../../assets/js/app.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
