@@ -39,7 +39,7 @@ class Art {
     public function getDateLivraison() {
         return $this->date_livraison;
     }   
-    public function estLivre() {
+    public function getEstLivre() {
         return $this->estLivre;
     }     
     public function getDescriptionFR() {

@@ -34,8 +34,6 @@
         </thead>
         <tbody>
             <?php 
-            $artsView = new ArtModel();
-            $art = $artsView -> getArtsAll();
 
             while( $row = $art->fetch()){ ?>
                 <tr>
@@ -73,8 +71,8 @@
                         <input type="text" id="title" name="title" class="form-control" placeholder="Titre">
                         <div class="row">
                             <div class="col">
-                                <label for="height">Hauteur</label>
-                                <input type="text" id="height" name="height" class="form-control" placeholder="Hauteur">
+                                <label for="hauteur">Hauteur</label>
+                                <input type="text" id="hauteur" name="hauteur" class="form-control" placeholder="Hauteur">
                             </div>
                             <div class="col">
                                 <label for="epaisseur">Epaisseur</label>
@@ -83,6 +81,10 @@
                             <div class="col">
                                 <label for="largeur">Largeur</label>
                                 <input type="text" id="largeur" name="largeur" class="form-control" placeholder="Largeur">
+                            </div>
+                            <div class="col">
+                                <label for="livree">Livrée</label>
+                                <input type="checkbox" id="livree" name="livree" class="form-control">
                             </div>
                         </div>
                         <label class="form-label" for="image">Image</label>
@@ -111,7 +113,16 @@
                         </div>
                     </div>
                     <div class="col">
-                        <textarea class="form-control" name="desc" id="desc" cols="30" rows="10" placeholder="Description"></textarea>
+                        Français
+                        <textarea class="form-control" name="descFR" id="descFR" cols="30" rows="10" placeholder="Description"></textarea>
+                        Anglais
+                        <textarea class="form-control" name="descEN" id="descEN" cols="30" rows="10" placeholder="Description"></textarea>
+                        Allemand
+                        <textarea class="form-control" name="descDE" id="descDE" cols="30" rows="10" placeholder="Description"></textarea>
+                        Chinois
+                        <textarea class="form-control" name="descCH" id="descCH" cols="30" rows="10" placeholder="Description"></textarea>
+                        Russes
+                        <textarea class="form-control" name="descRU" id="descRU" cols="30" rows="10" placeholder="Description"></textarea>
                     </div>
                 </div>
 
@@ -133,26 +144,30 @@
             <form class="form-group" action='index.php?action=edit&page=artsList' method="post">
                 <div class="form-group row">
                     <div class="col">
-                        <input hidden class="code1">
+                        <input id="code1" name = "code1" hidden>
                         <label for="title1">Titre</label>
                         <input type="text" id="title1" name="title1" class="form-control" placeholder="Titre">
-                        <div class="row">
+                        <div class="row mt-3">
                             <div class="col">
-                                <label for="height1">Hauteur</label>
-                                <input type="text" id="height1" name="height1" class="form-control" placeholder="Hauteur">
+                                <label for="hauteur1">Hauteur</label>
+                                <input type="text" id="hauteur1" name="hauteur1" class="form-control" placeholder="Hauteur">
                             </div>
                             <div class="col">
                                 <label for="epaisseur1">Epaisseur</label>
                                 <input type="text" id="epaisseur1" name="epaisseur1" class="form-control" placeholder="Epaisseur">
                             </div>
                             <div class="col">
-                                <label for="width1">Largeur</label>
-                                <input type="text" id="width1" name="width1" class="form-control" placeholder="Largeur">
+                                <label for="largeur1">Largeur</label>
+                                <input type="text" id="largeur1" name="largeur1" class="form-control" placeholder="Largeur">
+                            </div>
+                            <div class="col">
+                                <label for="livree1">Livrée</label>
+                                <input type="checkbox" id="livree1" name="livree1" class="form-check-input">
                             </div>
                         </div>
-                        <label class="form-label" for="image">Image</label>
+                        <label class="form-label mt-3" for="image">Image</label>
                         <input type="file" class="form-control" id="image" />
-                        <div class="row">
+                        <div class="row mt-3">
                             <div class="col">
                                 <select name="typeArt1" id="typeArt1" class="form-select">
                                     <option selected>Type d'oeuvre</option>
@@ -164,19 +179,30 @@
                             <div class="col">
                                 <select name="artist1" id="artist1" class="form-select">
                                     <option selected>Artistes</option>
-                                    <?php
+                <?php
                                     $artistView = new ArtistsModel();
                                     $artists = $artistView -> getArtistsAll();
-                                    
                                     while($row = $artists->fetch()){ ?>
                                     <option value="<?= $row['code_artiste'] ?>"><?= isset($row['nom'])? $row['nom']: "";  ?></option>
                                     <?php } ?>
                                 </select>
                             </div>
                         </div>
+                        <div id="qrcode" name="" class="p-2 mt-3"></div>
                     </div>
                     <div class="col">
-                        <textarea class="form-control" name="desc1" id="desc1" cols="30" rows="10" placeholder="Description"></textarea>
+                        Français
+                        <textarea class="form-control" name="descFR1" id="descFR1" cols="30" rows="10" placeholder="Description"></textarea>
+                        Anglais
+                        <textarea class="form-control" name="descEN1" id="descEN1" cols="30" rows="10" placeholder="Description"></textarea>
+                        Allemand
+                        <textarea class="form-control" name="descDE1" id="descDE1" cols="30" rows="10" placeholder="Description"></textarea>
+                        Chinois
+                        <textarea class="form-control" name="descCH1" id="descCH1" cols="30" rows="10" placeholder="Description"></textarea>
+                        Russes
+                        <textarea class="form-control" name="descRU1" id="descRU1" cols="30" rows="10" placeholder="Description"></textarea>
+
+                    </div>
                     </div>
                 </div>
 
@@ -202,10 +228,10 @@
                         <input id="code2" name = "code2" hidden>
                         <label for="title2">Titre</label>
                         <input type="text" id="title2" name="title2" class="form-control" placeholder="Titre">
-                        <div class="row">
+                        <div class="row mt-3">
                             <div class="col">
                                 <label for="height2">Hauteur</label>
-                                <input type="text" id="height2" name="height2" class="form-control" value=0 placeholder="Hauteur">
+                                <input type="text" id="hauteur2" name="hauteur2" class="form-control" value=0 placeholder="Hauteur">
                             </div>
                             <div class="col">
                                 <label for="epaisseur2">Epaisseur</label>
@@ -213,12 +239,16 @@
                             </div>
                             <div class="col">
                                 <label for="width2">Largeur</label>
-                                <input type="number" id="width2" name="width2" class="form-control" placeholder="Largeur">
+                                <input type="number" id="largeur2" name="largeur2" class="form-control" placeholder="Largeur">
+                            </div>
+                            <div class="col">
+                                <label for="livree2">Livrée</label>  
+                                <input type="checkbox" id="livree2" name="livree2" class="form-check-input">
                             </div>
                         </div>
-                        <label class="form-label" for="image">Image</label>
+                        <label class="form-label mt-3" for="image">Image</label>
                         <input type="file" class="form-control" id="image" />
-                        <div class="row">
+                        <div class="row mt-3">
                             <div class="col">
                                 <select name="typeArt" id="typeArt" class="form-select">
                                     <option selected>Type d'oeuvre</option>
@@ -229,24 +259,30 @@
                             </div>
                             
                             <div class="col">
-                                <select name="artist" id="artist2" class="form-select">
+                                <select name="artist2" id="artist2" class="form-select">
                                     <option selected>Artistes</option>
                                     <?php
-                                    
+                                    $artistView = new ArtistsModel();
+                                    $artists = $artistView -> getArtistsAll();
                                     while($row = $artists->fetch()){ ?>
                                     <option value="<?= $row['code_artiste'] ?>"><?= isset($row['nom'])? $row['nom']: "";  ?></option>
                                     <?php } ?>
                                 </select>
                             </div>     
                         </div>
-                        <div id="qrcode" name="" class="p-2"></div>
+                        <div id="qrcode" name="" class="p-2 mt-3"></div>
 
                     </div>
                     <div class="col">
+                        Français
                         <textarea class="form-control" name="descFR2" id="descFR2" cols="30" rows="10" placeholder="Description"></textarea>
+                        Anglais
                         <textarea class="form-control" name="descEN2" id="descEN2" cols="30" rows="10" placeholder="Description"></textarea>
+                        Allemand
                         <textarea class="form-control" name="descDE2" id="descDE2" cols="30" rows="10" placeholder="Description"></textarea>
+                        Chinois
                         <textarea class="form-control" name="descCH2" id="descCH2" cols="30" rows="10" placeholder="Description"></textarea>
+                        Russes
                         <textarea class="form-control" name="descRU2" id="descRU2" cols="30" rows="10" placeholder="Description"></textarea>
 
                     </div>

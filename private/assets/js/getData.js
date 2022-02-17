@@ -69,9 +69,9 @@ function write(ret){
   if(data['open'] == 'getArt'){
     document.getElementById("code" + n).value = ret['code'];
     document.getElementById("title" + n).value = ret['titre'];
-    document.getElementById("height" + n).value = ret['hauteur'];
+    document.getElementById("hauteur" + n).value = ret['hauteur'];
     document.getElementById("epaisseur" + n).value = ret['epaisseur'];
-    document.getElementById("width" + n).value = ret['largeur'];
+    document.getElementById("largeur" + n).value = ret['largeur'];
     //document.getElementById("typeArt" + n).value = ret['code'];
     document.getElementById("artist" + n).value = ret['nom'];
     document.getElementById("descFR" + n).value = ret['descriptionfr'];

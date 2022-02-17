@@ -24,7 +24,9 @@ class ArtModel extends Art{
 // et pour l'ouverture de la vue expo.
     function getViewsArtsExpo($idExpo){
 
-        $sql = "SELECT o.titre_oeuvre, exposer.nombre_vues, o.code_oeuvre, o.titre_oeuvre, o.date_livraison, a.nom
+        $sql = "SELECT o.titre_oeuvre, exposer.nombre_vues, o.code_oeuvre, 
+                        o.titre_oeuvre, o.date_livraison, o.livree,
+                        a.nom
                 FROM exposer
                 INNER JOIN oeuvre o ON exposer.code_oeuvre = o.code_oeuvre
                 LEFT JOIN artiste a ON o.code_artiste = a.code_artiste
@@ -115,14 +117,42 @@ class ArtModel extends Art{
         // $res = $lk->connect($sql);
     }
     function editArt($id){
+        $id = $this->getCode();
+        $titre = $this->getTitre();
+        $hauteur = $this->getHauteur();
+        $largeur = $this->getLargeur();
+        $epaisseur = $this->getEpaisseur();
+        $flash = $this->getFlash();
+        $livraison = $this->getDateLivraison();
+        $livree = $this->getEstLivre();
+        $desFR = $this->getDescriptionFR();
+        $desEN = $this->getDescriptionEN();
+        $desDE = $this->getDescriptionDE();
+        $desCH = $this->getDescriptionCH();
+        $desRU = $this->getDescriptionRU();
+        $type = $this->getCodeType();
+        $artiste = $this->getCodeArtiste();
+
         $sql = "UPDATE oeuvre
-                SET nom_colonne_1 = 'nouvelle valeur'
+                SET titre_expo = '$titre',
+                    hauteur = '$hauteur',
+                    largeur = '$largeur',
+                    epaisseur = '$epaisseur',
+                    date_livraison = '$livraison',
+                    livree = '$livree',
+                    descriptionfr = '$desFR',
+                    descriptionen = '$desEN',
+                    descriptionde = '$desDE',
+                    descriptionch = '$desCH',
+                    descriptionru = '$desRU',
+                    code_typeoeuvre = '$type',
+                    code_artiste = '$artiste'
+                    
                 WHERE code_oeuvre = $id";
 
         $lk = new Postgre();
         $res = $lk->connect($sql);
     }
-
 }
 
 

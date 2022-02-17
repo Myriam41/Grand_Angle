@@ -24,6 +24,7 @@
          <th>Ouvrir</th>
          <th>Titre</th>
          <th>Date de livraison</th>
+         <th>Livrée</th>
          <th>Artiste</th>
          <th></th>
      </thead>
@@ -43,6 +44,11 @@
                 </td>
                 <td><?= $row['titre_oeuvre'] ?></td>
                 <td><?= $row['date_livraison'] ?></td>
+                <td>
+<?php               if($row['livree']= 1){?>
+                        <input type="checkbox" checked>
+<?php               }?>
+                </td>
                 <td><?= $row['nom'] ?></td>
                 <td>
                     <button class="btn_sup"  name="<?= $row['code_oeuvre']?>" onclick="delExpo(this)"><i class="fas fa-trash-alt"></i></button>
