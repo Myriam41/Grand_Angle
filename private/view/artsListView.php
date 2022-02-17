@@ -141,7 +141,7 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span id="MEC" class="close">&times;</span>
-            <form class="form-group" action='index.php?action=edit&page=artsList' method="post">
+            <form class="form-group" name ="formEdit" action='index.php?edit=editArt&page=artsList&id=' method="post">
                 <div class="form-group row">
                     <div class="col">
                         <input id="code1" name = "code1" hidden>
@@ -188,7 +188,7 @@
                                 </select>
                             </div>
                         </div>
-                        <div id="qrcode" name="" class="p-2 mt-3"></div>
+                        <div id="qrcode1" name="" class="p-2 mt-3"></div>
                     </div>
                     <div class="col">
                         Français
@@ -201,23 +201,18 @@
                         <textarea class="form-control" name="descCH1" id="descCH1" cols="30" rows="10" placeholder="Description"></textarea>
                         Russes
                         <textarea class="form-control" name="descRU1" id="descRU1" cols="30" rows="10" placeholder="Description"></textarea>
-
-                    </div>
                     </div>
                 </div>
 
                 <div class="form-group">
-                <button type="button" class="btn btn-primary">Annuler</button>
-                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                    <button type="button" class="btn btn-primary">Annuler</button>
+                    <button type="submit" class="btn btn-primary"  onclick="envoiForm()">Enregistrer</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <!-- Trigger/Open The Modal -->
-    <!-- Modal pour visualiser enregistrement -->
-
-    <!-- The Modal -->
+    <!-- Modal pour simple visualisation des données -->
     <div id="modalView" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
@@ -270,9 +265,10 @@
                                 </select>
                             </div>     
                         </div>
-                        <div id="qrcode" name="" class="p-2 mt-3"></div>
+                        <div id="qrcode2" name="" class="p-2 mt-3"></div>
 
                     </div>
+                    <!-- Descriptions par langues - View -->
                     <div class="col">
                         Français
                         <textarea class="form-control" name="descFR2" id="descFR2" cols="30" rows="10" placeholder="Description"></textarea>
@@ -284,13 +280,7 @@
                         <textarea class="form-control" name="descCH2" id="descCH2" cols="30" rows="10" placeholder="Description"></textarea>
                         Russes
                         <textarea class="form-control" name="descRU2" id="descRU2" cols="30" rows="10" placeholder="Description"></textarea>
-
                     </div>
-                </div>
-
-                <div class="form-group">
-                <button type="button" class="btn btn-primary">Annuler</button>
-                    <button type="submit" class="btn btn-primary">Enregistrer</button>
                 </div>
             </form>
         </div>

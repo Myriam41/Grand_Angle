@@ -111,7 +111,7 @@
             $userM->setPass(isset($_POST['password1'])?$_POST['password1']:"");
             $userM->setAdmin(isset($_POST['admin1'])?$_POST['admin1']:"");
 
-            $user->$name($id);
+            $userM->$name($id);
             usersList();
         }
 
@@ -133,10 +133,9 @@
             $artM->setDescriptionRU(isset($_POST['descRU1'])?$_POST['descRU1']:"");
             $artM->setCodeType(isset($_POST['codeType'])?$_POST['codeType']:"");
             $artM->setCodeArtiste(isset($_POST['codeArtist'])?$_POST['codeArtist']:"");
-
             //$image = isset($_POST['image'])?$_POST['image']:"";
             $artM->$name($id);
-            artsList();
+            expo($_SESSION['idExpo']);
         }
 
         if($name == 'editArtist'){

@@ -45,6 +45,10 @@
         include_once('model/artModel.php');
         $artExpo = new ArtModel();
         $arts = $artExpo -> getViewsArtsExpo($id);
+
+        require_once('model/artistsModel.php');
+        $artistView = new ArtistsModel();
+        $artists = $artistView -> getArtistsAll();
         include_once('view/expoView.php');
     }
 

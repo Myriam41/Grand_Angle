@@ -7,12 +7,13 @@ class ArtModel extends Art{
 
     function getArtsNoLivre(){
 
-        $sql = 'SELECT o.code_oeuvre, o.titre_oeuvre, o.date_livraison, a.nom, exposition.titre_expo, exposition.date_debut
+        $sql = "SELECT o.code_oeuvre, o.titre_oeuvre, o.date_livraison, o.livree, a.nom, exposition.titre_expo, exposition.date_debut
                 FROM oeuvre o
                 LEFT JOIN artiste a ON o.code_artiste = a.code_artiste
                 LEFT JOIN exposer e ON o.code_oeuvre = e.code_oeuvre
                 LEFT JOIN exposition ON e.code_expo = exposition.code_expo
-                ORDER BY date_debut';
+                WHERE o.livree ISNULL
+                ORDER BY date_debut";
         
         $lk = new Postgre();
         $res = $lk->connect($sql);
@@ -122,33 +123,34 @@ class ArtModel extends Art{
         $hauteur = $this->getHauteur();
         $largeur = $this->getLargeur();
         $epaisseur = $this->getEpaisseur();
-        $flash = $this->getFlash();
         $livraison = $this->getDateLivraison();
-        $livree = $this->getEstLivre();
+        $livraison = isset($livraison)?$livraison:'ISNULL';
+        //date_livraison = '$livraison',
+       // $livree = $this->getEstLivre();
+       // livree = $livree,
         $desFR = $this->getDescriptionFR();
         $desEN = $this->getDescriptionEN();
         $desDE = $this->getDescriptionDE();
         $desCH = $this->getDescriptionCH();
         $desRU = $this->getDescriptionRU();
-        $type = $this->getCodeType();
-        $artiste = $this->getCodeArtiste();
+        //$type = $this->getCodeType();
+        //$artiste = $this->getCodeArtiste();
+        //code_typeoeuvre = '$type',
+        //code_artiste = '$artiste'
 
         $sql = "UPDATE oeuvre
-                SET titre_expo = '$titre',
+                SET titre_oeuvre = '$titre',
                     hauteur = '$hauteur',
                     largeur = '$largeur',
                     epaisseur = '$epaisseur',
-                    date_livraison = '$livraison',
-                    livree = '$livree',
+                    
+
                     descriptionfr = '$desFR',
                     descriptionen = '$desEN',
                     descriptionde = '$desDE',
                     descriptionch = '$desCH',
-                    descriptionru = '$desRU',
-                    code_typeoeuvre = '$type',
-                    code_artiste = '$artiste'
-                    
-                WHERE code_oeuvre = $id";
+                    descriptionru = '$desRU'            
+                WHERE code_oeuvre = '$id'";
 
         $lk = new Postgre();
         $res = $lk->connect($sql);
