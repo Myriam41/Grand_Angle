@@ -111,12 +111,31 @@
             $userM->setPass(isset($_POST['password1'])?$_POST['password1']:"");
             $userM->setAdmin(isset($_POST['admin1'])?$_POST['admin1']:"");
 
-            $user->$name($id);
+            $userM->$name($id);
             usersList();
         }
 
         if($name == 'editArt'){
             include_once ('model/artModel.php');
+            $artM = new ArtModel();
+            $artM->setCode(isset($_POST['code1'])?$_POST['code1']:"");
+            $artM->setTitre(isset($_POST['title1'])?$_POST['title1']:"");
+            $artM->setHauteur(isset($_POST['hauteur1'])?$_POST['hauteur1']:"");
+            $artM->setLargeur(isset($_POST['largeur1'])?$_POST['largeur1']:"");
+            $artM->setEpaisseur(isset($_POST['epaisseur1'])?$_POST['epaisseur1']:"");
+            $artM->setFlash(isset($_POST['flash1'])?$_POST['flash1']:"");
+            $artM->setDateLivraison(isset($_POST['livraison1'])?$_POST['livraison1']:"");
+            $artM->setEstLivre(isset($_POST['livree1'])?$_POST['livree1']:"");
+            $artM->setDescriptionFR(isset($_POST['descFR1'])?$_POST['descFR1']:"");
+            $artM->setDescriptionEN(isset($_POST['descEN1'])?$_POST['descEN1']:"");
+            $artM->setDescriptionDE(isset($_POST['descDE1'])?$_POST['descDE1']:"");
+            $artM->setDescriptionCH(isset($_POST['descCH1'])?$_POST['descCH1']:"");
+            $artM->setDescriptionRU(isset($_POST['descRU1'])?$_POST['descRU1']:"");
+            $artM->setCodeType(isset($_POST['codeType'])?$_POST['codeType']:"");
+            $artM->setCodeArtiste(isset($_POST['codeArtist'])?$_POST['codeArtist']:"");
+            //$image = isset($_POST['image'])?$_POST['image']:"";
+            $artM->$name($id);
+            expo($_SESSION['idExpo']);
         }
 
         if($name == 'editArtist'){

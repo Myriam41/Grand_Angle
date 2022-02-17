@@ -69,9 +69,9 @@ function write(ret){
   if(data['open'] == 'getArt'){
     document.getElementById("code" + n).value = ret['code'];
     document.getElementById("title" + n).value = ret['titre'];
-    document.getElementById("height" + n).value = ret['hauteur'];
+    document.getElementById("hauteur" + n).value = ret['hauteur'];
     document.getElementById("epaisseur" + n).value = ret['epaisseur'];
-    document.getElementById("width" + n).value = ret['largeur'];
+    document.getElementById("largeur" + n).value = ret['largeur'];
     //document.getElementById("typeArt" + n).value = ret['code'];
     document.getElementById("artist" + n).value = ret['nom'];
     document.getElementById("descFR" + n).value = ret['descriptionfr'];
@@ -80,12 +80,13 @@ function write(ret){
     document.getElementById("descDE" + n).value = ret['descriptionde'];
     document.getElementById("descRU" + n).value = ret['descriptionru'];
 
-    document.getElementById('qrcode').innerHTML='';
+    document.getElementById('qrcode' + n).innerHTML='';
     
-    var href = "http://172.16.20.75/Grand_Angle/Grand_Angle/index.php?v="+ ret['code'];
+    var href = '';
+    href = "http://172.16.20.75/Grand_Angle/Grand_Angle/index.php?v="+ ret['code'];
     const size = 900;
 
-    new QRCode(document.querySelector("#qrcode"), {
+    new QRCode(document.querySelector("#qrcode" + n), {
     text: href,
     width: size,
     height: size,
