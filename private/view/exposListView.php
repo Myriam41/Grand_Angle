@@ -7,7 +7,7 @@
      }
      
     $title = "expositions";
-    $titlePage = "Les expositions";
+    $titlePage = "Les Expositions";
 
     ob_start();   
 ?>

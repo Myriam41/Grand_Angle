@@ -81,9 +81,6 @@
 
         if($name == 'addArtist'){
             include_once ('model/artistsModel.php');
-
-
-
         }
     }
 
@@ -120,16 +117,12 @@
 
         if($name == 'editArt'){
             include_once ('model/artModel.php');
-
-
         }
 
         if($name == 'editArtist'){
             include_once ('model/artistsModel.php');
 
             $artistM = new ArtistsModel();
-
-
         }
     }
 

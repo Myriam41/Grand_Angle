@@ -22,6 +22,6 @@
             <i class="fas fa-users"></i>Utilisateurs
         </a>
         <a href="index.php?deconnect=1">
-            <i class="fas fa-wifi"></i>Déconnection
+            <i class="fas fa-wifi"></i>Déconnexion
         </a>
     </div>

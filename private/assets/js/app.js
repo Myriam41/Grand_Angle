@@ -101,7 +101,6 @@ function scrollFunction() {
     url = document.formEdit.action;
     console.log(url);
     code = document.getElementById('code1');
-    alert(code.value);
     document.formEdit.action = url + code.value;
     document.formEdit.submit();
   }

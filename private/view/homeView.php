@@ -24,7 +24,7 @@
 >>>>>>> design
                 <!-- Graph des vues -->
                 <div class="recent-orders cadres">
-                    <h2>Les 5 oeuvres les plus vues</h2>
+                    <h2>Les 5 oeuvres les plus vues - <?= $lastExpo->getTitre(); ?></h2>
                     <div id="artGraph">
                         <canvas id="graph" width="400" height="200"></canvas>
                     </div>
@@ -62,7 +62,7 @@
             <!-- partie de droite -->
             <div class="col-4">
                 <div class="recent-orders cadres">
-                    <h2>Dernière exposition</h2>
+                    <h2><?= $lastExpo->getTitre(); ?></h2>
 
                     <table class='table'>
                         <thead>

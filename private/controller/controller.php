@@ -4,7 +4,10 @@
     //Controlle l'ouverture des pages
 
     function home(){
-        //require('model/artModel.php');
+        include_once('model/ExpoModel.php');
+        $lastExpo = new ExpoModel();
+        $lastExpo -> getExpoById(1);
+
         include_once('model/ArtModel.php');
         $artsView = new ArtModel();
         $arts = $artsView -> getViewsArtsExpo(1);

@@ -14,7 +14,7 @@
         <div class="col-3 topRight">
             <div class="profile">
                 <div class="info">
-                    <p>Bonjour, <b>Mathieu</b></p>
+                    <p>Bonjour, <b><?= $_SESSION['user'] ?></b></p>
                     <small class="text-muted">Admin</small>
                 </div>
             </div>
