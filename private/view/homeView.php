@@ -18,10 +18,6 @@
         <div class=row>
             <!-- partie de gauche -->
             <div class="col-8">
-<<<<<<< HEAD
-=======
-
->>>>>>> design
                 <!-- Graph des vues -->
                 <div class="recent-orders cadres">
                     <h2>Les 5 oeuvres les plus vues - <?= $lastExpo->getTitre(); ?></h2>

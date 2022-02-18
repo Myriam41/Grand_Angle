@@ -39,7 +39,7 @@ class Art {
     public function getDateLivraison() {
         return $this->date_livraison;
     }   
-    public function estLivre() {
+    public function getEstLivre() {
         return $this->estLivre;
     }     
     public function getDescriptionFR() {
@@ -66,48 +66,48 @@ class Art {
 
     // Setters
     public function setCode($code) {
-        $this-> titre = $code;
+        $this-> code = $code;
     }
     public function setTitre($titre) {
         $this-> titre = $titre;
     }
     public function setHauteur($hauteur) {
-        $this-> titre = $hauteur;
+        $this-> hauteur = $hauteur;
     }
     public function setLargeur($largeur) {
-        $this-> titre = $largeur;
+        $this-> largeur = $largeur;
     }
     public function setEpaisseur($epaisseur) {
-        $this-> titre = $epaisseur;
+        $this-> epaisseur = $epaisseur;
     }
     public function setFlash($flash) {
         $this-> flash = $flash;
     }
     public function setDateLIvraison($dateLivraison) {
-        $this-> flash = $dateLivraison;
+        $this-> dateLivraison = $dateLivraison;
     }
     public function setEstLivre($estLivre) {
-        $this-> flash = $estLivre;
+        $this-> estLivre = $estLivre;
     }
     public function setDescriptionFR($descriptionFR) {
-        $this-> titre = $descriptionFR;
+        $this-> descriptionFR = $descriptionFR;
     }
     public function setDescriptionEN($descriptionEN) {
-        $this-> titre = $descriptionEN;
+        $this-> descriptionEN = $descriptionEN;
     }
     public function setDescriptionCH($descriptionCH) {
-        $this-> titre = $descriptionCH;
+        $this-> descriptionCH = $descriptionCH;
     }
     public function setDescriptionRU($descriptionRU) {
-        $this-> titre = $descriptionRU;
+        $this-> descriptionRU = $descriptionRU;
     }
     public function setDescriptionDE($descriptionDE) {
-        $this-> titre = $descriptionDE;
+        $this-> descriptionDE = $descriptionDE;
     }
     public function setCodeType($codeType) {
-        $this-> titre = $codeType;
+        $this-> codeType = $codeType;
     }
     public function setCodeArtiste($codeArtiste) {
-        $this-> titre = $codeArtiste;
+        $this-> codeArtiste = $codeArtiste;
     }
 }

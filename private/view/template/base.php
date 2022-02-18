@@ -61,6 +61,6 @@
 		<script src="assets/js/app.js"></script>
 		<!-- QRCode -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-		<script src="assets/js/qrcode.js"></script>
+		<!-- <script src="assets/js/qrcode.js"></script> -->
 	</body>
 </html>

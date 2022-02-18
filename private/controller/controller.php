@@ -24,6 +24,8 @@
 
     function artsList(){
         require_once('model/ArtModel.php');
+        $artsView = new ArtModel();
+        $art = $artsView -> getArtsAll();
         require_once('model/artistsModel.php');
         $artistView = new ArtistsModel();
         $artists = $artistView -> getArtistsAll();
@@ -32,7 +34,7 @@
     }
 
     function expo($id){
-        require_once('model/expoModel.php');
+        include_once('model/expoModel.php');
         $expoView = new ExpoModel();
         $expoView -> getExpoById($id);
         $code = $expoView->getCode();
@@ -40,10 +42,14 @@
         $debut = $expoView->getDateDebut();
         $fin = $expoView->getDateFin();
 
-        require_once('model/artModel.php');
+        include_once('model/artModel.php');
         $artExpo = new ArtModel();
         $arts = $artExpo -> getViewsArtsExpo($id);
-        require_once('view/expoView.php');
+
+        require_once('model/artistsModel.php');
+        $artistView = new ArtistsModel();
+        $artists = $artistView -> getArtistsAll();
+        include_once('view/expoView.php');
     }
 
     function exposList(){
