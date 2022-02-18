@@ -45,11 +45,11 @@
         </header>
         <section>
             <h3>La galerie</h3>
-            <p>Le musée des Beaux-Arts de Lyon est situé au cœur de la Presqu’île de Lyon, dans le cadre magnifique d’une abbaye du 17e siècle et de son cloître, devenu aujourd’hui un jardin de sculptures. Les collections encyclopédiques du musée présentent en cinq départements et 70 salles, réparties sur 7 000 m2, un panorama de grandes civilisations et d’écoles artistiques de l’Antiquité à nos jours.
+            <p>Le musée des Beaux-Arts de Tours est situé au cœur de la Presqu’île de Lyon, dans le cadre magnifique d’une abbaye du 17e siècle et de son cloître, devenu aujourd’hui un jardin de sculptures. Les collections encyclopédiques du musée présentent en cinq départements et 70 salles, réparties sur 7 000 m2, un panorama de grandes civilisations et d’écoles artistiques de l’Antiquité à nos jours.
                 <hr>
                 Peinture, sculpture, objets d’art, monnaies et médailles, œuvres graphiques : elles offrent un parcours exceptionnel à travers 5 000 ans d’art et d’histoire avec les chefs-d’œuvre de Véronèse, Rubens, Rembrandt, Poussin, Renoir, Monet, Gauguin, Chagall, Matisse et Picasso.
                 <hr>
-                Le musée des Beaux-Arts de Lyon compte aujourd'hui parmi les musées français et européens de renom grâce à la richesse de ses collections et au rayonnement de ses expositions. Il nourrit également des projets de partenariats avec les plus grands musées du monde.</p>
+                Le musée des Beaux-Arts de Tours compte aujourd'hui parmi les musées français et européens de renom grâce à la richesse de ses collections et au rayonnement de ses expositions. Il nourrit également des projets de partenariats avec les plus grands musées du monde.</p>
             
         </section>
         <footer>

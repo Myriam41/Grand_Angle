@@ -57,10 +57,10 @@
                <p><strong>Dernière admissions :</strong>&nbsp;1h avant la fermeture</p>
                <p><strong>Évacuations des salles :</strong>&nbsp;30min avant la fermeture</p>
                <hr>
-               <p><strong>Jours feriés :</strong>&nbsp;le musée du Louvre est fermé 
+               <p><strong>Jours feriés :</strong>&nbsp;le musée est fermé 
                 les 1er janvier, 1er mai et 25 décembre. Il est ouvert tous les autres jours 
                 fériés, sauf quand ils tombent un mardi, jour de fermeture hebdomadaire. </p>
-               <p><strong>Les 24 et 31 décembre 2021,</strong>&nbsp;le musée du Louvre fermera à 17 h. L'évacuation des salles débutera 30 minutes avant la fermeture.</p>
+               <p><strong>Les 24 et 31 décembre 2021,</strong>&nbsp;le musée fermera à 17 h. L'évacuation des salles débutera 30 minutes avant la fermeture.</p>
            </div>
        </section>
        <footer>
